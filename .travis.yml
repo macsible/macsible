@@ -17,6 +17,3 @@ script:
   # Basic syntax checks
   - ansible-playbook -i hosts plists.yml --syntax-check
   - ansible-playbook -i hosts main.yml --syntax-check
-
-notifications:
-  webhooks: https://galaxy.ansible.com/api/v1/notifications/
