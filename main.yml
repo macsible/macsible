@@ -23,6 +23,9 @@
 
     # Prep
     # --------------------------------------------------------------------------
+    # TODO: blockinfile can be removed once we're back to testing with Ansible 2
+    # in Travis.
+    - blockinfile
     - { role: ssh, tags: ["ssh","prep"] }
     - { role: spelling, tags: ["spelling","prep"] }
     # Access to passwords for use in other installations
