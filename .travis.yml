@@ -5,7 +5,7 @@
 os: osx
 
 env:
-  - USER=danbohea
+  - USER=danbohea HOME=/Users/danbohea
 
 before_install:
   # Install pip
