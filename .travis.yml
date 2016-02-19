@@ -14,6 +14,10 @@ install:
   - ansible-galaxy install -r deps.yml
 
 script:
-  # Basic syntax checks
+  # Playbook syntax checks
   - ansible-playbook -i hosts plists.yml --syntax-check
   - ansible-playbook -i hosts main.yml --syntax-check
+
+  # Playbook lint checks
+  - ansible-lint plists.yml
+  - ansible-lint main.yml
