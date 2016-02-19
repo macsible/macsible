@@ -1,5 +1,4 @@
 ---
-language: python
 os: osx
 
 # Use the new container infrastructure
@@ -16,6 +15,8 @@ install:
   - pip install ansible
   # Check ansible version
   - ansible --version
+  # Install Ansible Lint
+  - pip install ansible-lint
   # Install Ansible Galaxy dependencies
   - ansible-galaxy install -r deps.yml
 
