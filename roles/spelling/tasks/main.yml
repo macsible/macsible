@@ -1,0 +1,29 @@
+---
+
+- name: Create LocalDictionary file
+  template:
+    src: LocalDictionary.j2
+    dest: /Users/{{ unix_username }}/Library/Spelling/LocalDictionary
+    mode: 0644
+    force: no
+  register: create_localdictionary_file
+  notify: killall AppleSpell
+
+- name: Add words to LocalDictionary file
+  lineinfile:
+    dest: /Users/{{ unix_username }}/Library/Spelling/LocalDictionary
+    line: "{{ item }}"
+  with_items: spelling_localdictionary_words
+  when: create_localdictionary_file.changed == false
+
+# The final contents of the LocalDictionary file have to be sorted
+# alphabetically for OS X to be able to use it properly.
+
+# This is ugly but it works.
+# `sort` only seems to be able to write to a file other than the source file.
+- name: Sort words in LocalDictionary file alphabetically
+  # Sort original file contents, write output to a tmp file, move/rename tmp
+  # file to original file.
+  shell: sort ~/Library/Spelling/LocalDictionary > ~/Library/Spelling/LocalDictionary.tmp && mv ~/Library/Spelling/LocalDictionary.tmp ~/Library/Spelling/LocalDictionary
+  changed_when: false
+  when: create_localdictionary_file.changed == false

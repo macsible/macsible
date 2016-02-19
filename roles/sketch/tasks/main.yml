@@ -1,0 +1,14 @@
+---
+
+- name: Ensure Sketch plugins directory exists
+  file:
+    path: "{{ sketch_plugins_dir }}"
+    state: directory
+
+# TODO: Determine dest from end of item.repo
+- name: Clone plugins to Sketch plugins directory
+  git:
+    repo: "{{ item.repo }}"
+    dest: "{{ sketch_plugins_dir }}/{{ item.dest }}"
+    depth: 1
+  with_items: sketch_plugin_repos

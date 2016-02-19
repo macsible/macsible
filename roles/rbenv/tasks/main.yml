@@ -1,0 +1,32 @@
+---
+
+- name: Install rbenv & associated packages
+  homebrew: name={{ item }}
+  with_items: rbenv_brew_packages
+  notify: brew cleanup
+
+# The command module gets a fair bit of use below as we need to tell bash to run
+# the command as if we were in a login shell (to make sure rbenv kicks in).
+
+- name: Install Ruby
+  command: bash -lc "rbenv install {{ rbenv_default_ruby_version }}"
+           creates=/Users/{{ unix_username }}/.rbenv/versions/{{ rbenv_default_ruby_version }}
+
+- name: Check what the current global Ruby version is via rbenv
+  command: bash -lc "rbenv global"
+  register: rbenv_global
+  changed_when: rbenv_global.stdout != rbenv_default_ruby_version
+
+- name: Set the global Ruby version
+  command: bash -lc "rbenv global {{ rbenv_default_ruby_version }} && rbenv rehash"
+  when: rbenv_global.stdout != rbenv_default_ruby_version
+
+# Making gem installations via rbenv idempotent:
+# Can't use "creates" as the gem version number can change and "creates" doesn't
+# support wildcards :(
+
+# This works, it's just not idempotent and I hardly use rbenv much anymore.
+# - name: Install default gems to global Ruby version
+#   command: bash -lc "gem install {{ item }}"
+#   with_items:
+#     - "bundler"

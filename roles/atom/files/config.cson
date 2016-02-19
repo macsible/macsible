@@ -1,0 +1,35 @@
+"*":
+  "exception-reporting":
+    userId: "8d6dbc73-9252-7f14-3ad9-c234ba888bdd"
+  welcome:
+    showOnStartup: false
+  build: {}
+  core:
+    themes: [
+      "isotope-ui"
+      "afterglow-monokai-syntax"
+    ]
+  editor:
+    invisibles: {}
+    fontSize: 12
+    showInvisibles: true
+    softWrap: true
+  "markdown-preview": {}
+  "bottom-dock": {}
+  linter: {}
+  "isotope-ui": {}
+  pigments:
+    markerType: "gutter"
+  "file-icons":
+    onChanges: true
+    coloured: false
+  "atom-beautify":
+    _analyticsUserId: "0d0704af-4cea-45f7-993e-e1ef93dc23a2"
+  "git-plus":
+    splitPane: "down"
+  emmet: {}
+  "tree-view":
+    hideIgnoredNames: true
+".ansible.source":
+  editor:
+    showInvisibles: true

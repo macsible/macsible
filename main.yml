@@ -1,0 +1,125 @@
+---
+- name: Mac setup
+  hosts: all
+  connection: local
+
+  vars_files:
+    - vars/common.yml
+    - vars/role_specific.yml
+
+  pre_tasks:
+    # Ensure Homebrew Cask is available
+    - name: Tap the cask repository
+      homebrew_tap: tap=caskroom/cask
+    # The homebrew module's "update_homebrew" option seems to update homebrew
+    # for every package which is unnecessarily slow. Instead we've added this
+    # pre_task to ensure homebrew is just updated once.
+    # https://groups.google.com/forum/?utm_medium=email&utm_source=footer#!topic/ansible-project/zJ-5-MEj9sY
+    - name: Update homebrew
+      shell: brew update
+      changed_when: false
+
+  roles:
+
+    # Prep
+    # --------------------------------------------------------------------------
+    - { role: ssh, tags: ["ssh","prep"] }
+    - { role: spelling, tags: ["spelling","prep"] }
+    # Access to passwords for use in other installations
+    - { name: "lastpass-cli", brew_install_options: "with-pinentry,with-doc", tags: ["lastpass_cli","prep"], role: brew_pkg }
+    # Access to synced app settings
+    - { role: dropbox, tags: ["dropbox","prep"] }
+    # Better text editor
+    - { role: atom, tags: ["atom","prep"] }
+    # Quick-peak access to the contents of more text file formats
+    - { role: quick_look_plugins, tags: ["quick_look_plugins","prep"] }
+
+    # Essential day-to-day
+    # --------------------------------------------------------------------------
+
+    - { role: dotfiles, tags: ["dotfiles","stage_1"] }
+    - { role: duti, tags: ["duti","stage_1"] }
+    - { role: desktop_symlinks, tags: ["desktop_symlinks","stage_1"] }
+    - { role: time_machine, tags: ["time_machine","stage_1"] }
+    - { name: "caffeine", tags: ["caffeine","stage_1","sudo"], role: cask_app }
+    - { name: "alfred", tags: ["alfred","stage_1","sudo"], role: cask_app }
+    - { name: "evernote", tags: ["evernote","plist","stage_1"], role: cask_app, cask_app_plists: "com.evernote.Evernote.plist" }
+    - { name: "google-chrome", tags: ["google_chrome","stage_1"], role: cask_app }
+    - { name: "atext", role: cask_app, tags: ["atext","stage_1"] }
+    - { name: "bettertouchtool", tags: ["bettertouchtool","plist","stage_1"], role: cask_app, cask_app_plists: "com.hegenberg.BetterTouchTool.plist" }
+    - { name: "flux", tags: ["flux","plist","stage_1"], role: cask_app, cask_app_plists: "org.herf.Flux.plist" }
+    - { name: "moom", role: cask_app, tags: ["moom","plist","stage_1"], cask_app_plists: "com.manytricks.Moom.plist" }
+    - { name: "the-unarchiver", tags: ["the_unarchiver","stage_1"], role: cask_app }
+    - { name: "path-finder", tags: ["path_finder","plist","stage_1"], role: cask_app, cask_app_plists: "com.cocoatech.PathFinder.plist" }
+    - { name: "keyboard-maestro", tags: ["keyboard_maestro","stage_1"], role: cask_app }
+    - { name: "skype", role: cask_app, tags: ["skype","plist","stage_1"], cask_app_plists: "com.skype.skype.plist" }
+
+    # Essential dev
+    # --------------------------------------------------------------------------
+
+    - { role: vagrant, tags: ["vagrant","stage_2","sudo"] }
+    - { name: "virtualbox", tags: ["virtualbox","stage_2","sudo"], role: cask_app, cask_app_plists: "org.virtualbox.app.VirtualBox.plist" }
+    - { role: git, tags: ["git","stage_2"] }
+    - { name: "git-extras", tags: ["git_extras","stage_2"], role: brew_pkg }
+    - { role: composer, tags: ["composer","stage_2"] }
+    - { role: rbenv, tags: ["rbenv","stage_2"] }
+    - { role: node_pkgs, tags: ["node_pkgs","stage_2"] }
+    - { role: pip_pkgs, tags: ["pip_pkgs","stage_2"] }
+    - { name: "dash", tags: ["dash","plist","stage_2"], role: cask_app, cask_app_plists: "com.kapeli.dash.plist" }
+    - { name: "iterm2", role: cask_app, tags: ["iterm2","plist","stage_2"], cask_app_plists: "com.googlecode.iterm2.plist" }
+    - { role: tower, tags: ["tower","plist","stage_2"], cask_app_plists: "com.fournova.Tower2.plist" }
+    - { name: "sequel-pro", tags: ["sequel_pro","stage_2"], role: cask_app }
+    - { name: "transmit", tags: ["transmit","stage_2"], role: cask_app }
+    - { name: "imageoptim", tags: ["imageoptim","stage_2"], role: cask_app }
+    - { role: sketch, tags: ["sketch","stage_2"] } # TODO: Add plists
+
+    # Testing
+    # --------------------------------------------------------------------------
+
+    - { name: "vmware-fusion", tags: ["vmware_fusion","stage_3"], role: cask_app, when: system_type == "desktop" }
+    - { name: "firefox", tags: ["firefox","stage_3"], role: cask_app }
+    - { name: "opera", tags: ["opera","stage_3"], role: cask_app }
+    - { name: "opera-mobile-emulator", tags: ["opera_mobile_emulator","stage_3"], role: cask_app }
+
+    # Projects
+    # --------------------------------------------------------------------------
+
+    - { role: projects, tags: ["projects","stage_4"] }
+
+    # Remaining apps
+    # --------------------------------------------------------------------------
+
+    - { name: "handbrake", tags: ["handbrake","stage_5"], role: cask_app, when: system_type == "desktop" }
+    - { name: "postbox", tags: ["postbox","stage_5"], role: cask_app, when: system_type == "desktop" }
+    - { name: "google-hangouts", tags: ["google_hangouts","stage_5"], role: cask_app }
+    - { name: "hazel", tags: ["hazel","stage_5"], role: cask_app }
+    - { name: "cakebrew", tags: ["cakebrew","stage_5"], role: cask_app }
+    - { name: "hipchat", tags: ["hipchat","stage_5"], role: cask_app }
+    - { name: "limechat", tags: ["limechat","stage_5"], role: cask_app, cask_app_plists: "net.limechat.LimeChat.plist" }
+    - { name: "daisydisk", tags: ["daisydisk","stage_5"], role: cask_app }
+    - { name: "flash-player", tags: ["flash_player","stage_5"], role: cask_app }
+    - { name: "google-drive", tags: ["google_drive","stage_5"], role: cask_app }
+    - { name: "libreoffice", tags: ["libreoffice","stage_5"], role: cask_app }
+    - { name: "name-mangler", tags: ["name_mangler","stage_5"], role: cask_app }
+    - { name: "skitch", tags: ["skitch","stage_5"], role: cask_app }
+    - { name: "vlc", tags: ["vlc","stage_5"], role: cask_app }
+    - { name: "google-plus-auto-backup", role: cask_app, tags: ["google_plus_auto_backup","plist","stage_5"], cask_app_plists: "com.google.gpautobackup.plist" }
+    - { name: "sketchup", role: cask_app, tags: ["sketchup","plist","stage_5"], cask_app_plists: "com.sketchup.SketchUp.2014.plist" }
+    - { name: "transmission", role: cask_app, tags: ["transmission","plist","stage_5"], cask_app_plists: "org.m0k.transmission.plist" }
+    - { name: "bartender", role: cask_app, tags: ["bartender","plist","stage_5"], cask_app_plists: "com.surteesstudios.Bartender.plist" }
+    - { name: "doxie", tags: ["doxie","stage_5"], role: cask_app }
+    - { name: "omnigraffle", tags: ["omnigraffle","stage_5"], role: cask_app }
+    - { name: "tree", tags: ["tree","stage_5"], role: brew_pkg }
+    - { name: "kaleidoscope", tags: ["kaleidoscope","stage_5"], role: cask_app }
+    - { name: "appcleaner", tags: ["appcleaner","stage_5"], role: cask_app }
+    - { name: "istat-menus", role: cask_app, tags: ["istat_menus","plist","stage_5"], cask_app_plists: ["com.bjango.istatmenus.plist","com.bjango.istatmenus5.extras.plist"] }
+    - { role: steam, tags: ["steam","stage_5"] }
+    - { name: "crashplan", tags: ["crashplan","stage_5","prompt"], role: cask_app } # Prompts for input on install
+
+    # OS X config
+    # --------------------------------------------------------------------------
+
+    - { role: osx, tags: ["osx"] }
+
+  handlers:
+    - include: handlers/main.yml

@@ -1,0 +1,6 @@
+---
+
+sketch_plugins_dir: "/Path/To/Sketch/Plugins"
+
+sketch_plugin_repos:
+  - { repo: "https://github.com/bomberstudios/sketch-commands.git", dest: "sketch-commands" }

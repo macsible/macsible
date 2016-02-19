@@ -1,0 +1,10 @@
+---
+
+projects_oss:
+  - { dest: "vlad/vlad", repo: "git@github.com:hashbangcode/vlad.git" }
+
+projects_internal:
+  - { dest: "path/to/internal_project", repo: "git@bitbucket.org:dbohea/private-project-a.git" }
+
+projects_client:
+  - { dest: "path/to/client_project", repo: "git@bitbucket.org:dbohea/private-project-b.git" }

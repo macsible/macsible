@@ -1,0 +1,6 @@
+---
+
+pip_pkgs_list:
+  - ansible-lint
+  - mkdocs
+  - passlib

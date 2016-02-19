@@ -1,0 +1,10 @@
+---
+
+# TODO: This likely won't be necessary as of Ansible 2.1.0 as blockinfile is due
+# to be included in Ansible as an "extras" module.
+# https://github.com/ansible/ansible-modules-extras/pull/832
+- src: https://github.com/yaegashi/ansible-role-blockinfile
+  name: blockinfile
+
+- src: danbohea.cask-app
+  name: cask_app

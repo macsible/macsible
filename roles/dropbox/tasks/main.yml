@@ -1,0 +1,9 @@
+---
+
+- name: Symlink ~/Dropbox (desktop)
+  file:
+    path: ~/Dropbox
+    src: /Volumes/Data/Dropbox/
+    state: link
+    force: yes
+  when: system_type == "desktop"

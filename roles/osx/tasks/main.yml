@@ -1,0 +1,28 @@
+---
+
+- name: Copy OS X plists into place
+  copy:
+    src: "{{ ext_prefs_path }}/{{ system_type }}/app_settings/plists/{{ item }}"
+    dest: /Users/{{ unix_username }}/Library/Preferences
+  with_items:
+    - com.apple.dock.plist
+    - com.apple.loginitems.plist
+
+# TODO: Check if source image is there first.
+# TODO: Doesn't seem to to work on OS 10.10+.
+- name: Set desktop wallpaper image
+  shell: sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db "update data set value = '{{ ext_prefs_path_common }}/wallpaper/vlad_1920x1080.png'"
+
+- name: Ensure osx.sh is executable
+  file:
+    path: ./roles/osx/files/osx.sh
+    mode: 0755
+
+# Bash told to run as if in a login shell.
+# Also lets the script know that it's Ansible running it.
+- name: Execute osx.sh
+  shell: bash -lc ./roles/osx/files/osx.sh --ansible
+  notify:
+    - killall
+
+- debug: msg="Please log out and log back in for all settings to take effect."

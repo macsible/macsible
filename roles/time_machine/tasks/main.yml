@@ -1,0 +1,30 @@
+---
+
+- name: Ensure "TM_Excluded" directory exists (desktop)
+  file:
+    path: /Volumes/Data/{{ time_machine_ex_dir_name }}
+    state: directory
+  when: system_type == "desktop"
+
+- name: Ensure "TM_Excluded" directory exists (laptop)
+  file:
+    path: /Users/{{ unix_username }}/{{ time_machine_ex_dir_name }}
+    state: directory
+  when: system_type == "laptop"
+
+# TODO: Adding Time Machine exclusions using tmutil doesn't seem to add anything
+# to the Time Machine GUI list of exclusions :(
+
+# TODO: Make idempotent
+
+# - name: Exclude certain directories from Time Machine backups (desktop)
+#   shell: tmutil addexclusion {{ item }}
+#   with_items: time_machine_exclusions_desktop
+#   when: system_type == "desktop"
+
+# TODO: Make idempotent
+
+# - name: Exclude certain directories from Time Machine backups (laptop)
+#   shell: tmutil addexclusion {{ item }}
+#   with_items: time_machine_exclusions_laptop
+#   when: system_type == "laptop"

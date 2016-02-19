@@ -1,0 +1,15 @@
+---
+
+- name: Install duti
+  homebrew: name=duti
+  notify: brew cleanup
+
+- name: Check that ~/.duti exists
+  file:
+    path: ~/.duti
+    state: file
+    follow: yes
+
+- name: Run duti with preferences file
+  shell: duti ~/.duti
+  changed_when: false

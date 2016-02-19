@@ -1,0 +1,28 @@
+---
+language: python
+python: "2.7"
+os: osx
+
+# Use the new container infrastructure
+sudo: false
+
+# Install ansible
+addons:
+  apt:
+    packages:
+    - python-pip
+
+install:
+  # Install ansible
+  - pip install ansible
+  # Check ansible version
+  - ansible --version
+  # Install Ansible Galaxy dependencies
+  - ansible-galaxy install -r deps.yml
+
+script:
+  # Basic syntax check
+  - ansible-playbook -i hosts main.yml --syntax-check
+
+notifications:
+  webhooks: https://galaxy.ansible.com/api/v1/notifications/

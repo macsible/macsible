@@ -1,0 +1,20 @@
+---
+
+- name: Ensure Atom packages are installed
+  command: apm install {{ item }}
+  args:
+    creates: /Users/{{ unix_username }}/.atom/packages/{{ item }}
+  with_items: atom_packages
+
+# TODO: Add default var to control whether this happens or not.
+- name: Upgrade Atom packages
+  command: apm upgrade --no-confirm
+  changed_when: false
+
+- name: Copy Atom config into place.
+  copy:
+    src: config.cson
+    dest: /Users/{{ unix_username }}/.atom/config.cson
+    mode: 0644
+
+# TODO: provision project config & definitions (project-manager).

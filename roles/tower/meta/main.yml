@@ -1,0 +1,5 @@
+---
+
+dependencies:
+  - role: git
+  - { role: cask_app, name: "tower", tags: ["tower","plist"], plists: ["com.fournova.Tower2.plist"] }

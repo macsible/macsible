@@ -1,0 +1,15 @@
+---
+
+- name: Remove default Steam directrory prior to creating symlink (desktop)
+  file:
+    path: ~/Library/Application\ Support/Steam
+    state: absent
+  when: system_type == "desktop"
+
+- name: Create symlink for Steam directory (desktop)
+  file:
+    path: ~/Library/Application\ Support/Steam
+    src: /Volumes/Data/Steam/
+    state: link
+    force: yes
+  when: system_type == "desktop"

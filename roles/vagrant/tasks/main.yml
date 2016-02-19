@@ -1,0 +1,21 @@
+---
+
+- name: Ensure ~/.ssh/ exists
+  file:
+    path: ~/.ssh
+    state: directory
+
+- name: SSH config for local Vagrant development
+  blockinfile:
+    dest: ~/.ssh/config
+    content: "Host *.local\n  ForwardAgent yes"
+    create: yes
+
+# TODO: Make idempotent
+- name: Install Vagrant plugins
+  command: vagrant plugin install {{ item }}
+  with_items:
+    - vagrant-cachier
+    - vagrant-hostmanager
+    - vagrant-triggers
+    - vagrant-vmware-fusion

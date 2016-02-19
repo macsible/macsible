@@ -1,0 +1,12 @@
+---
+
+- name: Gather plist files
+  hosts: all
+  connection: local
+
+  vars_files:
+    - vars/main.yml
+    - vars/plists.yml
+
+  roles:
+    - { role: gather_plists }

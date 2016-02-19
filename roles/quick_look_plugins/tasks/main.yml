@@ -1,0 +1,10 @@
+---
+
+# Credit: https://github.com/sindresorhus/quick-look-plugins
+
+- name: Install Quick Look plugins
+  homebrew_cask: name={{ item }} state=present
+  environment:
+    HOMEBREW_CASK_OPTS: --appdir={{ cask_app_appdir }}
+  with_items: quick_look_plugins_list
+  notify: brew cask cleanup
