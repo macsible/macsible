@@ -1,4 +1,6 @@
-# First time install & run
+# Mac playbook
+
+## First time install & run
 
 1) Install Xcode from the App Store. When installed, launch Xcode and agree the policy prompt.
 
@@ -8,7 +10,7 @@
 
 3) Clone repo into place and `cd` to its working directory:
 
-    git clone https://dbohea@bitbucket.org/dbohea/mac-setup-playbook.git ~/Projects/internal/mac-setup-playbook && cd mac-setup-playbook/
+    git clone https://github.com/danbohea/mac-playbook.git ~/Projects/internal/mac-playbook && cd mac-playbook/
 
 4) Run initial setup file:
 
