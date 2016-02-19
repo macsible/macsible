@@ -19,5 +19,6 @@ script:
   - ansible-playbook -i hosts main.yml --syntax-check
 
   # Playbook lint checks
-  - ansible-lint plists.yml
-  - ansible-lint main.yml
+  # https://github.com/willthames/ansible-lint
+  # - ansible-lint plists.yml
+  # - ansible-lint main.yml
