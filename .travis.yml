@@ -1,5 +1,12 @@
 ---
+
+# https://docs.travis-ci.com/user/osx-ci-environment
+
 os: osx
+
+env:
+  - USER=danbohea
+  - HOME=/Users/danbohea
 
 install:
   # Install pip
@@ -24,4 +31,4 @@ script:
   # - ansible-lint main.yml
 
   # Run Ansible playbook on host "mba" (preparatory tasks only):
-  - ansible-playbook -i hosts main.yml --tags "prep" --limit mba
+  - ansible-playbook -i hosts main.yml p--tags "prep" --limit mba
