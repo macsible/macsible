@@ -9,7 +9,7 @@ install:
   # Check ansible version
   - ansible --version
   # Install Ansible Lint
-  - pip install ansible-lint
+  - sudo pip install ansible-lint
   # Install Ansible Galaxy dependencies
   - ansible-galaxy install -r deps.yml
 
