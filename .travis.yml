@@ -27,6 +27,7 @@ before_install:
   - whoami
   - pwd
   - cd /Users/ && ls -la
+  - cd /Users/travis/ && ls -la
 
 script:
   # Playbook syntax checks
