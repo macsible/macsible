@@ -4,8 +4,12 @@
 
 os: osx
 
-env:
-  - USER=danbohea HOME=/Users/danbohea
+# env:
+#   - USER=danbohea HOME=/Users/danbohea
+
+# TODO: Setting env vars still doesn't seem to actually make the difference I'm
+# expecting. Next try passinging in "travis" as the unix_username when running
+# any playbooks.
 
 before_install:
   # Install pip
@@ -36,4 +40,4 @@ script:
   # - ansible-lint main.yml
 
   # Run Ansible playbook on host "mba" (preparatory tasks only):
-  - ansible-playbook -i hosts main.yml --tags "prep" --limit mba
+  - ansible-playbook -i hosts main.yml --tags "prep" --limit mba --extra-vars "unix_username=travis"
