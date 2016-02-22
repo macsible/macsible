@@ -1,7 +1,5 @@
 # Mac playbook
 
-[![Build Status](https://travis-ci.org/danbohea/mac-playbook.svg?branch=master)](https://travis-ci.org/danbohea/mac-playbook)
-
 ## First time install & run
 
 1) Install Xcode from the App Store. When installed, launch Xcode and agree the policy prompt.
