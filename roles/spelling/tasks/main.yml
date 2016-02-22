@@ -1,6 +1,6 @@
 ---
 
-- name: Create LocalDictionary file
+- name: Create LocalDictionary file (includes custom word list)
   template:
     src: LocalDictionary.j2
     dest: /Users/{{ unix_username }}/Library/Spelling/LocalDictionary
@@ -9,7 +9,7 @@
   register: create_localdictionary_file
   notify: killall AppleSpell
 
-- name: Add words to LocalDictionary file
+- name: Add custom word list to existing LocalDictionary file
   lineinfile:
     dest: /Users/{{ unix_username }}/Library/Spelling/LocalDictionary
     line: "{{ item }}"
