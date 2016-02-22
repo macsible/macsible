@@ -448,7 +448,7 @@ defaults write com.apple.messageshelper.MessageController SOInputLineSettings -d
 
 if [ "$1" != "--ansible" ]; then
 	# Only run this if "--ansible" is not passed to this script as an argument
-	for app in "cfprefsd" "Dock" "Finder" "Mail" "SystemUIServer" "Terminal"; do
+	for app in "cfprefsd" "Dock" "Finder" "Mail" "SystemUIServer"; do
     killall "${app}" > /dev/null 2>&1
     done
     echo "Please log out and log back in for all settings to take effect."
