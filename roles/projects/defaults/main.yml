@@ -7,4 +7,4 @@ projects_internal:
   - { dest: "mac-playbook", repo: "https://github.com/danbohea/mac-playbook.git" }
 
 projects_client:
-  - { dest: "", repo: "" }
+  - { dest: "ansible-roles/drush", repo: "https://github.com/hashbangcode/ansible-role-drush.git" }
