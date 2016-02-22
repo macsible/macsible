@@ -11,9 +11,9 @@
 sudo easy_install pip
 
 # Install Ansible
-# This is the "less noisey" technique for installing Ansible on Mac OS 10.9+
-# http://docs.ansible.com/ansible/intro_installation.html#latest-releases-via-pip
-- sudo CFLAGS=-Qunused-arguments CPPFLAGS=-Qunused-arguments pip install ansible==1.9.4
+# Keep this at 1.9.4 until the following issue is resolved:
+# https://github.com/ansible/ansible-modules-core/issues/2473
+- sudo pip install ansible==1.9.4
 
 # Install Ansible Galaxy dependencies:
 ansible-galaxy install -r deps.yml
