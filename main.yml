@@ -54,7 +54,7 @@
     - { name: "moom", role: cask_app, tags: ["moom","plist","stage_1"], cask_app_plists: "com.manytricks.Moom.plist" }
     - { name: "the-unarchiver", tags: ["the_unarchiver","stage_1"], role: cask_app }
     - { name: "path-finder", tags: ["path_finder","plist","stage_1"], role: cask_app, cask_app_plists: "com.cocoatech.PathFinder.plist" }
-    - { name: "keyboard-maestro", tags: ["keyboard_maestro","stage_1,"mac_os_10_10"], role: cask_app }
+    - { name: "keyboard-maestro", tags: ["keyboard_maestro","stage_1","mac_os_10_10"], role: cask_app }
     - { name: "skype", role: cask_app, tags: ["skype","plist","stage_1"], cask_app_plists: "com.skype.skype.plist" }
 
     # Essential dev
