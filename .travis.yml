@@ -35,5 +35,6 @@ script:
   # Run Ansible playbook on host "mba" (preparatory tasks only):
   # - ansible-playbook -i hosts main.yml --limit mba --extra-vars "unix_username=travis" --tags "prep"
 
-  # Run Ansible playbook on host "mba" (skip prep tasks for now):
-  - ansible-playbook -i hosts main.yml --limit mba --extra-vars "unix_username=travis" --skip-tags "prep,dotfiles"
+  # Run Ansible playbook on host "mba".
+  # Skip prep roles for now, also skip roles that cause CI issues.
+  - ansible-playbook -i hosts main.yml --limit mba --extra-vars "unix_username=travis" --skip-tags "prep,no_ci""

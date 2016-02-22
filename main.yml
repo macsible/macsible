@@ -40,9 +40,9 @@
     # Essential day-to-day
     # --------------------------------------------------------------------------
 
-    - { role: dotfiles, tags: ["dotfiles","stage_1"] }
-    - { role: duti, tags: ["duti","stage_1"] }
-    - { role: desktop_symlinks, tags: ["desktop_symlinks","stage_1"] }
+    - { role: dotfiles, tags: ["dotfiles","stage_1","no_ci"] }
+    - { role: duti, tags: ["duti","stage_1","no_ci"] }
+    - { role: desktop_symlinks, tags: ["desktop_symlinks","stage_1","no_ci"] }
     - { role: time_machine, tags: ["time_machine","stage_1"] }
     - { name: "caffeine", tags: ["caffeine","stage_1","sudo"], role: cask_app }
     - { name: "alfred", tags: ["alfred","stage_1","sudo"], role: cask_app }
