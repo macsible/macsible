@@ -22,6 +22,8 @@ install:
   - sudo pip install ansible-lint
   # Install Ansible Galaxy dependencies
   - ansible-galaxy install -r deps.yml
+  # Update Homebrew & formulae
+  - brew update
   # Debugging info
   - ansible --version
   - whoami
