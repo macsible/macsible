@@ -11,14 +11,6 @@ os: osx
 # expecting. Next try passinging in "travis" as the unix_username when running
 # any playbooks.
 
-before_install:
-  # Debugging info
-  - ansible --version
-  - whoami
-  - pwd
-  - cd /Users/ && ls -la
-  - cd /Users/travis/ && ls -la
-
 install:
   # Install pip
   - sudo easy_install pip
@@ -30,6 +22,12 @@ install:
   - sudo pip install ansible-lint
   # Install Ansible Galaxy dependencies
   - ansible-galaxy install -r deps.yml
+  # Debugging info
+  - ansible --version
+  - whoami
+  - pwd
+  - cd /Users/ && ls -la
+  - cd /Users/travis/ && ls -la
 
 script:
   # Playbook syntax checks
