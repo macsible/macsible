@@ -4,13 +4,6 @@
 
 os: osx
 
-# env:
-#   - USER=danbohea HOME=/Users/danbohea
-
-# TODO: Setting env vars still doesn't seem to actually make the difference I'm
-# expecting. Next try passinging in "travis" as the unix_username when running
-# any playbooks.
-
 install:
   # Install pip
   - sudo easy_install pip
