@@ -24,8 +24,8 @@ install:
 
 script:
   # Playbook syntax checks
-  # - ansible-playbook -i hosts plists.yml --syntax-check
-  # - ansible-playbook -i hosts main.yml --syntax-check
+  - ansible-playbook -i hosts plists.yml --syntax-check
+  - ansible-playbook -i hosts main.yml --syntax-check
 
   # Playbook lint checks
   # https://github.com/willthames/ansible-lint
