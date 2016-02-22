@@ -1,10 +1,10 @@
 ---
 
 projects_oss:
-  - { dest: "vlad/vlad", repo: "git@github.com:hashbangcode/vlad.git" }
+  - { dest: "vlad/vlad", repo: "https://github.com/hashbangcode/vlad.git" }
 
 projects_internal:
-  - { dest: "path/to/internal_project", repo: "git@bitbucket.org:dbohea/private-project-a.git" }
+  - { dest: "mac-playbook", repo: "https://github.com/danbohea/mac-playbook.git" }
 
 projects_client:
-  - { dest: "path/to/client_project", repo: "git@bitbucket.org:dbohea/private-project-b.git" }
+  - { dest: "", repo: "" }
