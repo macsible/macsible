@@ -122,7 +122,7 @@
     # OS X config
     # --------------------------------------------------------------------------
 
-    - { role: osx, tags: ["osx"] }
+    - { role: osx, tags: ["osx","no_ci"] }
 
   handlers:
     - include: handlers/main.yml
