@@ -34,6 +34,7 @@
 # Also lets the script know that it's Ansible running it.
 - name: Execute osx.sh
   shell: bash -lc ./roles/osx/files/osx.sh --ansible
+  become: true
   notify:
     - killall
 
