@@ -18,7 +18,7 @@ sudo pip install ansible==1.9.4
 # Install Ansible Galaxy dependencies:
 ansible-galaxy install -r deps.yml
 
-# Install Homebrew (avoids prompt)
+# Install Homebrew (avoids prompt) http://stackoverflow.com/a/25535532
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" </dev/null
 # Check for any issues with Homebrew installation
 brew doctor
