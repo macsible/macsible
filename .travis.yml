@@ -36,4 +36,4 @@ script:
   # - ansible-playbook -i hosts main.yml --limit mba --extra-vars "unix_username=travis" --tags "prep"
 
   # Run Ansible playbook on host "mba" (skip prep tasks for now):
-  - ansible-playbook -i hosts main.yml --limit mba --extra-vars "unix_username=travis" --skip-tags "prep"
+  - ansible-playbook -i hosts main.yml --limit mba --extra-vars "unix_username=travis" --skip-tags "prep,dotfiles"
