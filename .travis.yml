@@ -41,4 +41,4 @@ script:
   # - Skip prep roles for now.
   # - Skip roles that cause CI issues.
   # - Skip roles that required Mac OS 10.10 or higher (Travis runs 10.9).
-  - ansible-playbook -i hosts main.yml --limit mba --extra-vars "unix_username=travis" --skip-tags "prep,no_ci,mac_os_10_10,mac_os_10_11"
+  - ansible-playbook -i hosts main.yml --limit mba --extra-vars "unix_username=travis" --skip-tags "prep,no_ci,mac_os_10_10"
