@@ -33,4 +33,7 @@ script:
   # - ansible-lint main.yml
 
   # Run Ansible playbook on host "mba" (preparatory tasks only):
-  - ansible-playbook -i hosts main.yml --tags "prep" --limit mba --extra-vars "unix_username=travis"
+  # - ansible-playbook -i hosts main.yml --tags "prep" --limit mba --extra-vars "unix_username=travis"
+
+  # Run Ansible playbook on host "mba":
+  - ansible-playbook -i hosts main.yml --limit mba --extra-vars "unix_username=travis"
