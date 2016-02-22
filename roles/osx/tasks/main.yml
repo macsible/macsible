@@ -1,17 +1,29 @@
 ---
 
-- name: Copy OS X plists into place
+- name: Gather stats on all possible plist file locations
+  stat: path={{ item[0] }}/{{ item[1] }}
+  with_nested:
+    - osx_plist_source_dirs
+    - osx_plists
+  register: osx_plist_files
+  tags: no_ci
+
+# Only copies items where a source file actually exists.
+- name: Copy plist files to ~/Library/Preferences
   copy:
-    src: "{{ ext_prefs_path }}/{{ system_type }}/app_settings/plists/{{ item }}"
-    dest: /Users/{{ unix_username }}/Library/Preferences
-  with_items:
-    - com.apple.dock.plist
-    - com.apple.loginitems.plist
+    src: "{{ item[0].stat.path }}"
+    dest: ~/Library/Preferences/{{ item[1] }}
+  with_nested:
+    - osx_plist_files.results
+    - osx_plists
+  when: item[0].stat.path is defined
+  tags: no_ci
 
 # TODO: Check if source image is there first.
 # TODO: Doesn't seem to to work on OS 10.10+.
 - name: Set desktop wallpaper image
   shell: sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db "update data set value = '{{ ext_prefs_path_common }}/wallpaper/vlad_1920x1080.png'"
+  tags: no_ci
 
 - name: Ensure osx.sh is executable
   file:

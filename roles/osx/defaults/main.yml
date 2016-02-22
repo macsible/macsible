@@ -1,0 +1,10 @@
+---
+
+# TODO: Store files in playbook as defaults and for testing?
+osx_plist_source_dirs:
+  - "path/to/where/plists/are/stored"
+  - "another/directory/of/plists"
+
+osx_plists:
+  - com.apple.dock.plist
+  - com.apple.loginitems.plist
