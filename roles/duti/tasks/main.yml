@@ -4,12 +4,17 @@
   homebrew: name=duti
   notify: brew cleanup
 
+# NOTE: ~/.duti should be provided by the dotfiles role
+
 - name: Check that ~/.duti exists
   file:
     path: ~/.duti
     state: file
     follow: yes
 
+# TODO: killall is likely a bit gung-ho.
+# Work out exactly which process *needs* to be restarted.
 - name: Run duti with preferences file
   shell: duti ~/.duti
-  changed_when: false
+  notify:
+  - killall
