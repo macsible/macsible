@@ -14,7 +14,6 @@
     - cfprefsd
     - Dock
     - Finder
-    - Mail
     - SystemUIServer
   ignore_errors: yes
 
@@ -28,10 +27,6 @@
 
 - name: killall Finder
   command: killall "Finder"
-  ignore_errors: yes
-
-- name: killall Mail
-  command: killall "Mail"
   ignore_errors: yes
 
 - name: killall SystemUIServer

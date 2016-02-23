@@ -319,7 +319,7 @@ defaults write com.apple.TextEdit SmartDashes -bool false
 
 # Restart affected applications if `--no-restart` flag is not present.
 if [[ ! ($* == *--no-restart*) ]]; then
-  for app in "cfprefsd" "Dock" "Finder" "Mail" "SystemUIServer"; do
+  for app in "cfprefsd" "Dock" "Finder" "SystemUIServer"; do
     killall "${app}" > /dev/null 2>&1
   done
 fi
