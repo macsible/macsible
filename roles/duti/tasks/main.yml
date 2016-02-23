@@ -12,9 +12,8 @@
     state: file
     follow: yes
 
-# TODO: killall is likely a bit gung-ho.
-# Work out exactly which process *needs* to be restarted.
+# NOTE: The osx role *appears* to undo what duti has setup for us here but a
+# restart should sort it out :)
+
 - name: Run duti with preferences file
   shell: duti ~/.duti
-  notify:
-  - killall
