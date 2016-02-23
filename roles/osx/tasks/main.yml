@@ -27,7 +27,6 @@
 # Bash told to run as if in a login shell.
 - name: Execute osx.sh
   shell: bash -lc ./roles/osx/files/osx.sh --no-restart
-  become: true
   notify:
     - killall
 

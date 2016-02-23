@@ -46,7 +46,9 @@ defaults write com.apple.LaunchServices LSQuarantine -bool false
 
 # Reveal IP address, hostname, OS version, etc. when clicking the clock
 # in the login window
-sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
+if [[ "$RUN_AS_ROOT" = true ]]; then
+  sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
+fi
 
 # Check for software updates daily, not just once per week
 defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
@@ -61,7 +63,9 @@ defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 # ------------------------------------------------------------------------------
 
 # Disable the sudden motion sensor as it’s not useful for SSDs
-sudo pmset -a sms 0
+if [[ "$RUN_AS_ROOT" = true ]]; then
+  sudo pmset -a sms 0
+fi
 
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input
 # ------------------------------------------------------------------------------
@@ -148,7 +152,9 @@ defaults write com.apple.finder FXPreferredViewStyle -string "clmv"
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
 
 # Enable the MacBook Air SuperDrive on any Mac
-sudo nvram boot-args="mbasd=1"
+if [[ "$RUN_AS_ROOT" = true ]]; then
+  sudo nvram boot-args="mbasd=1"
+fi
 
 # Show the ~/Library folder
 chflags nohidden ~/Library
@@ -230,12 +236,13 @@ defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 # Spotlight
 # ------------------------------------------------------------------------------
 
-# Hide Spotlight tray-icon (and subsequent helper)
-#sudo chmod 600 /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search
 # Disable Spotlight indexing for any volume that gets mounted and has not yet
 # been indexed before.
 # Use `sudo mdutil -i off "/Volumes/foo"` to stop indexing any volume.
-sudo defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Volumes"
+if [[ "$RUN_AS_ROOT" = true ]]; then
+  sudo defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Volumes"
+fi
+
 # Change indexing order and disable some search results
 # Yosemite-specific search results (remove them if you are using OS X 10.9 or older):
 # 	MENU_DEFINITION
@@ -267,12 +274,16 @@ defaults write com.apple.spotlight orderedItems -array \
 	'{"enabled" = 0;"name" = "MENU_EXPRESSION";}' \
 	'{"enabled" = 0;"name" = "MENU_WEBSEARCH";}' \
 	'{"enabled" = 0;"name" = "MENU_SPOTLIGHT_SUGGESTIONS";}'
+
 # Load new settings before rebuilding the index
 killall mds > /dev/null 2>&1
-# Make sure indexing is enabled for the main volume
-sudo mdutil -i on / > /dev/null
-# Rebuild the index from scratch
-sudo mdutil -E / > /dev/null
+
+if [[ "$RUN_AS_ROOT" = true ]]; then
+  # Make sure indexing is enabled for the main volume
+  sudo mdutil -i on / > /dev/null
+  # Rebuild the index from scratch
+  sudo mdutil -E / > /dev/null
+fi
 
 # Terminal
 # ------------------------------------------------------------------------------
