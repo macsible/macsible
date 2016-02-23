@@ -24,18 +24,20 @@
   shell: sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db "update data set value = '{{ ext_prefs_path_common }}/wallpaper/vlad_1920x1080.png'"
   tags: no_ci
 
-- name: Ensure osx.sh is executable
-  file:
-    path: ./roles/osx/files/osx.sh
-    mode: 0755
+# - name: Ensure osx.sh is executable
+#   file:
+#     path: ./roles/osx/files/osx.sh
+#     mode: 0755
 
-# Bash told to run as if in a login shell.
-# Also lets the script know that it's Ansible running it.
-# TODO: `--ansible` option is playing up.
-- name: Execute osx.sh
-  shell: bash -lc ./roles/osx/files/osx.sh --ansible
-  become: true
-  notify:
-    - killall
+# # Bash told to run as if in a login shell.
+# # Also lets the script know that it's Ansible running it.
+# # TODO: `--ansible` option is playing up.
+# - name: Execute osx.sh
+#   shell: bash -lc ./roles/osx/files/osx.sh --ansible
+#   become: true
+#   notify:
+#     - killall
+
+- include: osx_defaults.yml
 
 - debug: msg="Please log out and log back in for all settings to take effect."
