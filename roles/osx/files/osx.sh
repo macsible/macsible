@@ -1,11 +1,10 @@
 #!/bin/sh
 
-# TODO: Not all of these commands appear to have an effect on Mac OS 10.11.
-
 # Sources:
 # - https://mths.be/osx
 # - https://github.com/geerlingguy/dotfiles/blob/master/.osx
 
+# Manually tested against Mac OS 10.11 (El Capitan).
 # Tweaked for & by Dan Bohea, 2016.
 
 # ------------------------------------------------------------------------------
@@ -135,12 +134,10 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
 # Enable snap-to-grid for icons on the desktop and in other icon views
 /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
-/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
 /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
 
 # Set the size of icons on the desktop and in other icon views
 /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:iconSize 48" ~/Library/Preferences/com.apple.finder.plist
-/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:iconSize 48" ~/Library/Preferences/com.apple.finder.plist
 /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:iconSize 48" ~/Library/Preferences/com.apple.finder.plist
 
 # Use column view in all Finder windows by default
@@ -171,7 +168,7 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
 defaults write com.apple.dock tilesize -int 30
 
 # Set dock orientation to "Left"
-/usr/libexec/PlistBuddy -c "Set :orientation left" ~/Library/Preferences/com.apple.dock.plist
+defaults write com.apple.dock orientation -string "left"
 
 # Automatically hide and show the Dock
 defaults write com.apple.dock autohide -bool true
