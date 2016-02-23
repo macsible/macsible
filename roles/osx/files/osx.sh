@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# TODO: Not all of these commands appear to have an effect on Mac OS 10.11.
+
 # Sources:
 # - https://mths.be/osx
 # - https://github.com/geerlingguy/dotfiles/blob/master/.osx

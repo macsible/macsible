@@ -18,22 +18,12 @@
     - osx_plists
   when: item[0].stat.path is defined
 
-# TODO: Check if source image is there first.
-# TODO: Doesn't seem to to work on OS 10.10+.
-- name: Set desktop wallpaper image
-  shell: sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db "update data set value = '{{ ext_prefs_path_common }}/wallpaper/vlad_1920x1080.png'"
-  tags: no_ci
-
-# Wipe all (default) app icons from the Dock
-# This is only really useful when setting up a new Mac, or if you don’t use
-# the Dock to launch apps.
-#defaults write com.apple.dock persistent-apps -array
-
 - name: Ensure osx.sh is executable
   file:
     path: ./roles/osx/files/osx.sh
     mode: 0755
 
+# TODO: Not idempotent
 # Bash told to run as if in a login shell.
 - name: Execute osx.sh
   shell: bash -lc ./roles/osx/files/osx.sh --no-restart
@@ -41,7 +31,4 @@
   notify:
     - killall
 
-# TODO: Hold off until Ansible 2 is useable.
-# - include: osx_defaults.yml
-
-- debug: msg="Please log out and log back in for all settings to take effect."
+- debug: msg="Done. Note that some of these changes require a logout/restart to take effect."
