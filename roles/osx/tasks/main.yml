@@ -31,6 +31,7 @@
 
 # Bash told to run as if in a login shell.
 # Also lets the script know that it's Ansible running it.
+# TODO: `--ansible` option is playing up.
 - name: Execute osx.sh
   shell: bash -lc ./roles/osx/files/osx.sh --ansible
   become: true
