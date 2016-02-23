@@ -37,7 +37,7 @@
     # Quick-peak access to the contents of more text file formats
     - { role: quick_look_plugins, tags: ["quick_look_plugins","prep"] }
 
-    # Essential day-to-day
+    # Stage 1: Essential day-to-day
     # --------------------------------------------------------------------------
 
     - { role: dotfiles, tags: ["dotfiles","stage_1","no_ci"] }
@@ -57,7 +57,7 @@
     - { name: "keyboard-maestro", tags: ["keyboard_maestro","stage_1","mac_os_10_10"], role: cask_app }
     - { name: "skype", role: cask_app, tags: ["skype","plist","stage_1"], cask_app_plists: "com.skype.skype.plist" }
 
-    # Essential dev
+    # Stage 2: Essential dev
     # --------------------------------------------------------------------------
 
     - { role: vagrant, tags: ["vagrant","stage_2","sudo"] }
@@ -76,20 +76,22 @@
     - { name: "imageoptim", tags: ["imageoptim","stage_2"], role: cask_app }
     - { role: sketch, tags: ["sketch","stage_2"] } # TODO: Add plists
 
-    # Testing
+    # Stage 3: Projects
     # --------------------------------------------------------------------------
 
-    - { name: "vmware-fusion", tags: ["vmware_fusion","stage_3"], role: cask_app, when: system_type == "desktop" }
-    - { name: "firefox", tags: ["firefox","stage_3"], role: cask_app }
-    - { name: "opera", tags: ["opera","stage_3"], role: cask_app }
-    - { name: "opera-mobile-emulator", tags: ["opera_mobile_emulator","stage_3"], role: cask_app }
+    - { role: projects, tags: ["projects","stage_3"] }
 
-    # Projects
+    # Stage 4: Remaining apps
     # --------------------------------------------------------------------------
+    - { name: "tree", tags: ["tree","stage_4"], role: brew_pkg }
+    - { name: "istat-menus", role: cask_app, tags: ["istat_menus","plist","stage_4"], cask_app_plists: ["com.bjango.istatmenus.plist","com.bjango.istatmenus5.extras.plist"] }
+    - { name: "vmware-fusion", tags: ["vmware_fusion","stage_4"], role: cask_app, when: system_type == "desktop" }
+    - { name: "firefox", tags: ["firefox","stage_4"], role: cask_app }
+    - { name: "opera", tags: ["opera","stage_4"], role: cask_app }
+    - { name: "opera-mobile-emulator", tags: ["opera_mobile_emulator","stage_4"], role: cask_app }
 
-    - { role: projects, tags: ["projects","stage_4"] }
-
-    # Remaining apps
+    # Stage 5: No-frills cask installed apps that CI can skip.
+    # This makes for faster tests & keeps Travis log verbosity to a minimum.
     # --------------------------------------------------------------------------
 
     - { name: "handbrake", tags: ["handbrake","stage_5"], role: cask_app, when: system_type == "desktop" }
@@ -112,17 +114,15 @@
     - { name: "bartender", role: cask_app, tags: ["bartender","plist","stage_5"], cask_app_plists: "com.surteesstudios.Bartender.plist" }
     - { name: "doxie", tags: ["doxie","stage_5"], role: cask_app }
     - { name: "omnigraffle", tags: ["omnigraffle","stage_5"], role: cask_app }
-    - { name: "tree", tags: ["tree","stage_5"], role: brew_pkg }
     - { name: "kaleidoscope", tags: ["kaleidoscope","stage_5"], role: cask_app }
     - { name: "appcleaner", tags: ["appcleaner","stage_5"], role: cask_app }
-    - { name: "istat-menus", role: cask_app, tags: ["istat_menus","plist","stage_5"], cask_app_plists: ["com.bjango.istatmenus.plist","com.bjango.istatmenus5.extras.plist"] }
     - { role: steam, tags: ["steam","stage_5"] }
-    - { name: "crashplan", tags: ["crashplan","stage_5","prompt"], role: cask_app } # Prompts for input on install
+    - { name: "crashplan", tags: ["crashplan","stage_5","prompt"], role: cask_app }
 
-    # OS X config
+    # Stage 6: OS X config
     # --------------------------------------------------------------------------
 
-    - { role: osx, tags: ["osx"] }
+    - { role: osx, tags: ["osx","stage_6"] }
 
   handlers:
     - include: handlers/main.yml
