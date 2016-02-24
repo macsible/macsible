@@ -17,10 +17,6 @@ install:
   - ansible-galaxy install -r deps.yml
   # Update Homebrew & formulae
   - brew update
-  # Debugging info
-  - ansible --version
-  - whoami
-  - pwd
 
 script:
   # Playbook syntax checks
@@ -33,7 +29,7 @@ script:
   # - ansible-lint main.yml
 
   # Run Ansible playbook on host "mba".
-  # - Skip roles that cause CI issues
-  # - Skip roles that require Mac OS >10.9
-  # - Skip stage_5 roles as they don't *really* add much to the test
+  # - Skip roles that cause CI issues.
+  # - Skip roles that require Mac OS >= 10.10.
+  # - Skip stage_5 roles as they don't *really* add much to the test.
   - ansible-playbook -i hosts main.yml --limit mba --extra-vars "unix_username=travis" --skip-tags "no_ci,mac_os_10_10,stage_5"
