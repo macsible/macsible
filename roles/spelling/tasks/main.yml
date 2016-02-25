@@ -13,7 +13,7 @@
   lineinfile:
     dest: /Users/{{ unix_username }}/Library/Spelling/LocalDictionary
     line: "{{ item }}"
-  with_items: spelling_localdictionary_words
+  with_items: {{ spelling_localdictionary_words }}
   when: create_localdictionary_file.changed == false
 
 # The final contents of the LocalDictionary file have to be sorted

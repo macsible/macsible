@@ -6,9 +6,9 @@
 #     path: "{{ item }}/app_settings/plists"
 #     state: directory
 #   with_items:
-#     - common
-#     - desktop
-#     - laptop
+#     - {{ common }}
+#     - {{ desktop }}
+#     - {{ laptop }}
 
 # TODO: Add Ansible version check. The following tasks require >= Ansible 1.9.1.
 
@@ -17,12 +17,12 @@
 
 - name: Gather stats on local plist files (common)
   stat: path=/Users/{{ unix_username }}/Library/{{ item }}
-  with_items: plists_common
+  with_items: {{ plists_common }}
   register: local_plists_common
 
 - name: Gather stats on local plist files (system specific)
   stat: path=/Users/{{ unix_username }}/Library/{{ item }}
-  with_items: plists_system_specific
+  with_items: {{ plists_system_specific }}
   register: local_plists_system_specific
 
 # Copy plist files that exist on current system to synced storage
@@ -31,7 +31,7 @@
   copy:
     src: "{{ item.stat.path }}"
     dest: "{{ ext_prefs_path_common }}/app_settings/plists"
-  with_items: local_plists_common.results
+  with_items: {{ local_plists_common.results }}
   when: item.stat.exists
   tags: common
 
@@ -39,6 +39,6 @@
   copy:
     src: "{{ item.stat.path }}"
     dest: "{{ ext_prefs_path }}/{{ system_type }}/app_settings/plists"
-  with_items: local_plists_system_specific.results
+  with_items: {{ local_plists_system_specific.results }}
   when: item.stat.exists
   tags: system

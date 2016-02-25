@@ -3,8 +3,8 @@
 - name: Gather stats on all possible plist file locations
   stat: path={{ item[0] }}/{{ item[1] }}
   with_nested:
-    - osx_plist_source_dirs
-    - osx_plists
+    - {{ osx_plist_source_dirs }}
+    - {{ osx_plists }}
   register: osx_plist_files
   when: item[0] != ""
 
@@ -14,8 +14,8 @@
     src: "{{ item[0].stat.path }}"
     dest: ~/Library/Preferences/{{ item[1] }}
   with_nested:
-    - osx_plist_files.results
-    - osx_plists
+    - {{ osx_plist_files.results }}
+    - {{ osx_plists }}
   when: item[0].stat.path is defined
 
 - name: Ensure osx.sh is executable

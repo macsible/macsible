@@ -21,7 +21,7 @@
     repo: "{{ item.repo }}"
     dest: ~/Projects/oss/{{ item.dest }}
     accept_hostkey: yes
-  with_items: projects_oss
+  with_items: {{ projects_oss }}
 
 # Internal projects
 
@@ -30,7 +30,7 @@
     repo: "{{ item.repo }}"
     dest: ~/Projects/internal/{{ item.dest }}
     accept_hostkey: yes
-  with_items: projects_internal
+  with_items: {{ projects_internal }}
 
 # Client projects
 
@@ -39,7 +39,7 @@
     repo: "{{ item.repo }}"
     dest: ~/Projects/client/{{ item.dest }}/docroot
     accept_hostkey: yes
-  with_items: projects_client
+  with_items: {{ projects_client }}
 
 # TODO: Playing up, handle with Composer when Vlad supports it.
 # - name: Clone Vlad to projects where required
@@ -49,7 +49,7 @@
 #     accept_hostkey: yes
 #     depth: 1
 #     version: dev
-#   with_items: projects_client
+#   with_items: {{ projects_client }}
 #   when: item.vlad is defined and item.vlad
 
 - name: Symlink vlad_settings.yml for projects where required
@@ -57,5 +57,5 @@
     src: "{{ ext_prefs_path_common }}/projects/client/{{ item.dest }}/docroot/vlad_settings.yml"
     dest: ~/Projects/client/{{ item.dest }}/settings/vlad_settings.yml
     state: link
-  with_items: projects_client
+  with_items: {{ projects_client }}
   when: item.link_settings is defined and item.link_settings

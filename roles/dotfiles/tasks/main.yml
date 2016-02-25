@@ -11,7 +11,7 @@
     path: ~/{{ item }}
     src: "{{ dotfiles_dest }}/{{ item }}"
     state: link
-  with_items: dotfiles_files
+  with_items: {{ dotfiles_files }}
 
 - name: Reload .bash_profile
   shell: source ~/.bash_profile

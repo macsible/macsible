@@ -11,4 +11,4 @@
     repo: "{{ item.repo }}"
     dest: "{{ sketch_plugins_dir }}/{{ item.dest }}"
     depth: 1
-  with_items: sketch_plugin_repos
+  with_items: {{ sketch_plugin_repos }}
