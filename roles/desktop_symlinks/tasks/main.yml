@@ -6,5 +6,5 @@
     src: /Volumes/Data/"{{ item }}"/
     state: link
     force: yes
-  with_items: {{ desktop_symlinks_dir_names }}
+  with_items: "{{ desktop_symlinks_dir_names }}"
   when: system_type == "desktop"

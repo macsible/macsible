@@ -2,7 +2,7 @@
 
 - name: Install rbenv & associated packages
   homebrew: name={{ item }}
-  with_items: {{ rbenv_brew_packages }}
+  with_items: "{{ rbenv_brew_packages }}"
   notify: brew cleanup
 
 # The command module gets a fair bit of use below as we need to tell bash to run

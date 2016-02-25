@@ -4,7 +4,7 @@
   command: apm install {{ item }}
   args:
     creates: /Users/{{ unix_username }}/.atom/packages/{{ item }}
-  with_items: {{ atom_packages }}
+  with_items: "{{ atom_packages }}"
 
 # TODO: Add default var to control whether this happens or not.
 - name: Upgrade Atom packages

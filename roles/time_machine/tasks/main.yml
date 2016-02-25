@@ -19,12 +19,12 @@
 
 # - name: Exclude certain directories from Time Machine backups (desktop)
 #   shell: tmutil addexclusion {{ item }}
-#   with_items: {{ time_machine_exclusions_desktop }}
+#   with_items: "{{ time_machine_exclusions_desktop }}"
 #   when: system_type == "desktop"
 
 # TODO: Make idempotent
 
 # - name: Exclude certain directories from Time Machine backups (laptop)
 #   shell: tmutil addexclusion {{ item }}
-#   with_items: {{ time_machine_exclusions_laptop }}
+#   with_items: "{{ time_machine_exclusions_laptop }}"
 #   when: system_type == "laptop"

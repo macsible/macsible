@@ -14,4 +14,4 @@
 # TODO: Make idempotent
 - name: Install Vagrant plugins
   command: vagrant plugin install {{ item }}
-  with_items: {{ vagrant_plugins }}
+  with_items: "{{ vagrant_plugins }}"
