@@ -1,0 +1,7 @@
+---
+
+vagrant_plugins:
+  - vagrant-cachier
+  - vagrant-hostmanager
+  - vagrant-triggers
+  - vagrant-vmware-fusion

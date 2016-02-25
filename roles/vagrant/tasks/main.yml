@@ -14,8 +14,4 @@
 # TODO: Make idempotent
 - name: Install Vagrant plugins
   command: vagrant plugin install {{ item }}
-  with_items:
-    - vagrant-cachier
-    - vagrant-hostmanager
-    - vagrant-triggers
-    - vagrant-vmware-fusion
+  with_items: {{ vagrant_plugins }}
