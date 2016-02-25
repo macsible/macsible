@@ -23,41 +23,41 @@ fi
 # ------------------------------------------------------------------------------
 
 # Always show scrollbars
-defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
+# defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
 # Possible values: `WhenScrolling`, `Automatic` and `Always`
 
 # Expand save panel by default
-defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+# defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 
 # Expand print panel by default
-defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
+# defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
 
 # Save to disk (not to iCloud) by default
-defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
+# defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
 # Automatically quit printer app once the print jobs complete
-defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
+# defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 
 # Disable the “Are you sure you want to open this application?” dialog
-defaults write com.apple.LaunchServices LSQuarantine -bool false
+# defaults write com.apple.LaunchServices LSQuarantine -bool false
 
 # Remove duplicates in the “Open With” menu
 /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
 
 # Reveal IP address, hostname, OS version, etc. when clicking the clock
 # in the login window
-if [[ "$RUN_AS_ROOT" = true ]]; then
-  sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
-fi
+# if [[ "$RUN_AS_ROOT" = true ]]; then
+#   sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
+# fi
 
 # Check for software updates daily, not just once per week
-defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
+# defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 
 # Disable smart quotes as they’re annoying when typing code
-defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+# defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 
 # Disable smart dashes as they’re annoying when typing code
-defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+# defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 
 # SSD-specific tweaks
 # ------------------------------------------------------------------------------

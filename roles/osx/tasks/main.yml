@@ -23,6 +23,8 @@
     path: ./roles/osx/files/osx.sh
     mode: 0755
 
+- include: osx_defaults.yml
+
 # TODO: Not idempotent
 # Bash told to run as if in a login shell.
 - name: Execute osx.sh
