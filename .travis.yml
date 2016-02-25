@@ -8,9 +8,9 @@ install:
   # Install pip
   - sudo easy_install pip
   # Install ansible
-  # Keep this at 1.9.4 until the following issue is resolved:
-  # https://github.com/ansible/ansible-modules-core/issues/2473
-  - sudo pip install ansible==1.9.4
+  - sudo pip install ansible
+  # Verfiy Ansible version
+  - ansible --version
   # Install Ansible Lint
   - sudo pip install ansible-lint
   # Install Ansible Galaxy dependencies
