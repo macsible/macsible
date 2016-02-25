@@ -11,9 +11,7 @@
 sudo easy_install pip
 
 # Install Ansible
-# Keep this at 1.9.4 until the following issue is resolved:
-# https://github.com/ansible/ansible-modules-core/issues/2473
-sudo pip install ansible==1.9.4
+sudo pip install ansible
 
 # Install Ansible Galaxy dependencies:
 ansible-galaxy install -r deps.yml
