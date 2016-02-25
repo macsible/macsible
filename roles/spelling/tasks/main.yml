@@ -1,6 +1,6 @@
 ---
 
-- name: Create LocalDictionary file (includes custom word list)
+- name: Create LocalDictionary file (includes sorted custom word list)
   template:
     src: LocalDictionary.j2
     dest: /Users/{{ unix_username }}/Library/Spelling/LocalDictionary
