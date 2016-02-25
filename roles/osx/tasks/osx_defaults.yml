@@ -8,6 +8,7 @@
   osx_defaults:
     domain: NSGlobalDomain
     key: AppleShowScrollBars
+    type: string
     value: "Always"
   notify:
     - killall
@@ -61,6 +62,7 @@
   osx_defaults:
     domain: /Library/Preferences/com.apple.loginwindow
     key: AdminHostInfo
+    type: string
     value: HostName
   become: true
   notify:
