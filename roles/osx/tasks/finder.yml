@@ -8,30 +8,7 @@
   notify:
     - killall Finder
 
-# - name: Show icons for hard drives, servers, and removable media on the desktop
-#   osx_defaults:
-#     domain: com.apple.finder
-#     key: "{{ item }}"
-#     type: bool
-#     value: true
-#   with_items:
-#     - ShowExternalHardDrivesOnDesktop
-#     - ShowHardDrivesOnDesktop
-#     - ShowMountedServersOnDesktop
-#     - ShowRemovableMediaOnDesktop
-#   notify:
-#     - killall Finder
-#
-# - name: Show hidden files by default
-#   osx_defaults:
-#     domain: com.apple.finder
-#     key: AppleShowAllFiles
-#     type: bool
-#     value: true
-#   notify:
-#     - killall Finder
-
-- name: "{{ item.name }}"
+- name: "Finder: {{ item.name }}"
   osx_defaults:
     domain: com.apple.finder
     key: "{{ item.key }}"
