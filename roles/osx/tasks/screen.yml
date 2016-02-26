@@ -1,1 +1,30 @@
 ---
+
+- name: Save screenshots to the desktop
+  shell: defaults write com.apple.screencapture location -string "${HOME}/Desktop"
+  notify:
+    - killall
+
+# Other options: BMP, GIF, JPG, PDF, TIFF
+- name: Save screenshots in PNG format
+  command: defaults write com.apple.screencapture type -string "png"
+  notify:
+    - killall
+
+- name: Disable shadow in screenshots
+  osx_defaults:
+    domain: com.apple.screencapture
+    key: disable-shadow
+    type: bool
+    value: true
+  notify:
+    - killall
+
+- name: Enable subpixel font rendering on non-Apple LCDs
+  osx_defaults:
+    domain: NSGlobalDomain
+    key: AppleFontSmoothing
+    type: int
+    value: 2
+  notify:
+    - killall
