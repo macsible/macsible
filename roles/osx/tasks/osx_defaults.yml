@@ -165,6 +165,14 @@
 # Terminal
 # ------------------------------------------------------------------------------
 
+- name: Only use UTF-8 in Terminal.app
+  osx_defaults:
+    domain: com.apple.terminal
+    key: StringEncodings
+    type: array
+    value: 4
+  notify:
+    - killall
 
 # Time Machine
 # ------------------------------------------------------------------------------
