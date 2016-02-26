@@ -9,6 +9,7 @@
 - include: general_ui_ux.yml
 - include: safari_webkit.yml
 - include: screen.yml
+- include: ssd.yml
 - include: spotlight.yml
 - include: terminal.yml
 - include: textedit.yml
