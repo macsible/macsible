@@ -1,1 +1,47 @@
 ---
+
+- name: Set HOME as the default location for new Finder windows
+  shell: defaults write com.apple.finder {{ item }}
+  with_items:
+    - NewWindowTarget -string "PfLo"
+    - NewWindowTargetPath -string "file://${HOME}/"
+  notify:
+    - killall Finder
+
+# - name: Show icons for hard drives, servers, and removable media on the desktop
+#   osx_defaults:
+#     domain: com.apple.finder
+#     key: "{{ item }}"
+#     type: bool
+#     value: true
+#   with_items:
+#     - ShowExternalHardDrivesOnDesktop
+#     - ShowHardDrivesOnDesktop
+#     - ShowMountedServersOnDesktop
+#     - ShowRemovableMediaOnDesktop
+#   notify:
+#     - killall Finder
+#
+# - name: Show hidden files by default
+#   osx_defaults:
+#     domain: com.apple.finder
+#     key: AppleShowAllFiles
+#     type: bool
+#     value: true
+#   notify:
+#     - killall Finder
+
+- name: "{{ item.name }}"
+  osx_defaults:
+    domain: com.apple.finder
+    key: "{{ item.key }}"
+    type: bool
+    value: true
+  with_items:
+    - { name: 'Show icons for hard drives, servers, and removable media on the desktop', key: 'ShowExternalHardDrivesOnDesktop'}
+    - { name: 'Show icons for hard drives, servers, and removable media on the desktop', key: 'ShowHardDrivesOnDesktop'}
+    - { name: 'Show icons for hard drives, servers, and removable media on the desktop', key: 'ShowMountedServersOnDesktop'}
+    - { name: 'Show icons for hard drives, servers, and removable media on the desktop', key: 'ShowRemovableMediaOnDesktop'}
+    - { name: 'Show hidden files by default', key: 'AppleShowAllFiles'}
+  notify:
+    - killall Finder
