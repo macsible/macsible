@@ -16,7 +16,7 @@ install:
   # Install Ansible Lint
   - sudo pip install ansible-lint
   # Install Ansible Galaxy dependencies
-  - ansible-galaxy install -r deps.yml
+  - ansible-galaxy install -r requirements.yml
 
 script:
   # Playbook syntax checks

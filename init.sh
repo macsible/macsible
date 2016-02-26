@@ -14,7 +14,7 @@ sudo easy_install --quiet pip
 sudo pip install -q ansible
 
 # Install Ansible Galaxy dependencies:
-ansible-galaxy install -r deps.yml
+ansible-galaxy install -r requirements.yml
 
 # Disable smart quotes & smart dashes in TextEdit before editing any files
 defaults write com.apple.TextEdit SmartQuotes -bool false
