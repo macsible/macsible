@@ -8,10 +8,10 @@
 # ------------------------------------------------------------------------------
 
 # Install pip
-sudo easy_install pip
+sudo easy_install --quiet pip
 
 # Install Ansible
-sudo pip install ansible
+sudo pip install -q ansible
 
 # Install Ansible Galaxy dependencies:
 ansible-galaxy install -r deps.yml
