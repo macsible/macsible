@@ -43,12 +43,13 @@
   notify:
     - killall Finder
 
-- name: Enable snap-to-grid for icons on the desktop and in other icon views
-  command: >
-    /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
-    /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
-  notify:
-    - killall Finder
+# TODO: Fails
+# - name: Enable snap-to-grid for icons on the desktop and in other icon views
+#   command: >
+#     /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
+#     /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
+#   notify:
+#     - killall Finder
 
 - name: Set the size of icons on the desktop and in other icon views
   command: >
