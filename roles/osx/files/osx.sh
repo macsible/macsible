@@ -19,12 +19,15 @@ else
   while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 fi
 
+# TODO: Leave "type: string" commands uncommented until this issue is resolved:
+# https://github.com/ansible/ansible-modules-extras/issues/1742
+
 # General UI/UX
 # ------------------------------------------------------------------------------
 
 # Always show scrollbars
-# defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
-# Possible values: `WhenScrolling`, `Automatic` and `Always`
+defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
+Possible values: `WhenScrolling`, `Automatic` and `Always`
 
 # Expand save panel by default
 # defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
@@ -46,9 +49,9 @@ fi
 
 # Reveal IP address, hostname, OS version, etc. when clicking the clock
 # in the login window
-# if [[ "$RUN_AS_ROOT" = true ]]; then
-#   sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
-# fi
+if [[ "$RUN_AS_ROOT" = true ]]; then
+  sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
+fi
 
 # Check for software updates daily, not just once per week
 # defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1

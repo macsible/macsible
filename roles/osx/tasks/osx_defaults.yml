@@ -1,5 +1,8 @@
 ---
 
+# TODO: Avoid "type: string" commands until this issue is resolved:
+# https://github.com/ansible/ansible-modules-extras/issues/1742
+
 # General UI/UX
 # ------------------------------------------------------------------------------
 
