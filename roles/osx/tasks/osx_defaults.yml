@@ -4,14 +4,14 @@
 # ------------------------------------------------------------------------------
 
 # Possible values: `WhenScrolling`, `Automatic` and `Always`
-- name: Always show scrollbars
-  osx_defaults:
-    domain: NSGlobalDomain
-    key: AppleShowScrollBars
-    type: string
-    value: "Always"
-  notify:
-    - killall
+# - name: Always show scrollbars
+#   osx_defaults:
+#     domain: NSGlobalDomain
+#     key: AppleShowScrollBars
+#     type: string
+#     value: "Always"
+#   notify:
+#     - killall
 
 - name: Expand save panel by default
   osx_defaults:
@@ -58,15 +58,15 @@
   notify:
     - killall
 
-- name: Reveal IP address, hostname, OS version, etc. when clicking the clock in the login window
-  osx_defaults:
-    domain: /Library/Preferences/com.apple.loginwindow
-    key: AdminHostInfo
-    type: string
-    value: HostName
-  become: true
-  notify:
-    - killall
+# - name: Reveal IP address, hostname, OS version, etc. when clicking the clock in the login window
+#   osx_defaults:
+#     domain: /Library/Preferences/com.apple.loginwindow
+#     key: AdminHostInfo
+#     type: string
+#     value: HostName
+#   become: true
+#   notify:
+#     - killall
 
 - name: Check for software updates daily, not just once per week
   osx_defaults:
