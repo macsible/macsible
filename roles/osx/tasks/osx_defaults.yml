@@ -109,6 +109,14 @@
 # Dock
 # ------------------------------------------------------------------------------
 
+- name: Set dock orientation to "Left"
+  osx_defaults:
+    domain: com.apple.dock
+    key: orientation
+    type: string
+    value: "left"
+  notify:
+    - killall
 
 # Mission control
 # ------------------------------------------------------------------------------
