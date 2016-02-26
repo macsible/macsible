@@ -13,14 +13,13 @@
 # ------------------------------------------------------------------------------
 
 BGreen='\e[1;32m' # Green
-BRed='\e[1;31m'   # Red
 Color_Off='\e[0m' # Text Reset
 
 # Functions
 # ------------------------------------------------------------------------------
 
 function setStatusMessage {
-    printf "${IRed} --> ${BGreen}$1${Color_Off}\n" 1>&2
+  printf " --> ${BGreen}$1${Color_Off}\n" 1>&2
 }
 
 # Check whether a command exists - returns 0 if it does, 1 if it does not
@@ -36,21 +35,18 @@ function exists {
 # Install
 # ------------------------------------------------------------------------------
 
-setStatusMessage "Keep-alive: update existing sudo time stamp until we are finished"
-
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
-
 # Install pip
 if ! exists pip; then
-    setStatusMessage "Install pip"
+    setStatusMessage "Installing pip"
     sudo easy_install --quiet pip
 fi
 
 # Install Ansible
 if ! exists ansible; then
-    setStatusMessage "Install Ansible"
+    setStatusMessage "Installing Ansible"
     sudo pip install -q ansible
 fi
 
 # Install Ansible Galaxy dependencies:
+setStatusMessage "Installing Ansible role dependencies"
 ansible-galaxy install -r requirements.yml
