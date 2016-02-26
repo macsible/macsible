@@ -16,8 +16,8 @@
 #     key: orientation
 #     type: string
 #     value: "left"
-   notify:
-     - killall
+  notify:
+    - killall
 
 - name: Automatically hide and show the Dock
   osx_defaults:
