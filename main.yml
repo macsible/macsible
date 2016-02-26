@@ -12,6 +12,7 @@
     # Prep
     # --------------------------------------------------------------------------
 
+    - { role: osx, tags: ["osx","prep"] }
     - { role: ssh, tags: ["ssh","prep"] }
     - { role: spelling, tags: ["spelling","prep"] }
     # Access to passwords for use in other installations
@@ -104,11 +105,6 @@
     - { name: "appcleaner", tags: ["appcleaner","stage_5"], role: cask_app }
     - { role: steam, tags: ["steam","stage_5"] }
     - { name: "crashplan", tags: ["crashplan","stage_5","prompt"], role: cask_app }
-
-    # Stage 6: OS X config
-    # --------------------------------------------------------------------------
-
-    - { role: osx, tags: ["osx","stage_6"] }
 
   handlers:
     - include: handlers/main.yml
