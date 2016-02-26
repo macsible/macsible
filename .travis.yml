@@ -28,6 +28,11 @@ script:
   # - ansible-lint plists.yml
   # - ansible-lint main.yml
 
+  # Custom playbook test for use in development only:
+  # - catches possible fails early
+  # - tweak/uncomment as required
+  - ansible-playbook -i hosts main.yml --limit mba --extra-vars "unix_username=travis" --tags "osx"
+
   # Run Ansible playbook on host "mba".
   # - Skip roles that cause CI issues.
   # - Skip roles that require Mac OS >= 10.10.
