@@ -7,9 +7,11 @@ os: osx
 install:
   # Install pip
   - sudo easy_install --quiet pip
+  # Debug: pip version
+  - pip --version
   # Install ansible
   - sudo pip install -q ansible
-  # Verfiy Ansible version
+  # Debug: Ansible version
   - ansible --version
   # Install Ansible Lint
   - sudo pip install ansible-lint
