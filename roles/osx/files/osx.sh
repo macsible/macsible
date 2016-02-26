@@ -308,7 +308,7 @@ defaults write com.apple.terminal StringEncodings -array 4
 
 # Sort Activity Monitor results by CPU usage
 defaults write com.apple.ActivityMonitor SortColumn -string "CPUUsage"
-# defaults write com.apple.ActivityMonitor SortDirection -int 0
+defaults write com.apple.ActivityMonitor SortDirection -int 0
 
 # TextEdit
 # ------------------------------------------------------------------------------
