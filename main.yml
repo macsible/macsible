@@ -12,7 +12,6 @@
     # Prep
     # --------------------------------------------------------------------------
 
-    - { role: homebrew, tags: ["homebrew","prep"] }
     - { role: ssh, tags: ["ssh","prep"] }
     - { role: spelling, tags: ["spelling","prep"] }
     # Access to passwords for use in other installations

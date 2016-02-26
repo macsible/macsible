@@ -16,11 +16,6 @@ sudo pip install -q ansible
 # Install Ansible Galaxy dependencies:
 ansible-galaxy install -r deps.yml
 
-# Install Homebrew (avoids prompt) http://stackoverflow.com/a/25535532
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" </dev/null
-# Check for any issues with Homebrew installation
-brew doctor
-
 # Disable smart quotes & smart dashes in TextEdit before editing any files
 defaults write com.apple.TextEdit SmartQuotes -bool false
 defaults write com.apple.TextEdit SmartDashes -bool false
