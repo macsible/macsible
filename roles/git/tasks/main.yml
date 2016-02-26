@@ -8,15 +8,12 @@
 
 - name: Configure push.default
   command: git config --global push.default simple
-  when: git_user_name is defined
   changed_when: false
 
 - name: Configure user.name
   command: git config --global user.name "{{ git_user_name }}"
-  when: git_user_name is defined
   changed_when: false
 
 - name: Configure user.email
   command: git config --global user.email "{{ git_user_email }}"
-  when: git_user_email is defined
   changed_when: false
