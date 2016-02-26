@@ -26,8 +26,8 @@ fi
 # ------------------------------------------------------------------------------
 
 # Always show scrollbars
-defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
-Possible values: `WhenScrolling`, `Automatic` and `Always`
+# defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
+# Possible values: `WhenScrolling`, `Automatic` and `Always`
 
 # Expand save panel by default
 # defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
@@ -45,13 +45,13 @@ Possible values: `WhenScrolling`, `Automatic` and `Always`
 # defaults write com.apple.LaunchServices LSQuarantine -bool false
 
 # Remove duplicates in the “Open With” menu
-/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
+# /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
 
 # Reveal IP address, hostname, OS version, etc. when clicking the clock
 # in the login window
-if [[ "$RUN_AS_ROOT" = true ]]; then
-  sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
-fi
+# if [[ "$RUN_AS_ROOT" = true ]]; then
+#   sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
+# fi
 
 # Check for software updates daily, not just once per week
 # defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
@@ -66,9 +66,9 @@ fi
 # ------------------------------------------------------------------------------
 
 # Disable the sudden motion sensor as it’s not useful for SSDs
-if [[ "$RUN_AS_ROOT" = true ]]; then
-  sudo pmset -a sms 0
-fi
+# if [[ "$RUN_AS_ROOT" = true ]]; then
+#   sudo pmset -a sms 0
+# fi
 
 # Trackpad & mouse
 # ------------------------------------------------------------------------------

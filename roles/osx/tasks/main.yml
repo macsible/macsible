@@ -17,19 +17,19 @@
     - "{{ osx_plist_files.results }}"
     - "{{ osx_plists }}"
   when: item[0].stat.path is defined
+  notify:
+    - killall
 
-- name: Ensure osx.sh is executable
-  file:
-    path: ./roles/osx/files/osx.sh
-    mode: 0755
+# - name: Ensure osx.sh is executable
+#   file:
+#     path: ./roles/osx/files/osx.sh
+#     mode: 0755
 
 - include: osx_defaults.yml
 
 # TODO: Not idempotent
 # Bash told to run as if in a login shell.
-- name: Execute osx.sh
-  shell: bash -lc ./roles/osx/files/osx.sh --no-restart
-  notify:
-    - killall
-
-- debug: msg="Done. Note that some of these changes require a logout/restart to take effect."
+# - name: Execute osx.sh
+#   shell: bash -lc ./roles/osx/files/osx.sh --no-restart
+#   notify:
+#     - killall
