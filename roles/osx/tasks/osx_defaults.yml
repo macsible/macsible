@@ -106,7 +106,7 @@
 # ------------------------------------------------------------------------------
 
 
-# Dock
+# Dock & Mission Control
 # ------------------------------------------------------------------------------
 
 - name: Set the icon size of Dock items
@@ -136,9 +136,23 @@
   notify:
     - killall
 
-# Mission control
-# ------------------------------------------------------------------------------
+- name: Speed up Mission Control animations
+  osx_defaults:
+    domain: com.apple.dock
+    key: expose-animation-duration
+    type: float
+    value: 0.15
+  notify:
+    - killall
 
+- name: Don’t automatically rearrange Spaces based on most recent use
+  osx_defaults:
+    domain: com.apple.dock
+    key: mru-spaces
+    type: bool
+    value: false
+  notify:
+    - killall
 
 # Safari & WebKit
 # ------------------------------------------------------------------------------

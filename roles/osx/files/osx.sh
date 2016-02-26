@@ -170,26 +170,23 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
   Preview -bool false \
   Privileges -bool true
 
-# Dock
+# Dock & Mission Control
 # ------------------------------------------------------------------------------
 
 # Set the icon size of Dock items
 # defaults write com.apple.dock tilesize -int 30
 
 # Set dock orientation to "Left"
-# defaults write com.apple.dock orientation -string "left"
+defaults write com.apple.dock orientation -string "left"
 
 # Automatically hide and show the Dock
 # defaults write com.apple.dock autohide -bool true
 
-# Mission control
-# ------------------------------------------------------------------------------
-
 # Speed up Mission Control animations
-defaults write com.apple.dock expose-animation-duration -float 0.15
+# defaults write com.apple.dock expose-animation-duration -float 0.15
 
 # Don’t automatically rearrange Spaces based on most recent use
-defaults write com.apple.dock mru-spaces -bool false
+# defaults write com.apple.dock mru-spaces -bool false
 
 # Safari & WebKit
 # ------------------------------------------------------------------------------
