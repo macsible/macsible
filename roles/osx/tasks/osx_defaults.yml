@@ -98,17 +98,6 @@
   notify:
     - killall
 
-# SSD-specific tweaks
-# ------------------------------------------------------------------------------
-
-# - name: Disable the sudden motion sensor as it’s not useful for SSDs
-#   command: pmset -a sms 0
-#   become: true
-
-# Trackpad, mouse, keyboard, Bluetooth accessories, and input
-# ------------------------------------------------------------------------------
-
-
 # Screen
 # ------------------------------------------------------------------------------
 
@@ -117,15 +106,15 @@
 # ------------------------------------------------------------------------------
 
 
-# Dock, Dashboard, and hot corners
+# Dock
+# ------------------------------------------------------------------------------
+
+
+# Mission control
 # ------------------------------------------------------------------------------
 
 
 # Safari & WebKit
-# ------------------------------------------------------------------------------
-
-
-# Mail
 # ------------------------------------------------------------------------------
 
 
@@ -137,6 +126,10 @@
 # ------------------------------------------------------------------------------
 
 
+# Time Machine
+# ------------------------------------------------------------------------------
+
+
 # Activity Monitor
 # ------------------------------------------------------------------------------
 
@@ -144,6 +137,35 @@
 # TextEdit
 # ------------------------------------------------------------------------------
 
+- name: Use plain text mode for new TextEdit documents
+  osx_defaults:
+    domain: com.apple.TextEdit
+    key: RichText
+    type: int
+    value: 0
+  notify:
+    - killall
 
-# Messages
-# ------------------------------------------------------------------------------
+- name: Open and save files as UTF-8 in TextEdit
+  osx_defaults:
+    domain: com.apple.TextEdit
+    key: "{{ item }}"
+    type: int
+    value: 4
+  with_items:
+    - PlainTextEncoding
+    - PlainTextEncodingForWrite
+  notify:
+    - killall
+
+- name: Disable smart quotes & smart dashes in TextEdit
+  osx_defaults:
+    domain: com.apple.TextEdit
+    key: "{{ item }}"
+    type: bool
+    value: false
+  with_items:
+    - SmartQuotes
+    - SmartDashes
+  notify:
+    - killall

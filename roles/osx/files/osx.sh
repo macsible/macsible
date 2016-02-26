@@ -70,7 +70,7 @@ if [[ "$RUN_AS_ROOT" = true ]]; then
   sudo pmset -a sms 0
 fi
 
-# Trackpad, mouse, keyboard, Bluetooth accessories, and input
+# Trackpad & mouse
 # ------------------------------------------------------------------------------
 
 # Trackpad: enable tap to click for this user and for the login screen
@@ -317,15 +317,15 @@ defaults write com.apple.ActivityMonitor SortDirection -int 0
 # ------------------------------------------------------------------------------
 
 # Use plain text mode for new TextEdit documents
-defaults write com.apple.TextEdit RichText -int 0
+# defaults write com.apple.TextEdit RichText -int 0
 
 # Open and save files as UTF-8 in TextEdit
-defaults write com.apple.TextEdit PlainTextEncoding -int 4
-defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
+# defaults write com.apple.TextEdit PlainTextEncoding -int 4
+# defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
 
 # Disable smart quotes & smart dashes in TextEdit
-defaults write com.apple.TextEdit SmartQuotes -bool false
-defaults write com.apple.TextEdit SmartDashes -bool false
+# defaults write com.apple.TextEdit SmartQuotes -bool false
+# defaults write com.apple.TextEdit SmartDashes -bool false
 
 # Kill/restart affected applications
 # ------------------------------------------------------------------------------
