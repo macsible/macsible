@@ -7,23 +7,12 @@
     - vars/common.yml
     - vars/role_specific.yml
 
-  pre_tasks:
-    # Ensure Homebrew Cask is available
-    - name: Tap the cask repository
-      homebrew_tap: tap=caskroom/cask
-    # The homebrew module's "update_homebrew" option seems to update homebrew
-    # for every package which is unnecessarily slow. Instead we've added this
-    # pre_task to ensure homebrew is just updated once.
-    # https://groups.google.com/forum/?utm_medium=email&utm_source=footer#!topic/ansible-project/zJ-5-MEj9sY
-    - name: Update homebrew
-      shell: brew update
-      changed_when: false
-
   roles:
 
     # Prep
     # --------------------------------------------------------------------------
 
+    - { role: homebrew, tags: ["homebrew","prep"] }
     - { role: ssh, tags: ["ssh","prep"] }
     - { role: spelling, tags: ["spelling","prep"] }
     # Access to passwords for use in other installations

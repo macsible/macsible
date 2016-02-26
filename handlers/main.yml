@@ -1,9 +1,5 @@
 ---
 
-# Homebrew
-- name: brew cleanup
-  command: brew cleanup
-
 # Restarts a bunch of OS X apps & processes
 - name: killall
   command: killall "{{ item }}" > /dev/null 2>&1
