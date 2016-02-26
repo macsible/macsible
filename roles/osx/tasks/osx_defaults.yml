@@ -165,15 +165,15 @@
 # Terminal
 # ------------------------------------------------------------------------------
 
-- name: Only use UTF-8 in Terminal.app
-  osx_defaults:
-    domain: com.apple.terminal
-    key: StringEncodings
-    type: array
-    value:
-      - 4
-  notify:
-    - killall
+# TODO: Can't get this to not fail
+# - name: Only use UTF-8 in Terminal.app
+#   osx_defaults:
+#     domain: com.apple.terminal
+#     key: StringEncodings
+#     type: array
+#     value: [ 4 ]
+#   notify:
+#     - killall
 
 # Time Machine
 # ------------------------------------------------------------------------------
