@@ -301,14 +301,14 @@ defaults write com.apple.terminal StringEncodings -array 4
 # ------------------------------------------------------------------------------
 
 # Show the main window when launching Activity Monitor
-defaults write com.apple.ActivityMonitor OpenMainWindow -bool true
+# defaults write com.apple.ActivityMonitor OpenMainWindow -bool true
 
 # Show all processes in Activity Monitor
-defaults write com.apple.ActivityMonitor ShowCategory -int 0
+# defaults write com.apple.ActivityMonitor ShowCategory -int 0
 
 # Sort Activity Monitor results by CPU usage
 defaults write com.apple.ActivityMonitor SortColumn -string "CPUUsage"
-defaults write com.apple.ActivityMonitor SortDirection -int 0
+# defaults write com.apple.ActivityMonitor SortDirection -int 0
 
 # TextEdit
 # ------------------------------------------------------------------------------
@@ -323,15 +323,3 @@ defaults write com.apple.ActivityMonitor SortDirection -int 0
 # Disable smart quotes & smart dashes in TextEdit
 # defaults write com.apple.TextEdit SmartQuotes -bool false
 # defaults write com.apple.TextEdit SmartDashes -bool false
-
-# Kill/restart affected applications
-# ------------------------------------------------------------------------------
-
-# Restart affected applications if `--no-restart` flag is not present.
-if [[ ! ($* == *--no-restart*) ]]; then
-  for app in "cfprefsd" "Dock" "Finder" "SystemUIServer"; do
-    killall "${app}" > /dev/null 2>&1
-  done
-fi
-
-printf "Done. Note that some of these changes require a logout/restart to take effect.\n"
