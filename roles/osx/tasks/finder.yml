@@ -51,12 +51,13 @@
 #   notify:
 #     - killall Finder
 
-- name: Set the size of icons on the desktop and in other icon views
-  command: >
-    /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:iconSize 48" ~/Library/Preferences/com.apple.finder.plist
-    /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:iconSize 48" ~/Library/Preferences/com.apple.finder.plist
-  notify:
-    - killall Finder
+# TODO: Fails
+# - name: Set the size of icons on the desktop and in other icon views
+#   command: >
+#     /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:iconSize 48" ~/Library/Preferences/com.apple.finder.plist
+#     /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:iconSize 48" ~/Library/Preferences/com.apple.finder.plist
+#   notify:
+#     - killall Finder
 
 # Four-letter codes for the other view modes: `icnv`, `Nlsv`, `clmv`, `Flwv`
 - name: Use column view in all Finder windows by default
