@@ -113,7 +113,7 @@
   osx_defaults:
     domain: com.apple.dock
     key: tilesize
-    type: int
+    type: float
     value: 30
   notify:
     - killall
