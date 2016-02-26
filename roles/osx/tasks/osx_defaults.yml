@@ -109,12 +109,30 @@
 # Dock
 # ------------------------------------------------------------------------------
 
-- name: Set dock orientation to "Left"
+- name: Set the icon size of Dock items
   osx_defaults:
     domain: com.apple.dock
-    key: orientation
-    type: string
-    value: "left"
+    key: tilesize
+    type: int
+    value: 30
+  notify:
+    - killall
+
+# - name: Set dock orientation to "Left"
+#   osx_defaults:
+#     domain: com.apple.dock
+#     key: orientation
+#     type: string
+#     value: "left"
+#   notify:
+#     - killall
+
+- name: Automatically hide and show the Dock
+  osx_defaults:
+    domain: com.apple.dock
+    key: autohide
+    type: bool
+    value: true
   notify:
     - killall
 

@@ -174,13 +174,13 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
 # ------------------------------------------------------------------------------
 
 # Set the icon size of Dock items
-defaults write com.apple.dock tilesize -int 30
+# defaults write com.apple.dock tilesize -int 30
 
 # Set dock orientation to "Left"
-defaults write com.apple.dock orientation -string "left"
+# defaults write com.apple.dock orientation -string "left"
 
 # Automatically hide and show the Dock
-defaults write com.apple.dock autohide -bool true
+# defaults write com.apple.dock autohide -bool true
 
 # Mission control
 # ------------------------------------------------------------------------------
