@@ -5,18 +5,12 @@
 os: osx
 
 install:
-  # Install pip
-  - sudo easy_install --quiet pip
-  # Debug: pip version
+  - bash init.sh
+  # Debug: Print installed versions
   - pip --version
-  # Install ansible
-  - sudo pip install -q ansible
-  # Debug: Ansible version
   - ansible --version
   # Install Ansible Lint
   - sudo pip install ansible-lint
-  # Install Ansible Galaxy dependencies
-  - ansible-galaxy install -r requirements.yml
 
 script:
   # Playbook syntax checks
@@ -31,7 +25,7 @@ script:
   # Custom playbook test for use in development only:
   # - catches possible fails early
   # - tweak/uncomment as required
-  - ansible-playbook -i hosts main.yml --limit mba --extra-vars "unix_username=travis" --tags "osx"
+  # - ansible-playbook -i hosts main.yml --limit mba --extra-vars "unix_username=travis" --tags "osx"
 
   # Run Ansible playbook on host "mba".
   # - Skip roles that cause CI issues.
