@@ -9,14 +9,15 @@
   notify:
     - killall
 
-# - name: Set dock orientation to "Left"
+- name: Set dock orientation to "Left"
+  command: defaults write com.apple.dock orientation -string "left"
 #   osx_defaults:
 #     domain: com.apple.dock
 #     key: orientation
 #     type: string
 #     value: "left"
-#   notify:
-#     - killall
+   notify:
+     - killall
 
 - name: Automatically hide and show the Dock
   osx_defaults:

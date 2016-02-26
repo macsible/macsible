@@ -177,7 +177,7 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
 # defaults write com.apple.dock tilesize -int 30
 
 # Set dock orientation to "Left"
-defaults write com.apple.dock orientation -string "left"
+# defaults write com.apple.dock orientation -string "left"
 
 # Automatically hide and show the Dock
 # defaults write com.apple.dock autohide -bool true
@@ -289,7 +289,7 @@ fi
 # ------------------------------------------------------------------------------
 
 # Only use UTF-8 in Terminal.app
-defaults write com.apple.terminal StringEncodings -array 4
+# defaults write com.apple.terminal StringEncodings -array 4
 
 # Time Machine
 # ------------------------------------------------------------------------------
@@ -307,8 +307,8 @@ defaults write com.apple.terminal StringEncodings -array 4
 # defaults write com.apple.ActivityMonitor ShowCategory -int 0
 
 # Sort Activity Monitor results by CPU usage
-defaults write com.apple.ActivityMonitor SortColumn -string "CPUUsage"
-defaults write com.apple.ActivityMonitor SortDirection -int 0
+# defaults write com.apple.ActivityMonitor SortColumn -string "CPUUsage"
+# defaults write com.apple.ActivityMonitor SortDirection -int 0
 
 # TextEdit
 # ------------------------------------------------------------------------------

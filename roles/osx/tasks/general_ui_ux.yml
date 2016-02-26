@@ -2,15 +2,13 @@
 
 - name: Always show scrollbars
   command: defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
-# Possible values: `WhenScrolling`, `Automatic` and `Always`
-# - name: Always show scrollbars
 #   osx_defaults:
 #     domain: NSGlobalDomain
 #     key: AppleShowScrollBars
 #     type: string
-#     value: "Always"
-#   notify:
-#     - killall
+#     value: "Always" # Options: `WhenScrolling`, `Automatic`, `Always`
+  notify:
+    - killall
 
 - name: Expand save panel by default
   osx_defaults:
@@ -48,13 +46,6 @@
   notify:
     - killall
 
-- name: Remove duplicates in the “Open With” menu
-  command: /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
-
-- name: Reveal IP address, hostname, OS version, etc. when clicking the clock in the login window
-  command: defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
-  become: true
-
 - name: Disable the “Are you sure you want to open this application?” dialog
   osx_defaults:
     domain: com.apple.LaunchServices
@@ -64,15 +55,21 @@
   notify:
     - killall
 
-# - name: Reveal IP address, hostname, OS version, etc. when clicking the clock in the login window
+- name: Remove duplicates in the “Open With” menu
+  command: /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
+  notify:
+    - killall
+
+- name: Reveal IP address, hostname, OS version, etc. when clicking the clock in the login window
+  command: defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
 #   osx_defaults:
 #     domain: /Library/Preferences/com.apple.loginwindow
 #     key: AdminHostInfo
 #     type: string
 #     value: HostName
-#   become: true
-#   notify:
-#     - killall
+  become: true
+  notify:
+    - killall
 
 - name: Check for software updates daily, not just once per week
   osx_defaults:

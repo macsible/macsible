@@ -1,5 +1,8 @@
 ---
 
+# plists
+# ------------------------------------------------------------------------------
+
 - name: Gather stats on all possible plist file locations
   stat: path={{ item[0] }}/{{ item[1] }}
   with_nested:
@@ -20,16 +23,25 @@
   notify:
     - killall
 
-# - name: Ensure osx.sh is executable
-#   file:
-#     path: ./roles/osx/files/osx.sh
-#     mode: 0755
+# defaults
+# ------------------------------------------------------------------------------
 
-- include: osx_defaults.yml
+# Sources:
+# - https://mths.be/osx
+# - https://github.com/geerlingguy/dotfiles/blob/master/.osx
 
-# TODO: Not idempotent
-# Bash told to run as if in a login shell.
-# - name: Execute osx.sh
-#   shell: bash -lc ./roles/osx/files/osx.sh --no-restart
-#   notify:
-#     - killall
+# TODO: Avoid "type: string" commands until this issue is resolved:
+# https://github.com/ansible/ansible-modules-extras/issues/1742
+
+- include: activity_monitor.yml
+- include: dock_mission_control.yml
+- include: finder.yml
+- include: general_ui_ux.yml
+- include: safari_webkit.yml
+- include: screen.yml
+- include: ssd.yml
+- include: spotlight.yml
+- include: terminal.yml
+- include: textedit.yml
+- include: time_machine.yml
+- include: trackpad_mouse.yml

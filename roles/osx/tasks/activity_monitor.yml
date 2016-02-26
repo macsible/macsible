@@ -17,3 +17,22 @@
     value: 0
   notify:
     - killall
+
+- name: Sort Activity Monitor results by CPU usage (1)
+  command: defaults write com.apple.ActivityMonitor SortColumn -string "CPUUsage"
+  # osx_defaults:
+  #   domain: com.apple.ActivityMonitor
+  #   key: SortColumn
+  #   type: string
+  #   value: "CPUUsage"
+  notify:
+    - killall
+
+- name: Sort Activity Monitor results by CPU usage (2)
+  osx_defaults:
+    domain: com.apple.ActivityMonitor
+    key: SortDirection
+    type: int
+    value: 0
+  notify:
+    - killall
