@@ -74,15 +74,15 @@ fi
 # ------------------------------------------------------------------------------
 
 # Trackpad: enable tap to click for this user and for the login screen
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
-defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
-defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+# defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+# defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+# defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
 # Set scroll direction to old-school (not "natural")
-defaults write -g com.apple.swipescrolldirection -bool FALSE
+# defaults write -g com.apple.swipescrolldirection -bool FALSE
 
 # Enable secondary click
-defaults -currentHost write -g com.apple.trackpad.enableSecondaryClick -bool YES
+# defaults -currentHost write -g com.apple.trackpad.enableSecondaryClick -bool YES
 
 # Screen
 # ------------------------------------------------------------------------------
