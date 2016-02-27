@@ -30,8 +30,10 @@
 # - https://mths.be/osx
 # - https://github.com/geerlingguy/dotfiles/blob/master/.osx
 
-# TODO: Avoid "type: string" commands until this issue is resolved:
+# TODO: Currently avoiding "type: string" commands until this issue is resolved:
 # https://github.com/ansible/ansible-modules-extras/issues/1742
+
+# TODO: Currently avoiding "type: array" commands until they begin to behave.
 
 - include: activity_monitor.yml
 - include: dock_mission_control.yml
