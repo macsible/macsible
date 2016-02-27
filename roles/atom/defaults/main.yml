@@ -1,5 +1,7 @@
 ---
 
+atom_upgrade_packages: false
+
 atom_packages:
   - afterglow-monokai-syntax
   - atom-beautify
