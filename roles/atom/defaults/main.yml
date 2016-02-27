@@ -1,5 +1,25 @@
 ---
 
 atom_packages:
+  - afterglow-monokai-syntax
+  - atom-beautify
+  - autocomplete-plus
+  - autocomplete-sass
+  - bottom-dock
+  - emmet
+  - file-icons
+  - git-plus
+  - grunt-manager
+  - gulp-manager
+  - highlight-selected
+  - isotope-ui
   - language-ansible
+  - linter
+  - linter-ansible-linting
+  - linter-manager
+  - pigments
+  - project-manager
   - sort-lines
+  - split-diff
+  - todo-manager
+  - travis-ci-status
