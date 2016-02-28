@@ -10,7 +10,7 @@ install:
   - pip --version
   - ansible --version
   # Install Ansible Lint
-  - sudo pip install ansible-lint
+  - sudo pip install -q ansible-lint
 
 script:
   # Playbook syntax checks
