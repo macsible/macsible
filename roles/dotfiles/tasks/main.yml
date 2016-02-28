@@ -4,6 +4,7 @@
   git:
     repo: "{{ dotfiles_repo }}"
     dest: "{{ dotfiles_dest }}"
+    version: HEAD
     accept_hostkey: yes
 
 - name: Create symlinks to files in {{ dotfiles_dest }}

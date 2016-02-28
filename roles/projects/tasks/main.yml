@@ -21,6 +21,7 @@
     repo: "{{ item.repo }}"
     dest: ~/Projects/oss/{{ item.dest }}
     accept_hostkey: yes
+    version: HEAD
   with_items: "{{ projects_oss }}"
 
 # Internal projects
@@ -30,6 +31,7 @@
     repo: "{{ item.repo }}"
     dest: ~/Projects/internal/{{ item.dest }}
     accept_hostkey: yes
+    version: HEAD
   with_items: "{{ projects_internal }}"
 
 # Client projects
@@ -39,6 +41,7 @@
     repo: "{{ item.repo }}"
     dest: ~/Projects/client/{{ item.dest }}/docroot
     accept_hostkey: yes
+    version: HEAD
   with_items: "{{ projects_client }}"
 
 # TODO: Playing up, handle with Composer when Vlad supports it.
