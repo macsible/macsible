@@ -80,7 +80,7 @@
   notify:
     - killall
 
-- name: Disable smart quotes as they’re annoying when typing code
+- name: Disable smart quotes as they're annoying when typing code
   osx_defaults:
     domain: NSGlobalDomain
     key: NSAutomaticQuoteSubstitutionEnabled
@@ -89,7 +89,7 @@
   notify:
     - killall
 
-- name: Disable smart dashes as they’re annoying when typing code
+- name: Disable smart dashes as they're annoying when typing code
   osx_defaults:
     domain: NSGlobalDomain
     key: NSAutomaticDashSubstitutionEnabled

@@ -37,7 +37,7 @@
   notify:
     - killall
 
-- name: Don’t automatically rearrange Spaces based on most recent use
+- name: Don't automatically rearrange Spaces based on most recent use
   osx_defaults:
     domain: com.apple.dock
     key: mru-spaces
