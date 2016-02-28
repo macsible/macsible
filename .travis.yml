@@ -20,6 +20,7 @@ script:
   # Playbook lint checks
   # https://github.com/willthames/ansible-lint
   - ansible-lint plists.yml
+  # "resources" is excluded to sidestep warnings about use of curl & git etc.
   - ansible-lint -x resources main.yml
 
   # Custom playbook test for use in development only:
