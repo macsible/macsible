@@ -70,6 +70,7 @@
 
     # Stage 4: Remaining apps
     # --------------------------------------------------------------------------
+    - { role: transmission, tags: ["transmission","stage_4"] }
     - { name: "tree", tags: ["tree","stage_4"], role: brew_pkg }
     - { name: "istat-menus", role: cask_app, tags: ["istat_menus","plist","stage_4"], cask_app_plists: ["com.bjango.istatmenus.plist","com.bjango.istatmenus5.extras.plist"] }
     - { name: "vmware-fusion", tags: ["vmware_fusion","stage_4"], role: cask_app, when: system_type == "desktop" }
@@ -97,7 +98,6 @@
     - { name: "vlc", tags: ["vlc","stage_5"], role: cask_app }
     - { name: "google-plus-auto-backup", role: cask_app, tags: ["google_plus_auto_backup","plist","stage_5"], cask_app_plists: "com.google.gpautobackup.plist" }
     - { name: "sketchup", role: cask_app, tags: ["sketchup","plist","stage_5"], cask_app_plists: "com.sketchup.SketchUp.2014.plist" }
-    - { name: "transmission", role: cask_app, tags: ["transmission","plist","stage_5"], cask_app_plists: "org.m0k.transmission.plist" }
     - { name: "bartender", role: cask_app, tags: ["bartender","plist","stage_5"], cask_app_plists: "com.surteesstudios.Bartender.plist" }
     - { name: "doxie", tags: ["doxie","stage_5"], role: cask_app }
     - { name: "omnigraffle", tags: ["omnigraffle","stage_5"], role: cask_app }
