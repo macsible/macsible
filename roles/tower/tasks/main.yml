@@ -1,0 +1,12 @@
+---
+
+# TODO: Add iTerm2 dep?
+# TODO: Add Kaleidoscope dep?
+- name: "{{ item.name }}"
+  command: defaults write com.fournova.Tower2 {{ item.key }} -string "{{ item.value }}"
+  with_items:
+    - { name: "Use Homebrew Git binary", key: "GTUserDefaultsGitBinary", value: "/usr/local/bin/git"}
+    - { name: "Set default directory for cloned projects", key: "GTUserDefaultsDefaultCloningDirectory", value: "${HOME}/Projects"}
+    - { name: "Set terminal application", key: "GTUserDefaultsDefaultTerminalApplication", value: "com.googlecode.iterm2"}
+    - { name: "Set diff tool", key: "GTUserDefaultsDiffToolIdentifier", value: "kaleidoscope"}
+  notify: killall Tower

@@ -57,7 +57,7 @@
     - { role: pip_pkgs, tags: ["pip_pkgs","stage_2"] }
     - { name: "dash", tags: ["dash","plist","stage_2"], role: cask_app, cask_app_plists: "com.kapeli.dash.plist" }
     - { name: "iterm2", role: cask_app, tags: ["iterm2","plist","stage_2"], cask_app_plists: "com.googlecode.iterm2.plist" }
-    - { role: tower, tags: ["tower","plist","stage_2"], cask_app_plists: "com.fournova.Tower2.plist" }
+    - { role: tower, tags: ["tower","stage_2"] }
     - { name: "sequel-pro", tags: ["sequel_pro","stage_2"], role: cask_app }
     - { name: "transmit", tags: ["transmit","stage_2"], role: cask_app }
     - { name: "imageoptim", tags: ["imageoptim","stage_2"], role: cask_app }
