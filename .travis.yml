@@ -11,6 +11,8 @@ install:
   - ansible --version
   # Install Ansible Lint
   - sudo pip install -q ansible-lint
+  # Create config.yml
+  - cp config_example.yml config.yml
 
 script:
   # Playbook syntax checks
