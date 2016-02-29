@@ -20,12 +20,12 @@
     - { name: "Enable the Develop menu and the Web Inspector in Safari (2)", key: "WebKitDeveloperExtrasEnabledPreferenceKey", value: "true"}
     - { name: "Enable the Develop menu and the Web Inspector in Safari (3)", key: "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled", value: "true"}
   notify:
-    - killall
+    - killall Safari
 
 - name: Set Safari's home page to `about:blank` for faster loading
   command: defaults write com.apple.Safari HomePage -string "about:blank"
   notify:
-    - killall
+    - killall Safari
 
 - name: Disable Safari's thumbnail cache for History and Top Sites
   osx_defaults:
@@ -34,12 +34,12 @@
     type: int
     value: 2
   notify:
-    - killall
+    - killall Safari
 
 - name: Remove useless icons from Safari's bookmarks bar
   command: defaults write com.apple.Safari ProxiesInBookmarksBar "()"
   notify:
-    - killall
+    - killall Safari
 
 - name: Add a context menu item for showing the Web Inspector in web views
   osx_defaults:
