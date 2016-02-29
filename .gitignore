@@ -1,3 +1,4 @@
 .DS_Store
 ansible.log
+config.yml
 ext_roles
