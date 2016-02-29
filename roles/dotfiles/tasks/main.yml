@@ -7,12 +7,18 @@
     version: master
     accept_hostkey: yes
 
+- name: Get list of files to symlink to
+  command: find . -type f -depth 1 -name ".*"
+  args:
+    chdir: "{{ dotfiles_dir }}"
+  register: dotfiles_to_symlink
+
 - name: Create symlinks to files in {{ dotfiles_dir }}
   file:
     path: ~/{{ item }}
     src: "{{ dotfiles_dir }}/{{ item }}"
     state: link
-  with_items: "{{ dotfiles_files }}"
+  with_items: "{{ dotfiles_to_symlink }}"
 
 - name: Reload .bash_profile
   shell: source ~/.bash_profile
