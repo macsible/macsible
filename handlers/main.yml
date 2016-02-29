@@ -1,12 +1,14 @@
 ---
 
-# Restarts a bunch of OS X apps & processes
+# Restarts a bunch of OS X apps & processes.
+# Terminal intentionally excluded.
 - name: killall
   command: killall "{{ item }}" > /dev/null 2>&1
   with_items:
     - cfprefsd
     - Dock
     - Finder
+    - Safari
     - SystemUIServer
   ignore_errors: yes
 
@@ -28,4 +30,8 @@
 
 - name: killall Terminal
   command: killall "Terminal"
+  ignore_errors: yes
+
+- name: killall Safari
+  command: killall "Safari"
   ignore_errors: yes
