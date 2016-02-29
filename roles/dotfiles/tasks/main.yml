@@ -7,6 +7,7 @@
     version: master
     accept_hostkey: yes
 
+# TODO: Make idempotent
 - name: Get list of files to symlink to
   command: find . -type f -depth 1 -name ".*"
   args:

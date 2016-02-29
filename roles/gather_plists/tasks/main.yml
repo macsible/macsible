@@ -10,8 +10,6 @@
 #     - "{{ desktop }}"
 #     - "{{ laptop }}"
 
-# TODO: Add Ansible version check. The following tasks require >= Ansible 1.9.1.
-
 # Gathering stats on local plist files will ensure that Ansible only attempts to copy files that actually exist
 # (otheriwse it would fail)
 
