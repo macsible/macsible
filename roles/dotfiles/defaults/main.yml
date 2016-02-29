@@ -2,7 +2,7 @@
 
 dotfiles_repo: "https://github.com/danbohea/dotfiles.git"
 
-dotfiles_dest: "~/dotfiles"
+dotfiles_ddir: "~/dotfiles"
 
 dotfiles_files:
   - .bash_aliases

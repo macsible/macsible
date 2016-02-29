@@ -1,16 +1,16 @@
 ---
 
-- name: Clone dotfiles repo to {{ dotfiles_dest }}
+- name: Clone dotfiles repo to {{ dotfiles_dir }}
   git:
     repo: "{{ dotfiles_repo }}"
-    dest: "{{ dotfiles_dest }}"
+    dest: "{{ dotfiles_dir }}"
     version: master
     accept_hostkey: yes
 
-- name: Create symlinks to files in {{ dotfiles_dest }}
+- name: Create symlinks to files in {{ dotfiles_dir }}
   file:
     path: ~/{{ item }}
-    src: "{{ dotfiles_dest }}/{{ item }}"
+    src: "{{ dotfiles_dir }}/{{ item }}"
     state: link
   with_items: "{{ dotfiles_files }}"
 
