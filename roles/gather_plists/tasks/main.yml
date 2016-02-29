@@ -1,6 +1,7 @@
 ---
 
-# TODO: The file module won't expand ~/ so we need a more robust way of checking for these directories.
+# TODO: The file module won't expand ~/ so we need a more robust way of checking
+# for these directories.
 # - name: Ensure required directories are present
 #   file:
 #     path: "{{ item }}/app_settings/plists"
@@ -10,8 +11,8 @@
 #     - "{{ desktop }}"
 #     - "{{ laptop }}"
 
-# Gathering stats on local plist files will ensure that Ansible only attempts to copy files that actually exist
-# (otheriwse it would fail)
+# Gathering stats on local plist files will ensure that Ansible only attempts to
+# copy files that actually exist (otheriwse it would fail)
 
 - name: Gather stats on local plist files (common)
   stat: path=/Users/{{ unix_username }}/Library/{{ item }}
