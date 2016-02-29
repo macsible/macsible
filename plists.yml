@@ -4,7 +4,8 @@
   hosts: all
   connection: local
 
-  vars_files: config.yml
+  vars_files:
+    - config.yml
 
   roles:
     - { role: gather_plists }
