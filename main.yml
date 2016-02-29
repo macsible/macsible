@@ -3,9 +3,7 @@
   hosts: all
   connection: local
 
-  vars_files:
-    - vars/common.yml
-    - vars/role_specific.yml
+  vars_files: config.yml
 
   roles:
 
