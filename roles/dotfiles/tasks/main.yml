@@ -7,19 +7,21 @@
     version: master
     accept_hostkey: yes
 
-# TODO: Make idempotent
-- name: Get list of files to symlink to
-  command: find . -type f -depth 1 -name ".*"
+# Command uses `basename` to return only filenames (excludes paths)
+# Source: http://superuser.com/a/620591
+- name: Get list of file names to symlink to
+  command: find . -type f -depth 1 -name ".*" -exec basename {} \;
   args:
     chdir: "{{ dotfiles_dir }}"
   register: dotfiles_to_symlink
+  changed_when: false
 
 - name: Create symlinks to files in {{ dotfiles_dir }}
   file:
     path: ~/{{ item }}
     src: "{{ dotfiles_dir }}/{{ item }}"
     state: link
-  with_items: "{{ dotfiles_to_symlink }}"
+  with_items: "{{ dotfiles_to_symlink.stdout_lines }}"
 
 - name: Reload .bash_profile
   shell: source ~/.bash_profile
