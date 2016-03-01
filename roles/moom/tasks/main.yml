@@ -1,27 +1,25 @@
 ---
 
-- name: Install f.lux
-  homebrew_cask: name=flux state=present
+- name: Install Moom
+  homebrew_cask: name=moom state=present
   environment:
     HOMEBREW_CASK_OPTS: --appdir={{ cask_app_appdir }}
   notify: brew cask cleanup
 
-- name: Set location
-  command: defaults write org.herf.Flux {{ item }}
-  with_items:
-    - location -string "{{ flux_location }}"
-    - locationTextField -string {{ flux_locationTextField }}
-  notify:
-    - killall Flux
-
-- name: Set colour temperatures
+- name: Set preferences
   osx_defaults:
-    domain: org.herf.Flux
+    domain: com.manytricks.Moom
     key: "{{ item.key }}"
     type: int
     value: "{{ item.value }}"
   with_items:
-    - { key: 'lateColorTemp', value: "{{ flux_lateColorTemp }}" }
-    - { key: 'nightColorTemp', value: "{{ flux_nightColorTemp }}" }
+    - { key: 'Allow For Drawers', value: 1 }
+    - { key: 'Application Mode', value: 1 }
+    - { key: 'Mouse Controls Grid', value: 1 }
+    - { key: 'Mouse Controls Grid: Rows', value: 6 }
+    - { key: 'Mouse Controls Include Custom Controls', value: 1 }
+    - { key: 'Snap', value: 1 }
+    - { key: 'Snap: Ignore Bordering Edges And Corners', value: 1 }
+    - { key: 'SUEnableAutomaticChecks', value: 1 }
   notify:
-    - killall Flux
+    - killall Moom

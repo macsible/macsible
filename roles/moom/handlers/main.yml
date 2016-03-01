@@ -1,5 +1,5 @@
 ---
 
-- name: killall Flux
-  command: killall Flux
+- name: killall Moom
+  command: killall Moom
   ignore_errors: yes
