@@ -1,0 +1,5 @@
+---
+
+- name: killall Flux
+  command: killall Flux
+  ignore_errors: yes

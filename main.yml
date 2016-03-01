@@ -31,13 +31,13 @@
     - { role: desktop_symlinks, tags: ["desktop_symlinks","stage_1","no_ci"] }
     - { role: time_machine, tags: ["time_machine","stage_1"] }
     - { role: google_chrome, tags: ["google_chrome","stage_1"] }
+    - { role: moom, tags: ["moom","stage_1"] }
     - { role: flux, tags: ["flux","stage_1"] }
     - { name: "caffeine", tags: ["caffeine","stage_1","sudo"], role: cask_app }
     - { name: "alfred", tags: ["alfred","stage_1","sudo"], role: cask_app }
     - { name: "evernote", tags: ["evernote","plist","stage_1"], role: cask_app, cask_app_plists: "com.evernote.Evernote.plist" }
     - { name: "atext", role: cask_app, tags: ["atext","stage_1"] }
     # - { name: "bettertouchtool", tags: ["bettertouchtool","plist","stage_1"], role: cask_app, cask_app_plists: "com.hegenberg.BetterTouchTool.plist" } # TODO: Currently failing
-    - { name: "moom", role: cask_app, tags: ["moom","plist","stage_1"], cask_app_plists: "com.manytricks.Moom.plist" }
     - { name: "the-unarchiver", tags: ["the_unarchiver","stage_1"], role: cask_app }
     - { name: "path-finder", tags: ["path_finder","plist","stage_1"], role: cask_app, cask_app_plists: "com.cocoatech.PathFinder.plist" }
     - { name: "keyboard-maestro", tags: ["keyboard_maestro","stage_1","mac_os_10_10"], role: cask_app }
@@ -105,6 +105,3 @@
     - { name: "appcleaner", tags: ["appcleaner","stage_5"], role: cask_app }
     - { role: steam, tags: ["steam","stage_5"] }
     - { name: "crashplan", tags: ["crashplan","stage_5","prompt"], role: cask_app }
-
-  handlers:
-    - include: handlers/main.yml
