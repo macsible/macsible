@@ -13,6 +13,7 @@ atom_packages:
   - git-plus
   - grunt-manager
   - gulp-manager
+  - highlight-line
   - highlight-selected
   - isotope-ui
   - language-ansible
