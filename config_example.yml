@@ -1,7 +1,3 @@
 ---
 
-# System
-# ------------------------------------------------------------------------------
-
-# "laptop" | "desktop"
-system_type: "laptop"
+# Override default role variables here.
