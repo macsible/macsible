@@ -30,8 +30,3 @@ plist_source_dirs:
 cask_app_appdir: "/Applications"
 
 cask_app_plist_source_dirs: "{{ plist_source_dirs }}"
-
-# sketch
-# ------------------------------------------------------------------------------
-
-sketch_plugins_dir: "/Users/{{ ansible_env.USER }}/Library/Application Support/com.bohemiancoding.sketch3/Plugins"

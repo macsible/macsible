@@ -5,7 +5,7 @@ sketch_apps:
   - sketch-tool
   - sketch-toolbox
 
-sketch_plugins_dir: "/Path/To/Sketch/Plugins"
+sketch_plugins_dir: "/Users/{{ ansible_env.USER }}/Library/Application Support/com.bohemiancoding.sketch3/Plugins"
 
 sketch_plugin_repos:
   - { repo: "https://github.com/ddwht/sketch-dynamic-button.git", dest: "sketch-dynamic-button" }
