@@ -21,7 +21,7 @@
     type: int
     value: "{{ item.value }}"
   with_items:
-    - { key: 'lateColorTemp', value: {{ flux_lateColorTemp }} }
-    - { key: 'nightColorTemp', value: {{ flux_nightColorTemp }} }
+    - { key: 'lateColorTemp', value: "{{ flux_lateColorTemp }}" }
+    - { key: 'nightColorTemp', value: "{{ flux_nightColorTemp }}" }
   notify:
     - killall Flux
