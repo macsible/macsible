@@ -56,6 +56,7 @@
     - { role: pip_pkgs, tags: ["pip_pkgs","stage_2"] }
     - { name: "dash", tags: ["dash","plist","stage_2"], role: cask_app, cask_app_plists: "com.kapeli.dash.plist" }
     - { name: "iterm2", role: cask_app, tags: ["iterm2","plist","stage_2"], cask_app_plists: "com.googlecode.iterm2.plist" }
+    - { name: "kaleidoscope", tags: ["kaleidoscope","stage_2"], role: cask_app }
     - { role: tower, tags: ["tower","stage_2"] }
     - { name: "sequel-pro", tags: ["sequel_pro","stage_2"], role: cask_app }
     - { name: "transmit", tags: ["transmit","stage_2"], role: cask_app }
@@ -100,7 +101,6 @@
     - { name: "bartender", role: cask_app, tags: ["bartender","plist","stage_5"], cask_app_plists: "com.surteesstudios.Bartender.plist" }
     - { name: "doxie", tags: ["doxie","stage_5"], role: cask_app }
     - { name: "omnigraffle", tags: ["omnigraffle","stage_5"], role: cask_app }
-    - { name: "kaleidoscope", tags: ["kaleidoscope","stage_5"], role: cask_app }
     - { name: "appcleaner", tags: ["appcleaner","stage_5"], role: cask_app }
     - { role: steam, tags: ["steam","stage_5"] }
     - { name: "crashplan", tags: ["crashplan","stage_5","prompt"], role: cask_app }
