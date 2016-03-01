@@ -35,7 +35,7 @@
     - { name: "evernote", tags: ["evernote","plist","stage_1"], role: cask_app, cask_app_plists: "com.evernote.Evernote.plist" }
     - { name: "google-chrome", tags: ["google_chrome","stage_1"], role: cask_app }
     - { name: "atext", role: cask_app, tags: ["atext","stage_1"] }
-    - { name: "bettertouchtool", tags: ["bettertouchtool","plist","stage_1"], role: cask_app, cask_app_plists: "com.hegenberg.BetterTouchTool.plist" }
+    # - { name: "bettertouchtool", tags: ["bettertouchtool","plist","stage_1"], role: cask_app, cask_app_plists: "com.hegenberg.BetterTouchTool.plist" } # TODO: Currently failing
     - { name: "flux", tags: ["flux","plist","stage_1"], role: cask_app, cask_app_plists: "org.herf.Flux.plist" }
     - { name: "moom", role: cask_app, tags: ["moom","plist","stage_1"], cask_app_plists: "com.manytricks.Moom.plist" }
     - { name: "the-unarchiver", tags: ["the_unarchiver","stage_1"], role: cask_app }
