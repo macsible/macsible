@@ -1,5 +1,5 @@
 ---
 
 - name: killall Tower
-  command: killall "Tower"
+  command: killall Tower
   ignore_errors: yes

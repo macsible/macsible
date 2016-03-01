@@ -1,5 +1,5 @@
 ---
 
 - name: killall AppleSpell
-  command: killall "AppleSpell"
+  command: killall AppleSpell
   ignore_errors: yes
