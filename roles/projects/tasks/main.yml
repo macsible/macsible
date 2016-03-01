@@ -1,11 +1,5 @@
 ---
 
-- name: Ensure ~/Projects directory exists (laptop)
-  file:
-    path: ~/Projects
-    state: directory
-  when: system_type == "laptop"
-
 - name: Symlink ~/Projects (desktop)
   file:
     path: ~/Projects
@@ -13,6 +7,12 @@
     state: link
     force: yes
   when: system_type == "desktop"
+
+- name: Ensure ~/Projects directory exists
+  file:
+    path: ~/Projects
+    state: directory
+    follow: yes
 
 # OSS projects
 
