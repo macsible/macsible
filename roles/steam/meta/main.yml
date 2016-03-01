@@ -1,3 +1,4 @@
 ---
+
 dependencies:
-  - { role: cask_app, name: "steam" }
+  - role: danbohea.homebrew

@@ -1,5 +1,10 @@
 ---
 
+sketch_apps:
+  - sketch
+  - sketch-tool
+  - sketch-toolbox
+
 sketch_plugins_dir: "/Path/To/Sketch/Plugins"
 
 sketch_plugin_repos:

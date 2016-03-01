@@ -1,6 +1,4 @@
 ---
 
 dependencies:
-  - { role: cask_app, name: "sketch" }
-  - { role: cask_app, name: "sketch-tool" }
-  - { role: cask_app, name: "sketch-toolbox" }
+  - role: danbohea.homebrew

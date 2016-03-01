@@ -1,4 +1,4 @@
 ---
 
 dependencies:
-  - { role: cask_app, name: "vagrant", tags: ["vagrant"] }
+  - role: danbohea.homebrew

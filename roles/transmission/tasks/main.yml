@@ -1,5 +1,11 @@
 ---
 
+- name: Install Transmission
+  homebrew_cask: name=transmission state=present
+  environment:
+    HOMEBREW_CASK_OPTS: --appdir={{ cask_app_appdir }}
+  notify: brew cask cleanup
+
 - name: Ensure location for incomplete downloads exists
   file:
     path: /Users/{{ unix_username }}/Downloads/Torrents/Incomplete

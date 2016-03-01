@@ -1,5 +1,11 @@
 ---
 
+- name: Install Dropbox
+  homebrew_cask: name=dropbox state=present
+  environment:
+    HOMEBREW_CASK_OPTS: --appdir={{ cask_app_appdir }}
+  notify: brew cask cleanup
+
 - name: Symlink ~/Dropbox (desktop)
   file:
     path: ~/Dropbox

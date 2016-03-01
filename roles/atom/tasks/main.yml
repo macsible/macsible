@@ -1,5 +1,11 @@
 ---
 
+- name: Install Atom
+  homebrew_cask: name=atom state=present
+  environment:
+    HOMEBREW_CASK_OPTS: --appdir={{ cask_app_appdir }}
+  notify: brew cask cleanup
+
 - name: Ensure Atom packages are installed
   command: apm install {{ item }}
   args:

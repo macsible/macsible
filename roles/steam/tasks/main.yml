@@ -1,5 +1,12 @@
 ---
 
+- name: Install Steam
+  homebrew_cask: name=steam state=present
+  environment:
+    HOMEBREW_CASK_OPTS: --appdir={{ cask_app_appdir }}
+  when: system_type == "desktop"
+  notify: brew cask cleanup
+
 - name: Remove default Steam directrory prior to creating symlink (desktop)
   file:
     path: ~/Library/Application\ Support/Steam
