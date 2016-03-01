@@ -13,23 +13,21 @@ install:
   - sudo pip install -q ansible-lint
 
 script:
-  # Playbook syntax checks
-  - ansible-playbook -i hosts plists.yml --syntax-check
+  # Playbook syntax check
   - ansible-playbook -i hosts main.yml --syntax-check
 
-  # Playbook lint checks
+  # Playbook lint check
   # https://github.com/willthames/ansible-lint
-  - ansible-lint plists.yml
   # "resources" is excluded to sidestep warnings about use of curl & git etc.
   - ansible-lint -x resources main.yml
 
   # Custom playbook test for use in development only:
   # - catches possible fails early
   # - tweak/uncomment as required
-  # - ansible-playbook -i hosts main.yml --limit mba --extra-vars "unix_username=travis" --tags "osx"
+  # - ansible-playbook -i hosts main.yml --limit mba --extra-vars "unix_username=travis" --tags "moom"
 
-  # Run Ansible playbook on host "mba".
+  # Run Ansible playbook:
   # - Skip roles that cause CI issues.
   # - Skip roles that require Mac OS >= 10.10.
   # - Skip stage_5 roles as they don't *really* add much to the test.
-  - ansible-playbook -i hosts main.yml --limit mba --extra-vars "unix_username=travis" --skip-tags "no_ci,mac_os_10_10,stage_5"
+  - ansible-playbook main.yml --extra-vars "unix_username=travis" --skip-tags "no_ci,mac_os_10_10,stage_5"

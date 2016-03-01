@@ -2,55 +2,55 @@
 
 [![Build Status](https://travis-ci.org/danbohea/mac-playbook.svg?branch=master)](https://travis-ci.org/danbohea/mac-playbook)
 
-## First time install & run
+> **Disclaimer**: This is still a fairly opinionated project. Attempts to make it more flexible are ongoing, but for now please consider it work in progress for my personal use.
 
-1) Install Xcode from the App Store. When installed, launch Xcode and agree to the policy prompt.
+### Requirements
 
-2) Install Xcode command line developer tools. You will need to interact with the prompts that follow:
-- Install > Agree > Done.
+Ensure the following requirements are already installed and working:
 
-```
-xcode-select --install
-```
+- Mac OS 10.11 (El Capitan)
+- Xcode
+- Command Line Developer Tools
 
-3) Clone repo into place and `cd` to its working directory:
+See [here](docs/install_requirements.md) for assistance.
 
-```
-git clone https://github.com/danbohea/mac-playbook.git ~/Projects/internal/mac-playbook && cd mac-playbook/
-```
 
-4) Run initial setup file:
+### Install dependencies
+
+A script is included to ensure the following dependencies are met:
+
+- pip
+- Ansible
+- Any required Ansible roles via Ansible Galaxy
+- Create a config.yml file (required)
+
+To execute this script run:
 
 ```
 bash init.sh
 ```
 
-5) Run Ansible playbook (preparatory tasks only):
+
+### Configure
+
+Default variables can be overridden in config.yml.
+
+
+### Run the Ansible playbook
+
+At its simplest, the Ansible playbook can be run using the following command:
 
 ```
-ansible-playbook -i hosts main.yml -K --tags "prep" --limit [hostname]
+ansible-playbook main.yml -K
 ```
 
-6) Ensure that any external settings files are present (e.g. Dropbox is setup & required files are synced).
-
-6) Ensure required SSH keys are in place at ~/.ssh/
-
-7) Run Ansible playbook (skipping preparatory tasks is optional but slightly faster):
+To run only certain tags (e.g. `evernote` and `moom`):
 
 ```
-ansible-playbook -i hosts main.yml -K --skip-tags "prep" --limit [hostname]
+ansible-playbook main.yml -K -t "evernote,moom"
 ```
 
-## Running the playbook again
+### Further docs
 
-To run the whole playbook again you simply remove any tag options:
-
-```
-ansible-playbook -i hosts main.yml -K --limit [hostname]
-```
-
-To run only certain tags again:
-
-```
-ansible-playbook -i hosts main.yml -K --limit [hostname] -t "tag1, tag2"
-```
+- [Installing requirements](docs/install_requirements.md)
+- [Staged installation using tags](docs/tags_stages.md)
