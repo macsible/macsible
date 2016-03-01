@@ -1,31 +1,5 @@
 ---
 
-# plists
-# ------------------------------------------------------------------------------
-
-- name: Gather stats on all possible plist file locations
-  stat: path={{ item[0] }}/{{ item[1] }}
-  with_nested:
-    - "{{ osx_plist_source_dirs }}"
-    - "{{ osx_plists }}"
-  register: osx_plist_files
-  when: item[0] != ""
-
-# Only copies items where a source file actually exists.
-- name: Copy plist files to ~/Library/Preferences
-  copy:
-    src: "{{ item[0].stat.path }}"
-    dest: ~/Library/Preferences/{{ item[1] }}
-  with_nested:
-    - "{{ osx_plist_files.results }}"
-    - "{{ osx_plists }}"
-  when: item[0].stat.path is defined
-  notify:
-    - killall
-
-# defaults
-# ------------------------------------------------------------------------------
-
 # Sources:
 # - https://mths.be/osx
 # - https://github.com/geerlingguy/dotfiles/blob/master/.osx

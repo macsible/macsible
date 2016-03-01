@@ -1,8 +1,0 @@
----
-
-osx_plist_source_dirs:
-  - ""
-
-osx_plists:
-  - com.apple.dock.plist
-  - com.apple.loginitems.plist
