@@ -1,6 +1,7 @@
 ---
 - name: Mac setup
-  hosts: all
+  hosts: localhost
+  connection: local
 
   vars_files:
     - config.yml
