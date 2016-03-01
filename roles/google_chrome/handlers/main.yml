@@ -1,0 +1,5 @@
+---
+
+- name: killall Google Chrome
+  command: killall Google Chrome
+  ignore_errors: yes

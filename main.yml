@@ -30,11 +30,11 @@
     - { role: duti, tags: ["duti","stage_1","no_ci"] }
     - { role: desktop_symlinks, tags: ["desktop_symlinks","stage_1","no_ci"] }
     - { role: time_machine, tags: ["time_machine","stage_1"] }
+    - { role: google_chrome, tags: ["google_chrome","stage_1"] }
     - { role: flux, tags: ["flux","stage_1"] }
     - { name: "caffeine", tags: ["caffeine","stage_1","sudo"], role: cask_app }
     - { name: "alfred", tags: ["alfred","stage_1","sudo"], role: cask_app }
     - { name: "evernote", tags: ["evernote","plist","stage_1"], role: cask_app, cask_app_plists: "com.evernote.Evernote.plist" }
-    - { name: "google-chrome", tags: ["google_chrome","stage_1"], role: cask_app }
     - { name: "atext", role: cask_app, tags: ["atext","stage_1"] }
     # - { name: "bettertouchtool", tags: ["bettertouchtool","plist","stage_1"], role: cask_app, cask_app_plists: "com.hegenberg.BetterTouchTool.plist" } # TODO: Currently failing
     - { name: "moom", role: cask_app, tags: ["moom","plist","stage_1"], cask_app_plists: "com.manytricks.Moom.plist" }

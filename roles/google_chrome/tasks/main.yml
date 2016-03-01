@@ -1,0 +1,16 @@
+---
+
+- name: Install Google Chrome
+  homebrew_cask: name=google-chrome state=present
+  environment:
+    HOMEBREW_CASK_OPTS: --appdir={{ cask_app_appdir }}
+  notify: brew cask cleanup
+
+- name: Disable the all too sensitive backswipe on trackpads
+  osx_defaults:
+    domain: com.google.Chrome
+    key: AppleEnableSwipeNavigateWithScrolls
+    type: bool
+    value: false
+  notify:
+    - killall Google Chrome
