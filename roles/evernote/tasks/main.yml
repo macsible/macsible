@@ -15,12 +15,3 @@
   #   value: "CodeBlock"
   notify:
     - killall Evernote
-
-- name: Set view to "Top List View"
-  osx_defaults:
-    domain: com.evernote.Evernote
-    key: lastView.
-    type: int
-    value: 3
-  notify:
-    - killall Evernote
