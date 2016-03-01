@@ -5,19 +5,3 @@
 
 # "laptop" | "desktop"
 system_type: "laptop"
-
-# Paths
-# ------------------------------------------------------------------------------
-
-ext_prefs_path: "~/Dropbox/Mac/mac-setup"
-
-ext_prefs_path_common: "{{ ext_prefs_path }}/common"
-
-ext_prefs_path_desktop: "{{ ext_prefs_path }}/desktop"
-
-ext_prefs_path_laptop: "{{ ext_prefs_path }}/laptop"
-
-plist_source_dirs:
-  - "{{ ext_prefs_path_common }}/app_settings/plists"
-  - "{{ ext_prefs_path_desktop }}/app_settings/plists"
-  - "{{ ext_prefs_path_laptop }}/app_settings/plists"

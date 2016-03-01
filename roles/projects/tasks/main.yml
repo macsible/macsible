@@ -43,22 +43,3 @@
     accept_hostkey: yes
     version: master
   with_items: "{{ projects_client }}"
-
-# TODO: Playing up, handle with Composer when Vlad supports it.
-# - name: Clone Vlad to projects where required
-#   git:
-#     repo: git@github.com:hashbangcode/vlad.git
-#     dest: ~/Projects/client/{{ item.dest }}/vlad
-#     accept_hostkey: yes
-#     depth: 1
-#     version: dev
-#   with_items: "{{ projects_client }}"
-#   when: item.vlad is defined and item.vlad
-
-- name: Symlink vlad_settings.yml for projects where required
-  file:
-    src: "{{ ext_prefs_path_common }}/projects/client/{{ item.dest }}/docroot/vlad_settings.yml"
-    dest: ~/Projects/client/{{ item.dest }}/settings/vlad_settings.yml
-    state: link
-  with_items: "{{ projects_client }}"
-  when: item.link_settings is defined and item.link_settings
