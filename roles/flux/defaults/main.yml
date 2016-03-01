@@ -1,0 +1,6 @@
+---
+
+flux_location: ""
+flux_locationTextField: ""
+flux_lateColorTemp: 3500
+flux_nightColorTemp: "{{ flux_nightColorTemp }}"
