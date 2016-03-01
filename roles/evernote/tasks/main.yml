@@ -6,11 +6,11 @@
     HOMEBREW_CASK_OPTS: --appdir={{ cask_app_appdir }}
   notify: brew cask cleanup
 
-- name: "Beta: Enable code block"
-  osx_defaults:
-    domain: com.evernote.Evernote
-    key: ENEnabledBetaFeatures
-    type: array
-    value: ["CodeBlock"]
-  notify:
-    - killall Evernote
+# - name: "Beta: Enable code block"
+#   osx_defaults:
+#     domain: com.evernote.Evernote
+#     key: ENEnabledBetaFeatures
+#     type: array
+#     value: ["CodeBlock"]
+#   notify:
+#     - killall Evernote

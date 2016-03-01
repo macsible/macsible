@@ -1,0 +1,7 @@
+---
+
+- name: Install Path Finder
+  homebrew_cask: name=path-finder state=present
+  environment:
+    HOMEBREW_CASK_OPTS: --appdir={{ cask_app_appdir }}
+  notify: brew cask cleanup
