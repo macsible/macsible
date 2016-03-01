@@ -32,4 +32,4 @@ script:
   # - Skip roles that cause CI issues.
   # - Skip roles that require Mac OS >= 10.10.
   # - Skip stage_5 roles as they don't *really* add much to the test.
-  - ansible-playbook main.yml --extra-vars "unix_username=travis" --skip-tags "no_ci,mac_os_10_10,stage_5"
+  - ansible-playbook main.yml --skip-tags "no_ci,mac_os_10_10,stage_5"
