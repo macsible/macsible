@@ -41,7 +41,7 @@
     # - { name: "bettertouchtool", tags: ["bettertouchtool","plist","stage_1"], role: cask_app, cask_app_plists: "com.hegenberg.BetterTouchTool.plist" } # TODO: Currently failing
     - { name: "the-unarchiver", tags: ["the_unarchiver","stage_1"], role: cask_app }
     - { name: "keyboard-maestro", tags: ["keyboard_maestro","stage_1","mac_os_10_10"], role: cask_app }
-    - { name: "skype", role: cask_app, tags: ["skype","plist","stage_1"], cask_app_plists: "com.skype.skype.plist" }
+    - { role: skype, tags: ["skype","stage_1"] }
 
     # Stage 2: Essential dev
     # --------------------------------------------------------------------------

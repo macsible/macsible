@@ -1,0 +1,5 @@
+---
+
+- name: killall Skype
+  command: killall Skype
+  ignore_errors: yes

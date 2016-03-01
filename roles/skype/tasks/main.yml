@@ -1,0 +1,17 @@
+---
+
+- name: Install Skype
+  homebrew_cask: name=skype state=present
+  environment:
+    HOMEBREW_CASK_OPTS: --appdir={{ cask_app_appdir }}
+  notify: brew cask cleanup
+
+- name: Set audio/video preferences (desktop)
+  command: defaults write com.skype.skype "{{ item.key }}" -string "{{ item.value }}"
+  with_items:
+    -  { key: "SKAudioOutputDeviceUID", value: "Built-in Line Output (Line Out)" }
+    -  { key: "SKAudioInputDeviceUID", value: "Logitech Camera" }
+    -  { key: "SKAudioRingerDeviceUID", value: "Built-in Output (Internal Speakers)" }
+  when: system_type == "desktop"
+  notify:
+    - killall Evernote
