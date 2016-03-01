@@ -61,7 +61,7 @@
     - { name: "sequel-pro", tags: ["sequel_pro","stage_2"], role: cask_app }
     - { name: "transmit", tags: ["transmit","stage_2"], role: cask_app }
     - { name: "imageoptim", tags: ["imageoptim","stage_2"], role: cask_app }
-    - { role: sketch, tags: ["sketch","stage_2"] } # TODO: Add plists
+    - { role: sketch, tags: ["sketch","stage_2","mac_os_10_10"] }
 
     # Stage 3: Projects
     # --------------------------------------------------------------------------
