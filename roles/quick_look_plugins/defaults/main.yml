@@ -8,5 +8,5 @@ quick_look_plugins_list:
   - qlstephen
   - quicklook-csv
   - quicklook-json
-  - suspicious-package
+  # - suspicious-package # TODO: Fails build
   - webpquicklook

@@ -8,4 +8,4 @@
     - config.yml
 
   roles:
-    - { role: gather_plists }
+    - role: gather_plists
