@@ -11,6 +11,8 @@ install:
   - ansible --version
   # Install Ansible Lint
   - sudo pip install -q ansible-lint
+  # Debug: Print Ansible facts
+  # - ansible localhost -m setup
 
 script:
   # Playbook syntax check
