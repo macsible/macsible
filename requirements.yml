@@ -1,6 +1,3 @@
 ---
 
 - src: danbohea.homebrew
-
-- src: danbohea.cask-app
-  name: cask_app
