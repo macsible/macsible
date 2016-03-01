@@ -35,6 +35,10 @@ function exists {
 # Install
 # ------------------------------------------------------------------------------
 
+# Create config.yml
+setStatusMessage "Creating config.yml if absent"
+cp -n config_example.yml config.yml
+
 # Install pip
 if ! exists pip; then
     setStatusMessage "Installing pip"
@@ -50,3 +54,5 @@ fi
 # Install Ansible Galaxy dependencies:
 setStatusMessage "Installing Ansible role dependencies"
 ansible-galaxy install -r requirements.yml
+
+setStatusMessage "Initial setup complete"
