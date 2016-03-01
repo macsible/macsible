@@ -5,8 +5,3 @@
   environment:
     HOMEBREW_CASK_OPTS: --appdir={{ cask_app_appdir }}
   notify: brew cask cleanup
-
-- name: Set view options
-  command: defaults write com.cocoatech.PathFinder "Browser View Options Panel" -string "{{1036, 619}, {273, 470}}"
-  notify:
-    - killall Path Finder
