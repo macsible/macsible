@@ -8,7 +8,7 @@
 
 - name: Ensure "TM_Excluded" directory exists (laptop)
   file:
-    path: /Users/{{ unix_username }}/{{ time_machine_ex_dir_name }}
+    path: /Users/{{ ansible_env.USER }}/{{ time_machine_ex_dir_name }}
     state: directory
   when: system_type == "laptop"
 

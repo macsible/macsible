@@ -1,10 +1,5 @@
 ---
 
-# User credentials
-# ------------------------------------------------------------------------------
-
-unix_username: "{{ ansible_env.USER }}"
-
 # System
 # ------------------------------------------------------------------------------
 
@@ -39,4 +34,4 @@ cask_app_plist_source_dirs: "{{ plist_source_dirs }}"
 # sketch
 # ------------------------------------------------------------------------------
 
-sketch_plugins_dir: "/Users/{{ unix_username }}/Library/Application Support/com.bohemiancoding.sketch3/Plugins"
+sketch_plugins_dir: "/Users/{{ ansible_env.USER }}/Library/Application Support/com.bohemiancoding.sketch3/Plugins"

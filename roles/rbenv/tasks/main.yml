@@ -10,7 +10,7 @@
 
 - name: Install Ruby
   command: bash -lc "rbenv install {{ rbenv_default_ruby_version }}"
-           creates=/Users/{{ unix_username }}/.rbenv/versions/{{ rbenv_default_ruby_version }}
+           creates=/Users/{{ ansible_env.USER }}/.rbenv/versions/{{ rbenv_default_ruby_version }}
 
 - name: Check what the current global Ruby version is via rbenv
   command: bash -lc "rbenv global"
