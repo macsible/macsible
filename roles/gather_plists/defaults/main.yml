@@ -6,7 +6,6 @@ plists_common:
   - [ "com.skype.skype.plist" ]
   - [ "com.surteesstudios.Bartender.plist" ]
   - [ "net.limechat.LimeChat.plist" ]
-  - [ "com.cocoatech.PathFinder.plist" ]
 
 plists_system_specific:
   - [ "com.apple.dock.plist" ]
