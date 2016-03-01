@@ -71,6 +71,7 @@
     # Stage 4: Remaining apps
     # --------------------------------------------------------------------------
     - { role: transmission, tags: ["transmission","stage_4"] }
+    - { name: "bfg", tags: ["bfg","stage_4"], role: brew_pkg }
     - { name: "tree", tags: ["tree","stage_4"], role: brew_pkg }
     - { name: "istat-menus", role: cask_app, tags: ["istat_menus","plist","stage_4"], cask_app_plists: ["com.bjango.istatmenus.plist","com.bjango.istatmenus5.extras.plist"] }
     - { name: "vmware-fusion", tags: ["vmware_fusion","stage_4"], role: cask_app, when: system_type == "desktop" }
