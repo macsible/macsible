@@ -4,7 +4,6 @@ plists_common:
   - [ "com.bjango.istatmenus.plist","com.bjango.istatmenus5.extras.plist" ]
   - [ "com.evernote.Evernote.plist" ]
   - [ "com.googlecode.iterm2.plist" ]
-  - [ "com.sketchup.SketchUp.2014.plist" ]
   - [ "com.skype.skype.plist" ]
   - [ "com.surteesstudios.Bartender.plist" ]
   - [ "net.limechat.LimeChat.plist" ]

@@ -98,7 +98,7 @@
     - { name: "skitch", tags: ["skitch","stage_5"], role: cask_app }
     - { name: "vlc", tags: ["vlc","stage_5"], role: cask_app }
     - { name: "google-plus-auto-backup", role: cask_app, tags: ["google_plus_auto_backup","plist","stage_5"], cask_app_plists: "com.google.gpautobackup.plist" }
-    - { name: "sketchup", role: cask_app, tags: ["sketchup","plist","stage_5"], cask_app_plists: "com.sketchup.SketchUp.2014.plist" }
+    - { name: "sketchup", role: cask_app, tags: ["sketchup","stage_5"] }
     - { name: "bartender", role: cask_app, tags: ["bartender","plist","stage_5"], cask_app_plists: "com.surteesstudios.Bartender.plist" }
     - { name: "doxie", tags: ["doxie","stage_5"], role: cask_app }
     - { name: "omnigraffle", tags: ["omnigraffle","stage_5"], role: cask_app }
