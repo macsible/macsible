@@ -22,7 +22,6 @@
     - { role: atom, tags: ["atom","prep"] }
     # Quick-peak access to the contents of more text file formats
     - { role: quick_look_plugins, tags: ["quick_look_plugins","prep"] }
-    - { role: dock, tags: ["dock","prep"] }
 
     # Stage 1: Essential day-to-day
     # --------------------------------------------------------------------------
@@ -106,3 +105,15 @@
     - { name: "appcleaner", tags: ["appcleaner","stage_5"], role: cask_app }
     - { role: steam, tags: ["steam","stage_5"] }
     - { name: "crashplan", tags: ["crashplan","stage_5","prompt"], role: cask_app }
+
+    # Last
+    # --------------------------------------------------------------------------
+
+    - { role: dock, tags: ["dock","last"] }
+
+  post_tasks:
+    - osx_say:
+        msg: "This playbook is done diddly done."
+        voice: Fred
+    - debug:
+        msg: "Some changes may not take effect until after you've restarted your Mac."
