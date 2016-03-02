@@ -1,19 +1,25 @@
 ---
 
+# - List order will effect order in Dock
+# - Filenames must include .app extension
+# - Works with any type of app:
+#   - App Store app
+#   - Cask app
+#   - System app
 dock_apps:
-  - Path Finder
-  - Dash
-  - Postbox
-  - Google Chrome
-  - Evernote
-  - Skitch
-  - Calendar
-  - Atom
-  - Wunderlist
-  - System Preferences
-  - xScope
-  - iTerm
-  - Tower
-  - Transmit
-  - VirtualBox
-  - Cakebrew
+  - Path Finder.app
+  - Dash.app
+  - Postbox.app
+  - Google Chrome.app
+  - Evernote.app
+  - Skitch.app
+  - Calendar.app
+  - Atom.app
+  - Wunderlist.app
+  - System Preferences.app
+  - xScope.app
+  - iTerm.app
+  - Tower.app
+  - Transmit.app
+  - VirtualBox.app
+  - Cakebrew.app

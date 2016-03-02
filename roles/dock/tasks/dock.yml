@@ -29,7 +29,7 @@
   notify:
     - killall Dock
 
-- name: Wipe all (default) app icons from the Dock
+- name: Wipe all default app icons from the Dock
   command: defaults write com.apple.dock persistent-apps -array
   notify:
     - killall Dock
@@ -43,12 +43,9 @@
   register: installed_apps
   changed_when: false
 
+# - Only adds apps to the Dock that are already installed
 - name: Add applications to Dock
-  command: defaults write com.apple.dock persistent-apps -array-add '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/{{ item }}.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>'
-  # with_items: "{{ dock_apps }}"
-  with_nested:
-    - "{{ dock_apps }}"
-    - "{{ installed_apps.stdout_lines }}"
-  when: "{{ item[0] }} == {{ item[1] }}"
+  command: defaults write com.apple.dock persistent-apps -array-add '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/{{ item }}</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>'
+  with_items: "{{ dock_apps | intersect(installed_apps.stdout_lines) }}"
   notify:
     - killall Dock
