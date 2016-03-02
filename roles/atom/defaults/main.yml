@@ -21,9 +21,11 @@ atom_packages:
   - linter
   - linter-ansible-linting
   - linter-manager
+  - open-terminal-here
   - pigments
   - project-manager
   - sort-lines
   - split-diff
+  - svg-preview
   - todo-manager
   - travis-ci-status

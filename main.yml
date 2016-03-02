@@ -112,8 +112,8 @@
     - { role: dock, tags: ["dock","last"] }
 
   post_tasks:
-    - osx_say:
-        msg: "This playbook is done diddly done."
-        voice: Fred
+    # - osx_say:
+    #     msg: "This playbook is done diddly done."
+    #     voice: Fred
     - debug:
         msg: "Some changes may not take effect until you've restarted your Mac."
