@@ -21,6 +21,7 @@
     path: ~/{{ item }}
     src: "{{ dotfiles_dir }}/{{ item }}"
     state: link
+    force: yes
   with_items: "{{ dotfiles_to_symlink.stdout_lines }}"
 
 - name: Reload .bash_profile
