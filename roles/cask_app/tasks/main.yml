@@ -1,5 +1,7 @@
 ---
 
+# This is a re-usable role for a basic app install via Homebrew Cask.
+
 - name: Install {{ name }} to {{ cask_app_appdir }}
   homebrew_cask: name={{ name }} state=present
   environment:
