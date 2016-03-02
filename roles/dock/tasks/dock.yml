@@ -49,6 +49,6 @@
   with_nested:
     - "{{ dock_apps }}"
     - "{{ installed_apps.stdout_lines }}"
-  when: {{ item[0] }} == {{ item[1] }}
+  when: "{{ item[0] }} == {{ item[1] }}"
   notify:
     - killall Dock
