@@ -116,4 +116,4 @@
         msg: "This playbook is done diddly done."
         voice: Fred
     - debug:
-        msg: "Some changes may not take effect until after you've restarted your Mac."
+        msg: "Some changes may not take effect until you've restarted your Mac."
