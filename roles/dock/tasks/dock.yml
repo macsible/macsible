@@ -24,7 +24,8 @@
     domain: com.apple.dock
     key: autohide
     type: bool
-    value: true
+    # TODO: revert to true when done developing this role
+    value: false
   notify:
     - killall Dock
 
