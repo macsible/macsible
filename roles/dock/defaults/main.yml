@@ -1,6 +1,8 @@
 ---
 
 dock_apps:
+  - Calendar
   - Atom
   - Dropbox
-  - Path Finder.app
+  - Path Finder
+  - System Preferences
