@@ -7,9 +7,9 @@
     type: float
     value: 30
   notify:
-    - killall
+    - killall Dock
 
-- name: Set dock orientation to "Left"
+- name: Set Dock orientation
   command: defaults write com.apple.dock orientation -string "left"
 #   osx_defaults:
 #     domain: com.apple.dock
@@ -17,7 +17,7 @@
 #     type: string
 #     value: "left"
   notify:
-    - killall
+    - killall Dock
 
 - name: Automatically hide and show the Dock
   osx_defaults:
@@ -26,22 +26,12 @@
     type: bool
     value: true
   notify:
-    - killall
+    - killall Dock
 
-- name: Speed up Mission Control animations
-  osx_defaults:
-    domain: com.apple.dock
-    key: expose-animation-duration
-    type: float
-    value: 0.15
-  notify:
-    - killall
-
-- name: Don't automatically rearrange Spaces based on most recent use
-  osx_defaults:
-    domain: com.apple.dock
-    key: mru-spaces
-    type: bool
-    value: false
-  notify:
-    - killall
+# - name: Add applications to Dock
+#   command: defaults write com.apple.dock persistent-apps -array-add '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/{{ item }}.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>'
+#   with_items:
+#     - Atom
+#     - Dropbox
+#   notify:
+#     - killall Dock

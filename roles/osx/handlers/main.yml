@@ -6,7 +6,6 @@
   command: killall "{{ item }}" > /dev/null 2>&1
   with_items:
     - cfprefsd
-    - Dock
     - Finder
     - Safari
     - SystemUIServer
@@ -14,10 +13,6 @@
 
 - name: killall cfprefsd
   command: killall cfprefsd
-  ignore_errors: yes
-
-- name: killall Dock
-  command: killall Dock
   ignore_errors: yes
 
 - name: killall Finder

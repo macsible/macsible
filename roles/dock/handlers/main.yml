@@ -1,0 +1,5 @@
+---
+
+- name: killall Dock
+  command: killall Dock
+  ignore_errors: yes

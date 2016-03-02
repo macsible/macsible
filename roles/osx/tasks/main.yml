@@ -10,7 +10,6 @@
 # TODO: Currently avoiding "type: array" commands until they begin to behave.
 
 - include: activity_monitor.yml
-- include: dock_mission_control.yml
 - include: finder.yml
 - include: general_ui_ux.yml
 - include: safari_webkit.yml

@@ -22,6 +22,7 @@
     - { role: atom, tags: ["atom","prep"] }
     # Quick-peak access to the contents of more text file formats
     - { role: quick_look_plugins, tags: ["quick_look_plugins","prep"] }
+    - { role: dock, tags: ["dock","prep"] }
 
     # Stage 1: Essential day-to-day
     # --------------------------------------------------------------------------
