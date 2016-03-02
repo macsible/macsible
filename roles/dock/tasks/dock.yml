@@ -34,8 +34,21 @@
   notify:
     - killall Dock
 
+# Command uses `basename` to return only filenames (excludes paths)
+# Source: http://superuser.com/a/620591
+- name: Get list of .app files in /Applications
+  command: find . -depth 1 -name "*.app" -exec basename {} \;
+  args:
+    chdir: /Applications
+  register: installed_apps
+  changed_when: false
+
 - name: Add applications to Dock
   command: defaults write com.apple.dock persistent-apps -array-add '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/{{ item }}.app</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>'
-  with_items: "{{ dock_apps }}"
+  # with_items: "{{ dock_apps }}"
+  with_nested:
+    - "{{ dock_apps }}"
+    - "{{ installed_apps.stdout_lines }}"
+  when: "{{ item[0] }}" == "{{ item[1] }}"
   notify:
     - killall Dock

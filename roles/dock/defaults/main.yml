@@ -1,8 +1,19 @@
 ---
 
 dock_apps:
+  - Path Finder
+  - Dash
+  - Postbox
+  - Google Chrome
+  - Evernote
+  - Skitch
   - Calendar
   - Atom
-  - Dropbox
-  - Path Finder
+  - Wunderlist
   - System Preferences
+  - xScope
+  - iTerm
+  - Tower
+  - Transmit
+  - VirtualBox
+  - Cakebrew
