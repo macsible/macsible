@@ -26,9 +26,9 @@
     # Stage 1: Essential day-to-day
     # --------------------------------------------------------------------------
 
-    - { role: dotfiles, tags: ["dotfiles","stage_1","no_ci"] }
-    - { role: duti, tags: ["duti","stage_1","no_ci"] }
-    - { role: desktop_symlinks, tags: ["desktop_symlinks","stage_1","no_ci"] }
+    - { role: dotfiles, tags: ["dotfiles","stage_1"] }
+    - { role: duti, tags: ["duti","stage_1"] }
+    - { role: desktop_symlinks, tags: ["desktop_symlinks","stage_1"] }
     - { role: time_machine, tags: ["time_machine","stage_1"] }
     - { role: google_chrome, tags: ["google_chrome","stage_1"] }
     - { role: moom, tags: ["moom","stage_1"] }
@@ -51,7 +51,7 @@
     - { role: git, tags: ["git","stage_2"] }
     - { name: "git-extras", tags: ["git_extras","stage_2"], role: brew_pkg }
     - { role: composer, tags: ["composer","stage_2"] }
-    - { role: rbenv, tags: ["rbenv","stage_2","no_ci"] }
+    - { role: rbenv, tags: ["rbenv","stage_2"] }
     - { role: node_pkgs, tags: ["node_pkgs","stage_2"] }
     - { role: pip_pkgs, tags: ["pip_pkgs","stage_2"] }
     - { name: "dash", tags: ["dash","stage_2"], role: cask_app }
