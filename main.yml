@@ -39,7 +39,7 @@
     - { name: "alfred", tags: ["alfred","stage_1","sudo"], role: cask_app }
     - { name: "atext", role: cask_app, tags: ["atext","stage_1"] }
     - { role: path_finder, tags: ["path_finder","stage_1"] }
-    # - { name: "bettertouchtool", tags: ["bettertouchtool","plist","stage_1"], role: cask_app, cask_app_plists: "com.hegenberg.BetterTouchTool.plist" } # TODO: Currently failing
+    # - { name: "bettertouchtool", tags: ["bettertouchtool","stage_1"], role: cask_app } # TODO: Currently failing
     - { name: "the-unarchiver", tags: ["the_unarchiver","stage_1"], role: cask_app }
     - { name: "keyboard-maestro", tags: ["keyboard_maestro","stage_1","mac_os_10_10"], role: cask_app }
     - { role: skype, tags: ["skype","stage_1"] }
@@ -55,8 +55,8 @@
     - { role: rbenv, tags: ["rbenv","stage_2","no_ci"] }
     - { role: node_pkgs, tags: ["node_pkgs","stage_2"] }
     - { role: pip_pkgs, tags: ["pip_pkgs","stage_2"] }
-    - { name: "dash", tags: ["dash","plist","stage_2"], role: cask_app, cask_app_plists: "com.kapeli.dash.plist" }
-    - { name: "iterm2", role: cask_app, tags: ["iterm2","plist","stage_2"], cask_app_plists: "com.googlecode.iterm2.plist" }
+    - { name: "dash", tags: ["dash","stage_2"], role: cask_app }
+    - { name: "iterm2", role: cask_app, tags: ["iterm2","stage_2"] }
     - { name: "kaleidoscope", tags: ["kaleidoscope","stage_2"], role: cask_app }
     - { role: tower, tags: ["tower","stage_2"] }
     - { name: "sequel-pro", tags: ["sequel_pro","stage_2"], role: cask_app }
@@ -74,7 +74,7 @@
     - { role: transmission, tags: ["transmission","stage_4"] }
     - { name: "bfg", tags: ["bfg","stage_4"], role: brew_pkg }
     - { name: "tree", tags: ["tree","stage_4"], role: brew_pkg }
-    - { name: "istat-menus", role: cask_app, tags: ["istat_menus","plist","stage_4"], cask_app_plists: ["com.bjango.istatmenus.plist","com.bjango.istatmenus5.extras.plist"] }
+    - { name: "istat-menus", role: cask_app, tags: ["istat_menus","stage_4"] }
     - { name: "vmware-fusion", tags: ["vmware_fusion","stage_4"], role: cask_app, when: system_type == "desktop" }
     - { name: "firefox", tags: ["firefox","stage_4"], role: cask_app }
     - { name: "opera", tags: ["opera","stage_4"], role: cask_app }
@@ -90,7 +90,7 @@
     - { name: "hazel", tags: ["hazel","stage_5"], role: cask_app }
     - { name: "cakebrew", tags: ["cakebrew","stage_5"], role: cask_app }
     - { name: "hipchat", tags: ["hipchat","stage_5"], role: cask_app }
-    - { name: "limechat", tags: ["limechat","stage_5"], role: cask_app, cask_app_plists: "net.limechat.LimeChat.plist" }
+    - { name: "limechat", tags: ["limechat","stage_5"], role: cask_app }
     - { name: "daisydisk", tags: ["daisydisk","stage_5"], role: cask_app }
     - { name: "flash-player", tags: ["flash_player","stage_5"], role: cask_app }
     - { name: "google-drive", tags: ["google_drive","stage_5"], role: cask_app }
@@ -98,9 +98,9 @@
     - { name: "name-mangler", tags: ["name_mangler","stage_5"], role: cask_app }
     - { name: "skitch", tags: ["skitch","stage_5"], role: cask_app }
     - { name: "vlc", tags: ["vlc","stage_5"], role: cask_app }
-    - { name: "google-plus-auto-backup", role: cask_app, tags: ["google_plus_auto_backup","plist","stage_5"], cask_app_plists: "com.google.gpautobackup.plist" }
+    - { name: "google-plus-auto-backup", role: cask_app, tags: ["google_plus_auto_backup","stage_5"] }
     - { name: "sketchup", role: cask_app, tags: ["sketchup","stage_5"] }
-    - { name: "bartender", role: cask_app, tags: ["bartender","plist","stage_5"], cask_app_plists: "com.surteesstudios.Bartender.plist" }
+    - { name: "bartender", role: cask_app, tags: ["bartender","stage_5"] }
     - { name: "doxie", tags: ["doxie","stage_5"], role: cask_app }
     - { name: "omnigraffle", tags: ["omnigraffle","stage_5"], role: cask_app }
     - { name: "appcleaner", tags: ["appcleaner","stage_5"], role: cask_app }
