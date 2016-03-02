@@ -17,6 +17,7 @@ atom_packages:
   - highlight-selected
   - isotope-ui
   - language-ansible
+  - language-patch
   - linter
   - linter-ansible-linting
   - linter-manager
