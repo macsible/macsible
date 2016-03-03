@@ -12,5 +12,5 @@
 # - Only adds apps to Login Items that are already installed
 # - Source: https://discussions.apple.com/thread/5072892
 - name: Add apps to Login Items
-  command: "osascript -e 'tell application "System Events" to make new login item with properties { path: "/Applications/{{ item }}.app" } at end'"
+  command: 'osascript -e ''tell application "System Events" to make new login item with properties { path: "/Applications/{{ item }}.app" } at end'''
   with_items: "{{ login_items_apps | intersect(installed_apps.stdout_lines) }}"
