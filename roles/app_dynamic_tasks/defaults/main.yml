@@ -23,3 +23,19 @@ dock_apps:
   - Transmit.app
   - VirtualBox.app
   - Cakebrew.app
+
+# Filenames must include .app extension
+login_items_apps:
+  - Flux.app
+  - Bartender.app
+  - Alfred 2.app
+  - Moom.app
+  - iTerm.app
+  - CrasPlan menu bar.app
+  - BetterTouchTool.app
+  - Dropbox.app
+  - aText.app
+  - Path Finder.app
+  - Keyboard Maestro Engine.app
+  - HazelHelper.app
+  - Google Photos Backup.app

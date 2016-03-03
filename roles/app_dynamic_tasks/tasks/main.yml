@@ -8,3 +8,9 @@
     chdir: /Applications
   register: installed_apps
   changed_when: false
+  tags:
+    - dock_items
+    - login_items
+
+- include: dock_items.yml
+- include: login_items.yml
