@@ -111,6 +111,7 @@
     # --------------------------------------------------------------------------
 
     - { role: dock, tags: ["dock","last"] }
+    - { role: login_items, tags: ["login_items","last"] }
 
   post_tasks:
     # - osx_say:

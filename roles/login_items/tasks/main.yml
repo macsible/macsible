@@ -1,0 +1,15 @@
+---
+
+# Command uses `basename` to return only filenames (excludes paths)
+# Source: http://superuser.com/a/620591
+- name: Get list of .app files in /Applications
+  command: find . -depth 1 -name "*.app" -exec basename {} \;
+  args:
+    chdir: /Applications
+  register: installed_apps
+  changed_when: false
+
+# - Only adds apps to Login Items that are already installed
+- name: Add apps to Login Items
+  command: osascript -e 'tell application "System Events" to make new login item with properties { path: "/Applications/{{ item }}.app" } at end'
+  with_items: "{{ login_items_apps | intersect(installed_apps.stdout_lines) }}"
