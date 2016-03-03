@@ -1,4 +1,51 @@
 ---
 
-- include: dock.yml
-- include: mission_control.yml
+- name: Set the icon size of Dock items
+  osx_defaults:
+    domain: com.apple.dock
+    key: tilesize
+    type: float
+    value: 30
+  notify:
+    - killall Dock
+
+- name: Set Dock orientation
+  command: defaults write com.apple.dock orientation -string "left"
+#   osx_defaults:
+#     domain: com.apple.dock
+#     key: orientation
+#     type: string
+#     value: "left"
+  notify:
+    - killall Dock
+
+- name: Automatically hide and show the Dock
+  osx_defaults:
+    domain: com.apple.dock
+    key: autohide
+    type: bool
+    # TODO: revert to true when done developing this role
+    value: false
+  notify:
+    - killall Dock
+
+- name: Wipe all default app icons from the Dock
+  command: defaults write com.apple.dock persistent-apps -array
+  notify:
+    - killall Dock
+
+# Command uses `basename` to return only filenames (excludes paths)
+# Source: http://superuser.com/a/620591
+- name: Get list of .app files in /Applications
+  command: find . -depth 1 -name "*.app" -exec basename {} \;
+  args:
+    chdir: /Applications
+  register: installed_apps
+  changed_when: false
+
+# - Only adds apps to the Dock that are already installed
+- name: Add applications to Dock
+  command: defaults write com.apple.dock persistent-apps -array-add '<dict><key>tile-data</key><dict><key>file-data</key><dict><key>_CFURLString</key><string>/Applications/{{ item }}</string><key>_CFURLStringType</key><integer>0</integer></dict></dict></dict>'
+  with_items: "{{ dock_apps | intersect(installed_apps.stdout_lines) }}"
+  notify:
+    - killall Dock

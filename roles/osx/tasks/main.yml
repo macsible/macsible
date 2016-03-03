@@ -12,6 +12,7 @@
 - include: activity_monitor.yml
 - include: finder.yml
 - include: general_ui_ux.yml
+- include: mission_control.yml
 - include: safari_webkit.yml
 - include: screen.yml
 - include: ssd.yml
