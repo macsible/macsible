@@ -38,7 +38,7 @@
     - { name: "alfred", tags: ["alfred","stage_1","sudo"], role: cask_app }
     - { name: "atext", role: cask_app, tags: ["atext","stage_1"] }
     - { role: path_finder, tags: ["path_finder","stage_1"] }
-    # - { name: "bettertouchtool", tags: ["bettertouchtool","stage_1"], role: cask_app } # TODO: Currently failing
+    - { name: "bettertouchtool", tags: ["bettertouchtool","stage_1"], role: cask_app }
     - { name: "the-unarchiver", tags: ["the_unarchiver","stage_1"], role: cask_app }
     - { name: "keyboard-maestro", tags: ["keyboard_maestro","stage_1","mac_os_10_10"], role: cask_app }
     - { role: skype, tags: ["skype","stage_1"] }
