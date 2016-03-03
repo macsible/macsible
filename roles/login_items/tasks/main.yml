@@ -9,4 +9,3 @@
 - name: Add apps to Login Items
   command: 'osascript -e ''tell application "System Events" to make new login item with properties { path: "/Applications/{{ item }}" } at end'''
   with_items: "{{ login_items_apps | intersect(installed_apps.stdout_lines) }}"
-  tags: login_items
