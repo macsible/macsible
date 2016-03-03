@@ -114,9 +114,12 @@
     - { role: login_items, tags: ["login_items","last"] }
 
   post_tasks:
+
     - osx_say:
         msg: "This playbook is done diddly done."
         voice: Fred
       tags: no_ci
+
     - debug:
         msg: "Some changes may not take effect until you've restarted your Mac."
+      tags: always
