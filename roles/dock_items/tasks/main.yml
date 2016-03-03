@@ -1,34 +1,5 @@
 ---
 
-- name: Set the icon size of Dock items
-  osx_defaults:
-    domain: com.apple.dock
-    key: tilesize
-    type: float
-    value: 30
-  notify:
-    - killall Dock
-
-- name: Set Dock orientation
-  command: defaults write com.apple.dock orientation -string "left"
-#   osx_defaults:
-#     domain: com.apple.dock
-#     key: orientation
-#     type: string
-#     value: "left"
-  notify:
-    - killall Dock
-
-- name: Automatically hide and show the Dock
-  osx_defaults:
-    domain: com.apple.dock
-    key: autohide
-    type: bool
-    # TODO: revert to true when done developing this role
-    value: false
-  notify:
-    - killall Dock
-
 - name: Wipe all default app icons from the Dock
   command: defaults write com.apple.dock persistent-apps -array
   notify:
