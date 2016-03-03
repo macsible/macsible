@@ -1,16 +1,16 @@
 ---
 
 login_items_apps:
-  - Flux
-  - Bartender
-  - Alfred 2
-  - Moom
-  - iTerm
-  - CrasPlan menu bar
-  - BetterTouchTool
-  - Dropbox
-  - aText
-  - Path Finder
-  - Keyboard Maestro Engine
-  - HazelHelper
-  - Google Photos Backup
+  - Flux.app
+  - Bartender.app
+  - Alfred 2.app
+  - Moom.app
+  - iTerm.app
+  - CrasPlan menu bar.app
+  - BetterTouchTool.app
+  - Dropbox.app
+  - aText.app
+  - Path Finder.app
+  - Keyboard Maestro Engine.app
+  - HazelHelper.app
+  - Google Photos Backup.app
