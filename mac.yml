@@ -104,7 +104,7 @@
     - { name: "doxie", tags: ["doxie","stage_5"], role: cask_app }
     - { name: "omnigraffle", tags: ["omnigraffle","stage_5"], role: cask_app }
     - { name: "appcleaner", tags: ["appcleaner","stage_5"], role: cask_app }
-    - { name: "github-desktop", tags: ["github-desktop","stage_5"], role: cask_app }
+    - { name: "github-desktop", tags: ["github_desktop","stage_5"], role: cask_app }
     - { role: steam, tags: ["steam","stage_5"] }
     - { name: "crashplan", tags: ["crashplan","stage_5","prompt"], role: cask_app }
 
