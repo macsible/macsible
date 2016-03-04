@@ -1,6 +1,6 @@
 # Staged installation using tags
 
-The roles listed in the main.yml playbook have been tagged so that they can be run individually or in groups (stages):
+The roles listed in the mac.yml playbook have been tagged so that they can be run individually or in groups (stages):
 
 - prep
 - stage_1
@@ -32,4 +32,8 @@ Project work (e.g. folder structures, cloned git repos).
 
 ### stage_4 & stage_5
 
-Remaining lower priority apps. Travis CI can skip `stage_5` to help speed up tests by not bothering to install non-critical apps whose installation is very simple.
+Remaining lower priority apps. Travis CI skips `stage_5` to help speed up tests by not bothering to install non-critical apps whose installation is very simple.
+
+### last
+
+Roles that must be run after other roles. These are typically roles that need to assess what apps have been installed before they can perform any actions (such as adding items to the Dock).

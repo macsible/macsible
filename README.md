@@ -17,11 +17,11 @@ See [here](docs/install_requirements.md) for assistance.
 
 ### Install dependencies
 
-A script is included to ensure the following dependencies are met:
+A script is included to ensure certain dependencies are met:
 
-- pip
-- Ansible
-- Any required Ansible roles via Ansible Galaxy
+- Install pip
+- Install Ansible
+- Download required Ansible Galaxy roles
 - Create a config.yml file (required)
 
 To execute this script run:
@@ -38,16 +38,16 @@ Default variables can be overridden in config.yml.
 
 ### Run the Ansible playbook
 
-At its simplest, the Ansible playbook can be run using the following command:
+The mac.yml Ansible playbook can be run using the following command:
 
 ```
-ansible-playbook main.yml -K
+ansible-playbook mac.yml -K
 ```
 
 To run only certain tags (e.g. `evernote` and `moom`):
 
 ```
-ansible-playbook main.yml -K -t "evernote,moom"
+ansible-playbook mac.yml -K -t "evernote,moom"
 ```
 
 ### Further docs
