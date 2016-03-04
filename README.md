@@ -38,7 +38,7 @@ Default variables can be overridden in config.yml.
 
 ### Run the Ansible playbook
 
-The mac.yml Ansible playbook can be run using the following command:
+The primary Ansible playbook file is called mac.yml and can be run using the following command (asks for sudo password):
 
 ```
 ansible-playbook mac.yml -K
@@ -48,6 +48,12 @@ To run only certain tags (e.g. `evernote` and `moom`):
 
 ```
 ansible-playbook mac.yml -K -t "evernote,moom"
+```
+
+You can see a full list of available tags by running the following command (Galaxy roles must be downloaded first, run `bash init.sh` if uncertain):
+
+```
+ansible-playbook mac.yml --list-tags
 ```
 
 ### Further docs
