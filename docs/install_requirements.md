@@ -1,8 +1,3 @@
-### Install Xcode
-
-Install Xcode from the App Store. When installed, launch Xcode and agree to the policy prompt.
-
-
 ### Install Command Line Developer Tools
 
 To install Xcode Command Line Developer Tools run the following:

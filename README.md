@@ -9,7 +9,6 @@
 Ensure the following requirements are already installed and working:
 
 - Mac OS 10.11 (El Capitan)
-- Xcode
 - Command Line Developer Tools
 
 See [here](docs/install_requirements.md) for assistance.
