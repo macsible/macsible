@@ -1,9 +1,9 @@
 "*":
   "atom-beautify":
     _analyticsUserId: "0d0704af-4cea-45f7-993e-e1ef93dc23a2"
+  "autocomplete-plus": {}
   "bottom-dock": {}
   "bracket-matcher":
-    autocompleteBrackets: false
     autocompleteSmartQuotes: false
     wrapSelectionsInBrackets: false
   build: {}
@@ -29,6 +29,8 @@
     showErrorPanel: false
   "markdown-preview":
     useGitHubStyle: true
+  "open-terminal-here":
+    command: "open -a iTerm.app \"$PWD\""
   pigments:
     ignoredScopes: [
       "\\.comment"
