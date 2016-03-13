@@ -14,6 +14,7 @@ dock_apps:
   - Evernote.app
   - Skitch.app
   - Calendar.app
+  - PhpStorm.app
   - Atom.app
   - Wunderlist.app
   - System Preferences.app
