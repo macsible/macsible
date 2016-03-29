@@ -6,8 +6,11 @@
     HOMEBREW_CASK_OPTS: --appdir={{ cask_app_appdir }}
   notify: brew cask cleanup
 
-- name: Set directory to store VMs (desktop)
-  command: defaults write org.virtualbox.app.VirtualBox NSNavLastRootDirectory -string "{{ virtualbox_desktop_vms_dir }}"
+- name: Symlink to directory to store VMs (desktop only)
+  file:
+    path: "/Users/{{ ansible_env.USER }}/VirtualBox VMs"
+    src: "{{ virtualbox_vms_dir }}"
+    state: link
+    force: yes
+  become: true
   when: system_type == "desktop"
-  notify:
-    - killall VirtualBox
