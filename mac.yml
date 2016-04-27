@@ -42,8 +42,8 @@
     # Stage 2: Essential dev
     # --------------------------------------------------------------------------
 
+    - { role: parallels-desktop, tags: ["parallels_desktop","stage_2" }
     - { role: vagrant, tags: ["vagrant","stage_2","sudo"] }
-    - { role: virtualbox, tags: ["virtualbox","stage_2","sudo"] }
     - { role: git, tags: ["git","stage_2"] }
     - { name: "git-extras", tags: ["git_extras","stage_2"], role: brew_pkg }
     - { role: composer, tags: ["composer","stage_2"] }
@@ -73,7 +73,6 @@
     # - { name: "bfg", tags: ["bfg","stage_4"], role: brew_pkg }
     - { name: "tree", tags: ["tree","stage_4"], role: brew_pkg }
     - { name: "istat-menus", role: cask_app, tags: ["istat_menus","stage_4"] }
-    - { name: "vmware-fusion", tags: ["vmware_fusion","stage_4"], role: cask_app, when: system_type == "desktop" }
     - { name: "firefox", tags: ["firefox","stage_4"], role: cask_app }
     - { name: "opera", tags: ["opera","stage_4"], role: cask_app }
     - { name: "opera-mobile-emulator", tags: ["opera_mobile_emulator","stage_4"], role: cask_app }
