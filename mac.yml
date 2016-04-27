@@ -42,7 +42,7 @@
     # Stage 2: Essential dev
     # --------------------------------------------------------------------------
 
-    - { role: parallels-desktop, tags: ["parallels_desktop","stage_2"] }
+    - { name: "parallels-desktop", tags: ["parallels_desktop","stage_2"], role: cask_app }
     - { role: vagrant, tags: ["vagrant","stage_2","sudo"] }
     - { role: git, tags: ["git","stage_2"] }
     - { name: "git-extras", tags: ["git_extras","stage_2"], role: brew_pkg }
