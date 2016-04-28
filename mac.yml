@@ -14,14 +14,11 @@
     - { role: osx, tags: ["osx","prep"] }
     - { role: ssh, tags: ["ssh","prep"] }
     - { role: spelling, tags: ["spelling","prep"] }
-    # Access to passwords for use in other installations
     - { name: "lastpass-cli", brew_install_options: "with-pinentry,with-doc", tags: ["lastpass_cli","prep"], role: brew_pkg }
-    # Access to synced app settings
     - { role: dropbox, tags: ["dropbox","prep"] }
-    # Better text editor
     - { role: atom, tags: ["atom","prep"] }
-    # Quick-peak access to the contents of more text file formats
     - { role: quick_look_plugins, tags: ["quick_look_plugins","prep"] }
+    - { name: "bettertouchtool", tags: ["bettertouchtool","prep"], role: cask_app }
 
     # Stage 1: Essential day-to-day
     # --------------------------------------------------------------------------
@@ -38,7 +35,6 @@
     - { name: "alfred", tags: ["alfred","stage_1","sudo"], role: cask_app }
     - { name: "atext", role: cask_app, tags: ["atext","stage_1"] }
     - { role: path_finder, tags: ["path_finder","stage_1"] }
-    - { name: "bettertouchtool", tags: ["bettertouchtool","stage_1"], role: cask_app }
     - { name: "the-unarchiver", tags: ["the_unarchiver","stage_1"], role: cask_app }
     - { name: "keyboard-maestro", tags: ["keyboard_maestro","stage_1","mac_os_10_10"], role: cask_app }
     - { role: skype, tags: ["skype","stage_1"] }
@@ -46,8 +42,8 @@
     # Stage 2: Essential dev
     # --------------------------------------------------------------------------
 
+    - { name: "parallels-desktop", tags: ["parallels_desktop","stage_2"], role: cask_app }
     - { role: vagrant, tags: ["vagrant","stage_2","sudo"] }
-    - { role: virtualbox, tags: ["virtualbox","stage_2","sudo"] }
     - { role: git, tags: ["git","stage_2"] }
     - { name: "git-extras", tags: ["git_extras","stage_2"], role: brew_pkg }
     - { role: composer, tags: ["composer","stage_2"] }
@@ -73,10 +69,10 @@
     # Stage 4: Remaining apps
     # --------------------------------------------------------------------------
     - { role: transmission, tags: ["transmission","stage_4"] }
-    - { name: "bfg", tags: ["bfg","stage_4"], role: brew_pkg }
+    # TODO: Currently failing for no apparent reason.
+    # - { name: "bfg", tags: ["bfg","stage_4"], role: brew_pkg }
     - { name: "tree", tags: ["tree","stage_4"], role: brew_pkg }
     - { name: "istat-menus", role: cask_app, tags: ["istat_menus","stage_4"] }
-    - { name: "vmware-fusion", tags: ["vmware_fusion","stage_4"], role: cask_app, when: system_type == "desktop" }
     - { name: "firefox", tags: ["firefox","stage_4"], role: cask_app }
     - { name: "opera", tags: ["opera","stage_4"], role: cask_app }
     - { name: "opera-mobile-emulator", tags: ["opera_mobile_emulator","stage_4"], role: cask_app }

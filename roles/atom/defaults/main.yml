@@ -11,6 +11,7 @@ atom_packages:
   - emmet
   - file-icons
   - git-plus
+  - git-time-machine
   - grunt-manager
   - gulp-manager
   - highlight-line

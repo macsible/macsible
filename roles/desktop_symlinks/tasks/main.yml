@@ -2,9 +2,10 @@
 
 - name: Create symlinks for certain OS X directories (desktop only)
   file:
-    path: ~/"{{ item }}"
-    src: /Volumes/Data/"{{ item }}"/
+    path: "/Users/{{ ansible_env.USER }}/{{ item }}"
+    src: "/Volumes/Data/{{ item }}/"
     state: link
     force: yes
   with_items: "{{ desktop_symlinks_dir_names }}"
+  become: true
   when: system_type == "desktop"

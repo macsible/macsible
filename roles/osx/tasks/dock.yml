@@ -5,7 +5,7 @@
     domain: com.apple.dock
     key: tilesize
     type: float
-    value: 30
+    value: 40
   notify:
     - killall Dock
 
@@ -24,7 +24,6 @@
     domain: com.apple.dock
     key: autohide
     type: bool
-    # TODO: revert to true when done developing this role
-    value: false
+    value: true
   notify:
     - killall Dock
