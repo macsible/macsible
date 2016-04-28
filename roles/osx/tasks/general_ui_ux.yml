@@ -102,3 +102,12 @@
     value: false
   notify:
     - killall
+
+- name: Reduce transparency
+  osx_defaults:
+    domain: com.apple.universalaccess
+    key: reduceTransparency
+    type: int
+    value: 1
+  notify:
+    - killall
