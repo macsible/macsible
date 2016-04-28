@@ -15,11 +15,12 @@
   with_items:
     - { key: 'Allow For Drawers', value: 1 }
     - { key: 'Application Mode', value: 1 }
-    - { key: 'Mouse Controls Grid', value: 1 }
     - { key: 'Mouse Controls Grid: Rows', value: 6 }
+    - { key: 'Mouse Controls Grid', value: 1 }
     - { key: 'Mouse Controls Include Custom Controls', value: 1 }
-    - { key: 'Snap', value: 1 }
     - { key: 'Snap: Ignore Bordering Edges And Corners', value: 1 }
+    - { key: 'Snap', value: 1 }
+    - { key: 'Stealth Mode', value: 1 }
     - { key: 'SUEnableAutomaticChecks', value: 1 }
   notify:
     - killall Moom
