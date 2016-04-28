@@ -4,7 +4,7 @@ projects_oss:
   - { dest: "vlad/vlad", repo: "https://github.com/hashbangcode/vlad.git" }
 
 projects_internal:
-  - { dest: "mac-playbook", repo: "https://github.com/danbohea/mac-playbook.git" }
+  - { dest: "macsible", repo: "https://github.com/danbohea/macsible.git" }
 
 projects_client:
   - { dest: "ansible-roles/drush", repo: "https://github.com/hashbangcode/ansible-role-drush.git" }
