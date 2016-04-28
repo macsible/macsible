@@ -6,7 +6,7 @@
     HOMEBREW_CASK_OPTS: --appdir={{ cask_app_appdir }}
   notify: brew cask cleanup
 
-- name: Set preferences
+- name: Set preferences (int)
   osx_defaults:
     domain: com.manytricks.Moom
     key: "{{ item.key }}"
@@ -21,5 +21,14 @@
     - { key: 'Snap', value: 1 }
     - { key: 'Snap: Ignore Bordering Edges And Corners', value: 1 }
     - { key: 'SUEnableAutomaticChecks', value: 1 }
+  notify:
+    - killall Moom
+
+- name: Set snap delay
+  osx_defaults:
+    domain: com.manytricks.Moom
+    key: Snap Delay
+    type: float
+    value: 0.4
   notify:
     - killall Moom
