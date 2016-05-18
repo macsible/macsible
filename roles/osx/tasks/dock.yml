@@ -10,12 +10,12 @@
     - killall Dock
 
 - name: Set Dock orientation
-  command: defaults write com.apple.dock orientation -string "left"
+  command: defaults write com.apple.dock orientation -string "bottom"
 #   osx_defaults:
 #     domain: com.apple.dock
 #     key: orientation
 #     type: string
-#     value: "left"
+#     value: "bottom"
   notify:
     - killall Dock
 
