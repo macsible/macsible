@@ -1,16 +1,9 @@
 ---
 
-- name: Ensure "TM_Excluded" directory exists (desktop)
-  file:
-    path: /Volumes/Data/{{ time_machine_ex_dir_name }}
-    state: directory
-  when: system_type == "desktop"
-
-- name: Ensure "TM_Excluded" directory exists (laptop)
+- name: Ensure excluded directory exists
   file:
     path: /Users/{{ ansible_env.USER }}/{{ time_machine_ex_dir_name }}
     state: directory
-  when: system_type == "laptop"
 
 # TODO: Adding Time Machine exclusions using tmutil doesn't seem to add anything
 # to the Time Machine GUI list of exclusions :(

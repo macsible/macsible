@@ -1,5 +1,0 @@
----
-
-dependencies:
-  - role: danbohea.homebrew
-  - role: system

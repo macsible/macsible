@@ -1,13 +1,5 @@
 ---
 
-- name: Symlink ~/Projects (desktop)
-  file:
-    path: ~/Projects
-    src: /Volumes/Data/Projects/
-    state: link
-    force: yes
-  when: system_type == "desktop"
-
 - name: Ensure ~/Projects directory exists
   file:
     path: ~/Projects

@@ -15,7 +15,7 @@
     - { role: ssh, tags: ["ssh","prep"] }
     - { role: spelling, tags: ["spelling","prep"] }
     - { name: "lastpass-cli", brew_install_options: "with-pinentry,with-doc", tags: ["lastpass_cli","prep"], role: brew_pkg }
-    - { role: dropbox, tags: ["dropbox","prep"] }
+    - { name: "dropbox", tags: ["dropbox","prep"], role: cask_app }
     - { role: atom, tags: ["atom","prep"] }
     - { role: quick_look_plugins, tags: ["quick_look_plugins","prep"] }
     - { name: "bettertouchtool", tags: ["bettertouchtool","prep"], role: cask_app }
@@ -25,7 +25,6 @@
 
     - { role: dotfiles, tags: ["dotfiles","stage_1"] }
     - { role: duti, tags: ["duti","stage_1"] }
-    - { role: desktop_symlinks, tags: ["desktop_symlinks","stage_1"] }
     - { role: time_machine, tags: ["time_machine","stage_1"] }
     - { role: google_chrome, tags: ["google_chrome","stage_1"] }
     - { role: moom, tags: ["moom","stage_1"] }
@@ -47,7 +46,7 @@
     - { role: git, tags: ["git","stage_2"] }
     - { name: "git-extras", tags: ["git_extras","stage_2"], role: brew_pkg }
     - { role: composer, tags: ["composer","stage_2"] }
-    - { role: rbenv, tags: ["rbenv","stage_2"] }
+    # - { role: rbenv, tags: ["rbenv","stage_2"] }
     - { role: node_pkgs, tags: ["node_pkgs","stage_2"] }
     - { role: pip_pkgs, tags: ["pip_pkgs","stage_2"] }
     - { name: "dash", tags: ["dash","stage_2"], role: cask_app }
@@ -75,18 +74,17 @@
     - { name: "istat-menus", role: cask_app, tags: ["istat_menus","stage_4"] }
     - { name: "firefox", tags: ["firefox","stage_4"], role: cask_app }
     - { name: "opera", tags: ["opera","stage_4"], role: cask_app }
-    - { name: "opera-mobile-emulator", tags: ["opera_mobile_emulator","stage_4"], role: cask_app }
+    # - { name: "opera-mobile-emulator", tags: ["opera_mobile_emulator","stage_4"], role: cask_app }
 
     # Stage 5: No-frills cask installed apps that CI can skip.
     # This makes for faster tests & keeps Travis log verbosity to a minimum.
     # --------------------------------------------------------------------------
 
-    - { name: "handbrake", tags: ["handbrake","stage_5"], role: cask_app, when: system_type == "desktop" }
     - { name: "postbox", tags: ["postbox","stage_5"], role: cask_app, when: system_type == "desktop" }
     - { name: "google-hangouts", tags: ["google_hangouts","stage_5"], role: cask_app }
     - { name: "hazel", tags: ["hazel","stage_5"], role: cask_app }
     - { name: "cakebrew", tags: ["cakebrew","stage_5"], role: cask_app }
-    - { name: "hipchat", tags: ["hipchat","stage_5"], role: cask_app }
+    # - { name: "hipchat", tags: ["hipchat","stage_5"], role: cask_app }
     - { name: "limechat", tags: ["limechat","stage_5"], role: cask_app }
     - { name: "daisydisk", tags: ["daisydisk","stage_5"], role: cask_app }
     - { name: "flash-player", tags: ["flash_player","stage_5"], role: cask_app }
@@ -97,12 +95,12 @@
     - { name: "vlc", tags: ["vlc","stage_5"], role: cask_app }
     - { name: "google-plus-auto-backup", role: cask_app, tags: ["google_plus_auto_backup","stage_5"] }
     - { name: "sketchup", role: cask_app, tags: ["sketchup","stage_5"] }
-    - { name: "bartender", role: cask_app, tags: ["bartender","stage_5"] }
+    # - { name: "bartender", role: cask_app, tags: ["bartender","stage_5"] }
     - { name: "doxie", tags: ["doxie","stage_5"], role: cask_app }
     - { name: "omnigraffle", tags: ["omnigraffle","stage_5"], role: cask_app }
     - { name: "appcleaner", tags: ["appcleaner","stage_5"], role: cask_app }
-    - { name: "github-desktop", tags: ["github_desktop","stage_5"], role: cask_app }
-    - { role: steam, tags: ["steam","stage_5"] }
+    # - { name: "github-desktop", tags: ["github_desktop","stage_5"], role: cask_app }
+    # - { role: steam, tags: ["steam","stage_5"] }
     - { name: "crashplan", tags: ["crashplan","stage_5","prompt"], role: cask_app }
 
     # Last

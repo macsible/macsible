@@ -1,5 +1,0 @@
----
-
-- name: killall VirtualBox
-  command: killall VirtualBox
-  ignore_errors: yes
