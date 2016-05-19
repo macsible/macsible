@@ -49,7 +49,7 @@ fi
 # http://stackoverflow.com/a/36987168
 if ! exists setuptools; then
     setStatusMessage "Installing setuptools"
-    sudo pip install --upgrade setuptools --user python
+    sudo pip install --upgrade setuptools
 fi
 
 # Install Ansible
