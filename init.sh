@@ -42,20 +42,20 @@ cp -n config_example.yml config.yml
 # Install pip
 if ! exists pip; then
     setStatusMessage "Installing pip"
-    sudo easy_install pip
+    sudo easy_install --quiet pip
 fi
 
 # Install setuptools
 # http://stackoverflow.com/a/36987168
 if ! exists setuptools; then
     setStatusMessage "Installing setuptools"
-    sudo pip install --upgrade setuptools
+    sudo pip install -q --upgrade setuptools
 fi
 
 # Install Ansible
 if ! exists ansible; then
     setStatusMessage "Installing Ansible"
-    sudo pip install ansible
+    sudo pip install -q ansible
 fi
 
 # Install Ansible Galaxy dependencies:
