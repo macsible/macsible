@@ -8,6 +8,7 @@ atom_packages:
   - autocomplete-plus
   - autocomplete-sass
   - bottom-dock
+  - double-tag
   - emmet
   - file-icons
   - git-plus
