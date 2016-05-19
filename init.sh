@@ -45,6 +45,13 @@ if ! exists pip; then
     sudo easy_install --quiet pip
 fi
 
+# Install setuptools
+# http://stackoverflow.com/a/36987168
+if ! exists setuptools; then
+    setStatusMessage "Installing setuptools"
+    pip install -q --upgrade setuptools --user python
+fi
+
 # Install Ansible
 if ! exists ansible; then
     setStatusMessage "Installing Ansible"
