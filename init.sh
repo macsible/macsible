@@ -40,10 +40,10 @@ setStatusMessage "Creating config.yml if absent"
 cp -n config_example.yml config.yml
 
 # Install pip
-if ! exists pip; then
-    setStatusMessage "Installing pip"
-    sudo easy_install --quiet pip
-fi
+# if ! exists pip; then
+setStatusMessage "Installing/upgrading pip"
+sudo easy_install --quiet --upgrade pip
+# fi
 
 # Install setuptools
 # http://stackoverflow.com/a/36987168
