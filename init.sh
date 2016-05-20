@@ -31,7 +31,7 @@ cp -n config_example.yml config.yml
 
 # Install pip
 setStatusMessage "Installing/upgrading pip"
-sudo easy_install --upgrade pip
+sudo easy_install pip
 
 # Install setuptools
 # http://stackoverflow.com/a/36987168
