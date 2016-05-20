@@ -22,16 +22,6 @@ function setStatusMessage {
   printf " --> ${BGreen}$1${Color_Off}\n" 1>&2
 }
 
-# Check whether a command exists - returns 0 if it does, 1 if it does not
-function exists {
-  if command -v $1 >/dev/null 2>&1
-  then
-    return 0
-  else
-    return 1
-  fi
-}
-
 # Install
 # ------------------------------------------------------------------------------
 
@@ -40,23 +30,17 @@ setStatusMessage "Creating config.yml if absent"
 cp -n config_example.yml config.yml
 
 # Install pip
-# if ! exists pip; then
 setStatusMessage "Installing/upgrading pip"
 sudo easy_install --upgrade pip
-# fi
 
 # Install setuptools
 # http://stackoverflow.com/a/36987168
-# if ! exists setuptools; then
 setStatusMessage "Installing setuptools"
 pip install --upgrade setuptools --user python
-# fi
 
 # Install Ansible
-# if ! exists ansible; then
 setStatusMessage "Installing Ansible"
 sudo pip install ansible
-# fi
 
 # Install Ansible Galaxy dependencies:
 setStatusMessage "Installing Ansible role dependencies"
