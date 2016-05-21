@@ -26,7 +26,7 @@ function setStatusMessage {
 # ------------------------------------------------------------------------------
 
 # Install pip
-setStatusMessage "Installing/upgrading pip"
+setStatusMessage "Installing pip"
 sudo easy_install pip
 
 # Install setuptools
