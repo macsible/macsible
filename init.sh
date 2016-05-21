@@ -38,6 +38,9 @@ function exists {
 # Install homebrew
 # ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
+# Update Homebrew
+brew update
+
 # Install pip
 # setStatusMessage "Installing pip"
 # sudo easy_install pip
