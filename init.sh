@@ -36,7 +36,7 @@ sudo easy_install pip
 
 # Install Ansible
 setStatusMessage "Installing Ansible"
-sudo pip install ansible
+sudo pip install ansible --quiet
 
 # Install Ansible Galaxy dependencies:
 setStatusMessage "Installing required Ansible Galaxy roles"
