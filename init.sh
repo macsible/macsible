@@ -25,9 +25,12 @@ function setStatusMessage {
 # Install
 # ------------------------------------------------------------------------------
 
+# Install homebrew
+# ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
 # Install pip
-setStatusMessage "Installing pip"
-sudo easy_install pip
+# setStatusMessage "Installing pip"
+# sudo easy_install pip
 
 # Install setuptools
 # http://stackoverflow.com/a/36987168
@@ -35,8 +38,9 @@ sudo easy_install pip
 # pip install --upgrade setuptools --user python
 
 # Install Ansible
-setStatusMessage "Installing Ansible"
-sudo pip install ansible --quiet
+# setStatusMessage "Installing Ansible"
+# sudo pip install ansible --quiet
+brew install ansible
 
 # Install Ansible Galaxy dependencies:
 setStatusMessage "Installing required Ansible Galaxy roles"
