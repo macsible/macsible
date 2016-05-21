@@ -31,8 +31,8 @@ sudo easy_install pip
 
 # Install setuptools
 # http://stackoverflow.com/a/36987168
-setStatusMessage "Installing setuptools"
-pip install --upgrade setuptools --user python
+# setStatusMessage "Installing setuptools"
+# pip install --upgrade setuptools --user python
 
 # Install Ansible
 setStatusMessage "Installing Ansible"
