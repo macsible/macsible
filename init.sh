@@ -22,6 +22,16 @@ function setStatusMessage {
   printf " --> ${BGreen}$1${Color_Off}\n" 1>&2
 }
 
+# Check whether a command exists - returns 0 if it does, 1 if it does not
+function exists {
+  if command -v $1 >/dev/null 2>&1
+  then
+    return 0
+  else
+    return 1
+  fi
+}
+
 # Install
 # ------------------------------------------------------------------------------
 
@@ -40,7 +50,9 @@ function setStatusMessage {
 # Install Ansible
 # setStatusMessage "Installing Ansible"
 # sudo pip install ansible --quiet
-brew install ansible
+if ! exists ansible; then
+  brew install ansible
+fi
 
 # Install Ansible Galaxy dependencies:
 setStatusMessage "Installing required Ansible Galaxy roles"
