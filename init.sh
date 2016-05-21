@@ -39,7 +39,7 @@ setStatusMessage "Installing Ansible"
 sudo pip install ansible
 
 # Install Ansible Galaxy dependencies:
-setStatusMessage "Installing Ansible role dependencies"
+setStatusMessage "Installing required Ansible Galaxy roles"
 ansible-galaxy install -r requirements.yml
 
 # Create config.yml
