@@ -45,5 +45,3 @@ ansible-galaxy install -r requirements.yml
 # Create config.yml
 setStatusMessage "Creating config.yml if absent"
 cp -n config_example.yml config.yml
-
-setStatusMessage "Initial setup complete"
