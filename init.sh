@@ -25,10 +25,6 @@ function setStatusMessage {
 # Install
 # ------------------------------------------------------------------------------
 
-# Create config.yml
-setStatusMessage "Creating config.yml if absent"
-cp -n config_example.yml config.yml
-
 # Install pip
 setStatusMessage "Installing/upgrading pip"
 sudo easy_install pip
@@ -45,5 +41,9 @@ sudo pip install ansible
 # Install Ansible Galaxy dependencies:
 setStatusMessage "Installing Ansible role dependencies"
 ansible-galaxy install -r requirements.yml
+
+# Create config.yml
+setStatusMessage "Creating config.yml if absent"
+cp -n config_example.yml config.yml
 
 setStatusMessage "Initial setup complete"
