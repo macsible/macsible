@@ -33,4 +33,4 @@ script:
   # - Skip rbenv role (takes too long, non-critical role).
   # - Skip roles that require Mac OS >= 10.10.
   # - Skip stage_5 roles as they don't *really* add much to the test.
-  - ansible-playbook mac.yml --skip-tags "mac_os_10_10,no_ci,rbenv,stage_5"
+  - ansible-playbook mac.yml --skip-tags "mac_os_10_10,no_ci,temp_no_ci,stage_5"
