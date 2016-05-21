@@ -5,10 +5,12 @@
 os: osx
 
 install:
+  # Debug: Print versions of relevant software
+  - python --version
   - bash init.sh
   # Run again to check response if deps are already installed.
   - bash init.sh
-  # Debug: Print installed versions
+  # Debug: Print versions of relevant software
   - pip --version
   - ansible --version
   # Install Ansible Lint
