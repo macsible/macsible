@@ -5,17 +5,16 @@
 os: osx
 
 install:
-  # Debug: Print versions of relevant software
+  # Debug info
   - python --version
+  # Run setup script
   - bash init.sh
-  # Run again to check response if deps are already installed.
-  - bash init.sh
-  # Debug: Print versions of relevant software
+  # Debug info
   - pip --version
   - ansible --version
   # Install Ansible Lint
   - sudo pip install -q ansible-lint
-  # Debug: Print Ansible facts
+  # Debug info
   # - ansible localhost -m setup
 
 script:
