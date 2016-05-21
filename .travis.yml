@@ -6,6 +6,8 @@ os: osx
 
 install:
   - bash init.sh
+  # Run again to check response if deps are already installed.
+  - bash init.sh
   # Debug: Print installed versions
   - pip --version
   - ansible --version
