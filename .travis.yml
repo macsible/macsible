@@ -28,12 +28,12 @@ script:
   - ansible-lint -x resources mac.yml
 
   # Custom playbook test for use in development only:
-  # - catches possible fails early
+  # - catch possible fails early
   # - tweak/uncomment as required
   # - ansible-playbook mac.yml --tags "duti"
 
   # Run Ansible playbook:
-  # - Skip tasks/roles that we no cause issues in Travis.
-  # - Skip roles that require Mac OS >= 10.10.
-  # - Skip stage_5 roles as they don't *really* add much to the test.
+  # - Skip tasks/roles that we no cause issues in Travis
+  # - Skip roles that require Mac OS >= 10.10
+  # - Skip stage_5 roles as they don't *really* add much to the test
   - ansible-playbook mac.yml --skip-tags "mac_os_10_10,no_ci,temp_no_ci,stage_5"
