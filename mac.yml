@@ -32,7 +32,6 @@
     - { role: evernote, tags: ["evernote","stage_1"] }
     - { name: "caffeine", tags: ["caffeine","stage_1","sudo"], role: cask_app }
     - { name: "alfred", tags: ["alfred","stage_1","sudo"], role: cask_app }
-    - { name: "atext", role: cask_app, tags: ["atext","stage_1"] }
     - { role: path_finder, tags: ["path_finder","stage_1"] }
     # TODO: Download currently failing.
     - { name: "the-unarchiver", tags: ["the_unarchiver","stage_1","temp_no_ci"], role: cask_app }
