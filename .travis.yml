@@ -10,6 +10,7 @@ install:
   # Run setup script
   - bash init.sh
   # Debug info
+  - python --version
   - pip --version
   - ansible --version
   # Install Ansible Lint
