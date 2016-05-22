@@ -59,4 +59,4 @@ ansible-playbook mac.yml --list-tags
 ### Further docs
 
 - [Installing requirements](docs/install_requirements.md)
-- [Staged installation using tags](docs/tags_stages.md)
+- [Stage by stage installation using tags](docs/tags_stages.md)
