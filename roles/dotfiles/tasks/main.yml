@@ -2,21 +2,21 @@
 
 - name: Clone dotfiles repo to {{ dotfiles_dir }}
   git:
-    repo: "{{ dotfiles_repo }}"
+    repo: "{{ dotfiles_repo_https }}"
     dest: "{{ dotfiles_dir }}"
     version: master
     accept_hostkey: yes
 
 # Command uses `basename` to return only filenames (excludes paths)
 # Source: http://superuser.com/a/620591
-- name: Get list of file names to symlink to
+- name: Get list of filenames to symlink to
   command: find . -type f -depth 1 -name ".*" -exec basename {} \;
   args:
     chdir: "{{ dotfiles_dir }}"
   register: dotfiles_to_symlink
   changed_when: false
 
-- name: Create symlinks to files in {{ dotfiles_dir }}
+- name: Create symlinks to files in dotfiles directory
   file:
     path: ~/{{ item }}
     src: "{{ dotfiles_dir }}/{{ item }}"
@@ -27,3 +27,10 @@
 - name: Reload .bash_profile
   shell: source ~/.bash_profile
   changed_when: false
+
+# TODO: Make idempotent
+- name: Set git remote URL to SSH
+  shell: git remote set-url origin "{{ dotfiles_repo_ssh | quote }}"
+  args:
+    chdir: "{{ dotfiles_dir }}"
+    warn: false
