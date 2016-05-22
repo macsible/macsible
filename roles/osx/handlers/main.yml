@@ -35,6 +35,6 @@
   command: killall Safari
   ignore_errors: yes
 
-  - name: killall Calendar
-    command: killall Calendar
-    ignore_errors: yes
+- name: killall Calendar
+  command: killall Calendar
+  ignore_errors: yes
