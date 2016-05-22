@@ -36,7 +36,9 @@ function exists {
 # ------------------------------------------------------------------------------
 
 # Install Homebrew
-# ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+if ! exists brew; then
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
 
 # Update Homebrew
 brew update
