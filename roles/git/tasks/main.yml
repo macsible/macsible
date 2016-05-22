@@ -29,13 +29,13 @@
 # ------------------------------------------------------------------------------
 
 - name: Configure push.default
-  command: git config --global push.default "{{git_push_default}}"
-  when: git_push_default_result.stdout != "{{git_push_default}}"
+  command: git config --global push.default "{{ git_push_default }}"
+  when: git_push_default_result.stdout != "{{ git_push_default }}"
 
 - name: Configure user.name
   command: git config --global user.name "{{ git_user_name }}"
-  when: git_user_email_result.stdout != "{{git_user_name}}"
+  when: git_user_email_result.stdout != "{{ git_user_name }}"
 
 - name: Configure user.email
   command: git config --global user.email "{{ git_user_email }}"
-  when: git_user_email_result.stdout != "{{git_user_email}}"
+  when: git_user_email_result.stdout != "{{ git_user_email }}"

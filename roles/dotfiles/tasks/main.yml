@@ -30,7 +30,7 @@
 
 # TODO: Make idempotent
 - name: Set git remote URL to SSH
-  shell: git remote set-url origin "{{ dotfiles_repo_ssh | quote }}"
+  shell: git remote set-url origin {{ dotfiles_repo_ssh }}
   args:
     chdir: "{{ dotfiles_dir }}"
     warn: false
