@@ -3,7 +3,6 @@
 # Filenames must include .app extension
 login_items_apps:
   - Flux.app
-  - Bartender.app
   - Alfred 3.app
   - Moom.app
   - iTerm.app
