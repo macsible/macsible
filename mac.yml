@@ -67,6 +67,7 @@
 
     # Stage 4: Remaining apps
     # --------------------------------------------------------------------------
+
     - { role: transmission, tags: ["transmission","stage_4"] }
     - { name: "bfg", tags: ["bfg","stage_4"], role: brew_pkg }
     - { name: "tree", tags: ["tree","stage_4"], role: brew_pkg }
@@ -79,7 +80,6 @@
     # This makes for faster tests & keeps Travis log verbosity to a minimum.
     # --------------------------------------------------------------------------
 
-    - { name: "postbox", tags: ["postbox","stage_5"], role: cask_app, when: system_type == "desktop" }
     - { name: "google-hangouts", tags: ["google_hangouts","stage_5"], role: cask_app }
     - { name: "hazel", tags: ["hazel","stage_5"], role: cask_app }
     - { name: "cakebrew", tags: ["cakebrew","stage_5"], role: cask_app }
