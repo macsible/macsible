@@ -2,14 +2,15 @@
 
 # Filenames must include .app extension
 login_items_apps:
-  - Flux.app
   - Alfred 3.app
-  - Moom.app
-  - iTerm.app
-  - CrasPlan menu bar.app
+  - aText.app
   - BetterTouchTool.app
+  - CrasPlan menu bar.app
   - Dropbox.app
-  - Path Finder.app
-  - Keyboard Maestro Engine.app
-  - HazelHelper.app
+  - Flux.app
   - Google Photos Backup.app
+  - HazelHelper.app
+  - iTerm.app
+  - Keyboard Maestro Engine.app
+  - Moom.app
+  - Path Finder.app

@@ -17,6 +17,7 @@
     - { name: "lastpass-cli", brew_install_options: "with-pinentry,with-doc", tags: ["lastpass_cli","prep"], role: brew_pkg }
     - { name: "dropbox", tags: ["dropbox","prep"], role: cask_app }
     - { role: atom, tags: ["atom","prep"] }
+    - { name: "atext", role: cask_app, tags: ["atext","stage_1"] }
     - { role: quick_look_plugins, tags: ["quick_look_plugins","prep"] }
     - { name: "bettertouchtool", tags: ["bettertouchtool","prep"], role: cask_app }
 
