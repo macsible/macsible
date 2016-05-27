@@ -1,4 +1,4 @@
 ---
 
 dependencies:
-  - role: danbohea.homebrew
+  - danbohea.homebrew
