@@ -1,4 +1,4 @@
 ---
 
-- src: danbohea.homebrew
+- src: https://github.com/danbohea/ansible-role-homebrew
   name: danbohea.homebrew
