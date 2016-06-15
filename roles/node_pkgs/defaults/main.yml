@@ -4,7 +4,7 @@ node_pkgs_list:
   - bower
   - generator-ctools-layout
   - generator-drupalmodule
-  # - generator-generator # TODO: Causes CI build to fail
+  - generator-generator
   - grunt-cli
   - gulp
   - yo
