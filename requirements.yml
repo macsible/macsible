@@ -5,5 +5,8 @@
 - src: https://github.com/danbohea/ansible-role-homebrew
   name: danbohea.homebrew
 
+- src: https://github.com/danbohea/ansible-role-google-chrome
+  name: danbohea.google-chrome
+
 - src: https://github.com/danbohea/ansible-role-skype
   name: danbohea.skype
