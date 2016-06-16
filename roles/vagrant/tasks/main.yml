@@ -11,6 +11,7 @@
     path: ~/.ssh
     state: directory
 
+# TODO: Apparently this isn't required in later versions of Vagrant. Check.
 - name: SSH config for local Vagrant development
   blockinfile:
     dest: ~/.ssh/config
