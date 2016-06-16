@@ -2,8 +2,19 @@
 
 # https://docs.travis-ci.com/user/osx-ci-environment
 
-os: osx
-osx_image: xcode7.3
+# Mac OS 10.11, 10.10 & 10.9
+matrix:
+  include:
+    - os: osx
+      osx_image: xcode7.3
+    - os: osx
+      osx_image: xcode7.1
+    - os: osx
+      osx_image: beta-xcode6.2
+  allow_failures:
+    - osx_image: xcode7.1
+    - osx_image: beta-xcode6.2
+  fast_finish: true
 
 install:
   # Debug info
