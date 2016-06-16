@@ -4,3 +4,6 @@
 
 - src: https://github.com/danbohea/ansible-role-homebrew
   name: danbohea.homebrew
+
+- src: https://github.com/danbohea/ansible-role-skype
+  name: danbohea.skype
