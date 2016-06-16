@@ -37,7 +37,7 @@
     # TODO: Download currently failing.
     - { name: "the-unarchiver", tags: ["the_unarchiver","stage_1","temp_no_ci"], role: cask_app }
     - { name: "keyboard-maestro", tags: ["keyboard_maestro","stage_1","mac_os_10_10"], role: cask_app }
-    - { role: skype, tags: ["skype","stage_1"] }
+    - { role: danbohea.skype, tags: ["skype","stage_1"] }
 
     # Stage 2: Essential dev
     # --------------------------------------------------------------------------
