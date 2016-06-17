@@ -19,7 +19,7 @@ See [here](docs/install_requirements.md) for assistance.
 A script is included to ensure certain dependencies are met:
 
 - Install Homebrew
-= Install separate Python (via Homebrew)
+- Install separate Python (via Homebrew)
 - Install Ansible (via Homebrew)
 - Download required Ansible Galaxy roles
 - Create a config.yml file (required)
