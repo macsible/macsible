@@ -13,7 +13,7 @@
 
     - { role: osx, tags: ["osx","prep"] }
     - { role: ssh, tags: ["ssh","prep"] }
-    - { role: spelling, tags: ["spelling","prep"] }
+    - { role: danbohea.spelling, tags: ["spelling","prep"] }
     - { name: "lastpass-cli", brew_install_options: "with-pinentry,with-doc", tags: ["lastpass_cli","prep"], role: brew_pkg }
     - { name: "dropbox", tags: ["dropbox","prep"], role: cask_app }
     - { role: atom, tags: ["atom","prep"] }
@@ -29,7 +29,7 @@
     - { role: time_machine, tags: ["time_machine","stage_1"] }
     - { role: danbohea.google-chrome, tags: ["google_chrome","stage_1"] }
     - { role: moom, tags: ["moom","stage_1"] }
-    - { role: flux, tags: ["flux","stage_1"] }
+    - { role: danbohea.flux, tags: ["flux","stage_1"] }
     - { role: evernote, tags: ["evernote","stage_1"] }
     - { name: "caffeine", tags: ["caffeine","stage_1","sudo"], role: cask_app }
     - { name: "alfred", tags: ["alfred","stage_1","sudo"], role: cask_app }
@@ -57,7 +57,7 @@
     - { name: "sequel-pro", tags: ["sequel_pro","stage_2"], role: cask_app }
     - { name: "transmit", tags: ["transmit","stage_2"], role: cask_app }
     - { name: "imageoptim", tags: ["imageoptim","stage_2"], role: cask_app }
-    - { role: sketch, tags: ["sketch","stage_2","mac_os_10_10"] }
+    - { role: danbohea.sketch, tags: ["sketch","stage_2","mac_os_10_10"] }
     - { name: "xscope", tags: ["xscope","stage_2"], role: cask_app }
     - { name: "phpstorm", tags: ["phpstorm","stage_2"], role: cask_app }
 

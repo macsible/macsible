@@ -16,3 +16,6 @@
 
 - src: https://github.com/danbohea/ansible-role-skype
   name: danbohea.skype
+
+- src: https://github.com/danbohea/ansible-role-spelling
+  name: danbohea.spelling
