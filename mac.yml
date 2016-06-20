@@ -14,7 +14,7 @@
     - { role: osx, tags: ["osx","prep"] }
     - { role: ssh, tags: ["ssh","prep"] }
     - { role: danbohea.spelling, tags: ["spelling","prep"] }
-    - { cask_app_name: "lastpass-cli", brew_install_options: "with-pinentry,with-doc", tags: ["lastpass_cli","prep"], role: brew_pkg }
+    - { brew_pkg_name: "lastpass-cli", brew_install_options: "with-pinentry,with-doc", tags: ["lastpass_cli","prep"], role: brew_pkg }
     - { cask_app_name: "dropbox", tags: ["dropbox","prep"], role: danbohea.cask-app }
     - { role: atom, tags: ["atom","prep"] }
     - { cask_app_name: "atext", role: danbohea.cask-app, tags: ["atext","stage_1"] }
@@ -45,7 +45,7 @@
     - { cask_app_name: "virtualbox", tags: ["virtualbox","stage_2"], role: danbohea.cask-app }
     - { role: vagrant, tags: ["vagrant","stage_2","sudo"] }
     - { role: git, tags: ["git","stage_2"] }
-    - { cask_app_name: "git-extras", tags: ["git_extras","stage_2"], role: brew_pkg }
+    - { brew_pkg_name: "git-extras", tags: ["git_extras","stage_2"], role: brew_pkg }
     - { role: composer, tags: ["composer","stage_2"] }
     # - { role: rbenv, tags: ["rbenv","stage_2","no_ci"] }
     - { role: node_pkgs, tags: ["node_pkgs","stage_2"] }
@@ -70,8 +70,8 @@
     # --------------------------------------------------------------------------
 
     - { role: transmission, tags: ["transmission","stage_4"] }
-    - { cask_app_name: "bfg", tags: ["bfg","stage_4"], role: brew_pkg }
-    - { cask_app_name: "tree", tags: ["tree","stage_4"], role: brew_pkg }
+    - { brew_pkg_name: "bfg", tags: ["bfg","stage_4"], role: brew_pkg }
+    - { brew_pkg_name: "tree", tags: ["tree","stage_4"], role: brew_pkg }
     - { cask_app_name: "istat-menus", role: danbohea.cask-app, tags: ["istat_menus","stage_4"] }
     - { cask_app_name: "firefox", tags: ["firefox","stage_4"], role: danbohea.cask-app }
     - { cask_app_name: "opera", tags: ["opera","stage_4"], role: danbohea.cask-app }
