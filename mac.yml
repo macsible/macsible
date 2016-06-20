@@ -29,7 +29,7 @@
     - { role: time_machine, tags: ["time_machine","stage_1"] }
     - { role: danbohea.google-chrome, tags: ["google_chrome","stage_1"] }
     - { role: moom, tags: ["moom","stage_1"] }
-    - { role: danbohea.flux, tags: ["flux","stage_1"] }
+    # - { role: danbohea.flux, tags: ["flux","stage_1"] }
     - { role: evernote, tags: ["evernote","stage_1"] }
     - { cask_app_name: "caffeine", tags: ["caffeine","stage_1","sudo"], role: danbohea.cask-app }
     - { cask_app_name: "alfred", tags: ["alfred","stage_1","sudo"], role: danbohea.cask-app }
