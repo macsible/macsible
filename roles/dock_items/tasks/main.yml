@@ -1,5 +1,14 @@
 ---
 
+# Command uses `basename` to return only filenames (excludes paths)
+# Source: http://superuser.com/a/620591
+- name: Get list of .app files in /Applications
+  command: find . -depth 1 -name "*.app" -exec basename {} \;
+  args:
+    chdir: /Applications
+  register: installed_apps
+  changed_when: false
+
 - name: Wipe all default app icons from the Dock
   command: defaults write com.apple.dock persistent-apps -array
   notify: killall Dock
