@@ -14,12 +14,12 @@
     - { role: osx, tags: ["osx","prep"] }
     - { role: ssh, tags: ["ssh","prep"] }
     - { role: danbohea.spelling, tags: ["spelling","prep"] }
-    - { name: "lastpass-cli", brew_install_options: "with-pinentry,with-doc", tags: ["lastpass_cli","prep"], role: brew_pkg }
-    - { name: "dropbox", tags: ["dropbox","prep"], role: cask_app }
+    - { cask_app_name: "lastpass-cli", brew_install_options: "with-pinentry,with-doc", tags: ["lastpass_cli","prep"], role: brew_pkg }
+    - { cask_app_name: "dropbox", tags: ["dropbox","prep"], role: danbohea.cask-app }
     - { role: atom, tags: ["atom","prep"] }
-    - { name: "atext", role: cask_app, tags: ["atext","stage_1"] }
+    - { cask_app_name: "atext", role: danbohea.cask-app, tags: ["atext","stage_1"] }
     - { role: quick_look_plugins, tags: ["quick_look_plugins","prep"] }
-    - { name: "bettertouchtool", tags: ["bettertouchtool","prep"], role: cask_app }
+    - { cask_app_name: "bettertouchtool", tags: ["bettertouchtool","prep"], role: danbohea.cask-app }
 
     # Stage 1: Essential day-to-day
     # --------------------------------------------------------------------------
@@ -31,35 +31,35 @@
     - { role: moom, tags: ["moom","stage_1"] }
     - { role: danbohea.flux, tags: ["flux","stage_1"] }
     - { role: evernote, tags: ["evernote","stage_1"] }
-    - { name: "caffeine", tags: ["caffeine","stage_1","sudo"], role: cask_app }
-    - { name: "alfred", tags: ["alfred","stage_1","sudo"], role: cask_app }
+    - { cask_app_name: "caffeine", tags: ["caffeine","stage_1","sudo"], role: danbohea.cask-app }
+    - { cask_app_name: "alfred", tags: ["alfred","stage_1","sudo"], role: danbohea.cask-app }
     - { role: path_finder, tags: ["path_finder","stage_1"] }
-    - { name: "the-unarchiver", tags: ["the_unarchiver","stage_1","temp_no_ci"], role: cask_app }
-    - { name: "keyboard-maestro", tags: ["keyboard_maestro","stage_1","mac_os_10_10"], role: cask_app }
+    - { cask_app_name: "the-unarchiver", tags: ["the_unarchiver","stage_1","temp_no_ci"], role: danbohea.cask-app }
+    - { cask_app_name: "keyboard-maestro", tags: ["keyboard_maestro","stage_1","mac_os_10_10"], role: danbohea.cask-app }
     - { role: danbohea.skype, tags: ["skype","stage_1"] }
 
     # Stage 2: Essential dev
     # --------------------------------------------------------------------------
 
-    - { name: "parallels-desktop", tags: ["parallels_desktop","stage_2"], role: cask_app }
-    - { name: "virtualbox", tags: ["virtualbox","stage_2"], role: cask_app }
+    - { cask_app_name: "parallels-desktop", tags: ["parallels_desktop","stage_2"], role: danbohea.cask-app }
+    - { cask_app_name: "virtualbox", tags: ["virtualbox","stage_2"], role: danbohea.cask-app }
     - { role: vagrant, tags: ["vagrant","stage_2","sudo"] }
     - { role: git, tags: ["git","stage_2"] }
-    - { name: "git-extras", tags: ["git_extras","stage_2"], role: brew_pkg }
+    - { cask_app_name: "git-extras", tags: ["git_extras","stage_2"], role: brew_pkg }
     - { role: composer, tags: ["composer","stage_2"] }
     # - { role: rbenv, tags: ["rbenv","stage_2","no_ci"] }
     - { role: node_pkgs, tags: ["node_pkgs","stage_2"] }
     - { role: pip_pkgs, tags: ["pip_pkgs","stage_2"] }
-    - { name: "dash", tags: ["dash","stage_2"], role: cask_app }
-    - { name: "iterm2", role: cask_app, tags: ["iterm2","stage_2"] }
-    - { name: "kaleidoscope", tags: ["kaleidoscope","stage_2"], role: cask_app }
+    - { cask_app_name: "dash", tags: ["dash","stage_2"], role: danbohea.cask-app }
+    - { cask_app_name: "iterm2", role: danbohea.cask-app, tags: ["iterm2","stage_2"] }
+    - { cask_app_name: "kaleidoscope", tags: ["kaleidoscope","stage_2"], role: danbohea.cask-app }
     - { role: tower, tags: ["tower","stage_2"] }
-    - { name: "sequel-pro", tags: ["sequel_pro","stage_2"], role: cask_app }
-    - { name: "transmit", tags: ["transmit","stage_2"], role: cask_app }
-    - { name: "imageoptim", tags: ["imageoptim","stage_2"], role: cask_app }
+    - { cask_app_name: "sequel-pro", tags: ["sequel_pro","stage_2"], role: danbohea.cask-app }
+    - { cask_app_name: "transmit", tags: ["transmit","stage_2"], role: danbohea.cask-app }
+    - { cask_app_name: "imageoptim", tags: ["imageoptim","stage_2"], role: danbohea.cask-app }
     - { role: danbohea.sketch, tags: ["sketch","stage_2","mac_os_10_10"] }
-    - { name: "xscope", tags: ["xscope","stage_2"], role: cask_app }
-    - { name: "phpstorm", tags: ["phpstorm","stage_2"], role: cask_app }
+    - { cask_app_name: "xscope", tags: ["xscope","stage_2"], role: danbohea.cask-app }
+    - { cask_app_name: "phpstorm", tags: ["phpstorm","stage_2"], role: danbohea.cask-app }
 
     # Stage 3: Projects
     # --------------------------------------------------------------------------
@@ -70,37 +70,37 @@
     # --------------------------------------------------------------------------
 
     - { role: transmission, tags: ["transmission","stage_4"] }
-    - { name: "bfg", tags: ["bfg","stage_4"], role: brew_pkg }
-    - { name: "tree", tags: ["tree","stage_4"], role: brew_pkg }
-    - { name: "istat-menus", role: cask_app, tags: ["istat_menus","stage_4"] }
-    - { name: "firefox", tags: ["firefox","stage_4"], role: cask_app }
-    - { name: "opera", tags: ["opera","stage_4"], role: cask_app }
-    # - { name: "opera-mobile-emulator", tags: ["opera_mobile_emulator","stage_4"], role: cask_app }
+    - { cask_app_name: "bfg", tags: ["bfg","stage_4"], role: brew_pkg }
+    - { cask_app_name: "tree", tags: ["tree","stage_4"], role: brew_pkg }
+    - { cask_app_name: "istat-menus", role: danbohea.cask-app, tags: ["istat_menus","stage_4"] }
+    - { cask_app_name: "firefox", tags: ["firefox","stage_4"], role: danbohea.cask-app }
+    - { cask_app_name: "opera", tags: ["opera","stage_4"], role: danbohea.cask-app }
+    # - { cask_app_name: "opera-mobile-emulator", tags: ["opera_mobile_emulator","stage_4"], role: danbohea.cask-app }
 
     # Stage 5: No-frills cask installed apps that CI can skip.
     # This makes for faster tests & keeps Travis log verbosity to a minimum.
     # --------------------------------------------------------------------------
 
-    - { name: "google-hangouts", tags: ["google_hangouts","stage_5"], role: cask_app }
-    - { name: "hazel", tags: ["hazel","stage_5"], role: cask_app }
-    - { name: "cakebrew", tags: ["cakebrew","stage_5"], role: cask_app }
-    # - { name: "hipchat", tags: ["hipchat","stage_5"], role: cask_app }
-    - { name: "limechat", tags: ["limechat","stage_5"], role: cask_app }
-    - { name: "daisydisk", tags: ["daisydisk","stage_5"], role: cask_app }
-    - { name: "flash-player", tags: ["flash_player","stage_5"], role: cask_app }
-    - { name: "google-drive", tags: ["google_drive","stage_5"], role: cask_app }
-    - { name: "libreoffice", tags: ["libreoffice","stage_5"], role: cask_app }
-    - { name: "name-mangler", tags: ["name_mangler","stage_5"], role: cask_app }
-    - { name: "skitch", tags: ["skitch","stage_5"], role: cask_app }
-    - { name: "vlc", tags: ["vlc","stage_5"], role: cask_app }
-    - { name: "google-plus-auto-backup", role: cask_app, tags: ["google_plus_auto_backup","stage_5"] }
-    - { name: "sketchup", role: cask_app, tags: ["sketchup","stage_5"] }
-    # - { name: "bartender", role: cask_app, tags: ["bartender","stage_5"] }
-    - { name: "doxie", tags: ["doxie","stage_5"], role: cask_app }
-    - { name: "omnigraffle", tags: ["omnigraffle","stage_5"], role: cask_app }
-    - { name: "appcleaner", tags: ["appcleaner","stage_5"], role: cask_app }
+    - { cask_app_name: "google-hangouts", tags: ["google_hangouts","stage_5"], role: danbohea.cask-app }
+    - { cask_app_name: "hazel", tags: ["hazel","stage_5"], role: danbohea.cask-app }
+    - { cask_app_name: "cakebrew", tags: ["cakebrew","stage_5"], role: danbohea.cask-app }
+    # - { cask_app_name: "hipchat", tags: ["hipchat","stage_5"], role: danbohea.cask-app }
+    - { cask_app_name: "limechat", tags: ["limechat","stage_5"], role: danbohea.cask-app }
+    - { cask_app_name: "daisydisk", tags: ["daisydisk","stage_5"], role: danbohea.cask-app }
+    - { cask_app_name: "flash-player", tags: ["flash_player","stage_5"], role: danbohea.cask-app }
+    - { cask_app_name: "google-drive", tags: ["google_drive","stage_5"], role: danbohea.cask-app }
+    - { cask_app_name: "libreoffice", tags: ["libreoffice","stage_5"], role: danbohea.cask-app }
+    - { cask_app_name: "name-mangler", tags: ["name_mangler","stage_5"], role: danbohea.cask-app }
+    - { cask_app_name: "skitch", tags: ["skitch","stage_5"], role: danbohea.cask-app }
+    - { cask_app_name: "vlc", tags: ["vlc","stage_5"], role: danbohea.cask-app }
+    - { cask_app_name: "google-plus-auto-backup", role: danbohea.cask-app, tags: ["google_plus_auto_backup","stage_5"] }
+    - { cask_app_name: "sketchup", role: danbohea.cask-app, tags: ["sketchup","stage_5"] }
+    # - { cask_app_name: "bartender", role: danbohea.cask-app, tags: ["bartender","stage_5"] }
+    - { cask_app_name: "doxie", tags: ["doxie","stage_5"], role: danbohea.cask-app }
+    - { cask_app_name: "omnigraffle", tags: ["omnigraffle","stage_5"], role: danbohea.cask-app }
+    - { cask_app_name: "appcleaner", tags: ["appcleaner","stage_5"], role: danbohea.cask-app }
     # - { role: steam, tags: ["steam","stage_5"] }
-    - { name: "crashplan", tags: ["crashplan","stage_5","prompt"], role: cask_app }
+    - { cask_app_name: "crashplan", tags: ["crashplan","stage_5","prompt"], role: danbohea.cask-app }
 
     # Last
     # --------------------------------------------------------------------------

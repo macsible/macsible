@@ -3,7 +3,7 @@
 - name: Install Tower
   homebrew_cask: name=tower state=present
   environment:
-    HOMEBREW_CASK_OPTS: --appdir={{ cask_app_appdir }}
+    HOMEBREW_CASK_OPTS: --appdir={{ homebrew_cask_appdir }}
   notify: brew cask cleanup
 
 # TODO: Add iTerm2 dep?
