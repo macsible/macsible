@@ -16,7 +16,7 @@ install:
   - pip --version
   - ansible --version
   # Install Ansible Lint
-  - sudo pip install -q ansible-lint
+  # - sudo pip install -q ansible-lint
   # Debug info
   # - ansible localhost -m setup
 
@@ -27,7 +27,7 @@ script:
   # Playbook lint check
   # https://github.com/willthames/ansible-lint
   # "resources" is excluded to sidestep warnings about use of curl & git etc.
-  - ansible-lint -x resources mac.yml
+  # - ansible-lint -x resources mac.yml
 
   # Custom playbook test for use in development only:
   # - catch possible fails early
