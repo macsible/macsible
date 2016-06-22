@@ -4,10 +4,8 @@
 
 <small>^ If the badge above is grey and says "build | error" don't worry, it's likely the build has just timed out. This project takes forever to test!</small>
 
-> **Disclaimer**: This is still a fairly opinionated project. Attempts to make it more flexible are ongoing, but for now please consider it work in progress for my personal use.
-
-- **Currently**, Macsible is the current state of the playbook that I use to setup 2 different Macs. It uses various Ansible Galaxy roles to achieve that (search Ansible Galaxy for [roles tagged "macsible"](https://galaxy.ansible.com/list#/roles?page=1&page_size=10&tags=macsible)).
-- **Eventually**, Macsible will be a fairly unopinionated framework for other people to do the same.
+- **Currently**, Macsible is the personal playbook that I use to setup 2 different Macs. It uses various Ansible Galaxy roles to achieve that (search Ansible Galaxy for [roles tagged "macsible"](https://galaxy.ansible.com/list#/roles?page=1&page_size=10&tags=macsible)).
+- **Eventually**, Macsible will be a fairly unopinionated framework for other people to do the same and hopefully contribute back to.
 - **In the meantime**, feel free to fork, raise issues etc. I'd love to hear people's thoughts.
 
 
