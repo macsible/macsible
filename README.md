@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/danbohea/macsible.svg?branch=master)](https://travis-ci.org/danbohea/macsible)
 
+<small>^ If the badge above is grey and says "build | error" don't worry, it's likely the build has just timed out. This project takes forever to test!</small>
+
 > **Disclaimer**: This is still a fairly opinionated project. Attempts to make it more flexible are ongoing, but for now please consider it work in progress for my personal use.
 
 - **Currently**, Macsible is the current state of the playbook that I use to setup 2 different Macs. It uses various Ansible Galaxy roles to achieve that (search Ansible Galaxy for [roles tagged "macsible"](https://galaxy.ansible.com/list#/roles?page=1&page_size=10&tags=macsible)).
