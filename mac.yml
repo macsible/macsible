@@ -48,7 +48,6 @@
     - { cask_app_name: "virtualbox", tags: ["virtualbox","stage_2"], role: danbohea.cask-app }
     - { role: vagrant, tags: ["vagrant","stage_2","sudo"] }
     - { role: git, tags: ["git","stage_2"] }
-    - { brew_pkg_name: "git-extras", tags: ["git_extras","stage_2"], role: brew_pkg }
     - { role: composer, tags: ["composer","stage_2"] }
     # - { role: rbenv, tags: ["rbenv","stage_2","no_ci"] }
     - { role: node_pkgs, tags: ["node_pkgs","stage_2"] }
