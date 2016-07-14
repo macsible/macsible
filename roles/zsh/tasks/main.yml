@@ -10,8 +10,6 @@
   register: zsh_location
   changed_when: false
 
-- debug: var=zsh_location
-
 - name: Add new Zsh location to /etc/shells
   lineinfile:
     dest: /etc/shells
