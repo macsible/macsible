@@ -10,6 +10,7 @@ dock_apps:
   - Path Finder.app
   - Dash.app
   - Skype.app
+  - Slack.app
   - Google Chrome.app
   - Evernote.app
   - Skitch.app
@@ -19,7 +20,6 @@ dock_apps:
   - Wunderlist.app
   - System Preferences.app
   - xScope.app
-  - iTerm.app
   - Tower.app
   - Transmit.app
   - Parallels Desktop.app
