@@ -1,7 +1,6 @@
 ---
 
 # Restarts a bunch of OS X apps & processes.
-# Terminal intentionally excluded.
 - name: killall
   command: killall "{{ item }}" > /dev/null 2>&1
   with_items:
@@ -25,10 +24,6 @@
 
 - name: killall SystemUIServer
   command: killall SystemUIServer
-  ignore_errors: yes
-
-- name: killall Terminal
-  command: killall Terminal
   ignore_errors: yes
 
 - name: killall Safari

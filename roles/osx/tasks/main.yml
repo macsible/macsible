@@ -17,7 +17,6 @@
 - include: screen.yml
 - include: ssd.yml
 - include: spotlight.yml
-- include: terminal.yml
 - include: textedit.yml
 - include: time_machine.yml
 - include: trackpad_mouse.yml

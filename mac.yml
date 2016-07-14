@@ -20,10 +20,12 @@
     - { cask_app_name: "atext", role: danbohea.cask-app, tags: ["atext","stage_1"] }
     - { role: quick_look_plugins, tags: ["quick_look_plugins","prep"] }
     - { cask_app_name: "bettertouchtool", tags: ["bettertouchtool","prep"], role: danbohea.cask-app }
+    - { role: terminal, tags: ["terminal","prep"] }
 
     # Stage 1: Essential day-to-day
     # --------------------------------------------------------------------------
 
+    - { role: zsh, tags: ["zsh","stage_1"] }
     - { role: dotfiles, tags: ["dotfiles","stage_1"] }
     - { role: duti, tags: ["duti","stage_1"] }
     - { role: time_machine, tags: ["time_machine","stage_1"] }

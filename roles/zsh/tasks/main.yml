@@ -1,0 +1,28 @@
+---
+
+- name: Install Zsh via Homebrew
+  homebrew:
+    name: zsh
+  notify: brew cleanup
+
+- name: Register location of new Zsh
+  command: which zsh
+  register: zsh_location
+  changed_when: false
+
+- debug: var=zsh_location
+
+- name: Add new Zsh location to /etc/shells
+  lineinfile:
+    dest: /etc/shells
+    line: "{{ zsh_location.stdout }}"
+  become: true
+
+- name: Make new Zsh the default shell
+  user: name={{ ansible_env.USER }} shell={{ zsh_location.stdout }}
+  become: true
+
+- name: Clone oh-my-zsh
+  git:
+    repo: https://github.com/robbyrussell/oh-my-zsh
+    dest: ~/.oh-my-zsh
