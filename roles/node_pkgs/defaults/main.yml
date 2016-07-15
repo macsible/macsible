@@ -6,4 +6,5 @@ node_pkgs_list:
   - generator-drupalmodule
   - grunt-cli
   - gulp
+  - imageoptim-cli
   - yo
