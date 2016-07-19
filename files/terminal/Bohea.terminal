@@ -179,6 +179,8 @@
 	</data>
 	<key>FontAntialias</key>
 	<true/>
+	<key>FontHeightSpacing</key>
+	<real>1.25</real>
 	<key>ProfileCurrentVersion</key>
 	<real>2.04</real>
 	<key>SelectionColor</key>
