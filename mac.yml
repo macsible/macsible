@@ -34,8 +34,7 @@
     - { role: danbohea.flux, tags: ["flux","stage_1"] }
     - { role: evernote, tags: ["evernote","stage_1"] }
     - { cask_app_name: "caffeine", tags: ["caffeine","stage_1","sudo"], role: danbohea.cask-app }
-    # TODO: Cask is still peddling v2 of Alfred, keep this commented out until they update to v3.
-    # - { cask_app_name: "alfred", tags: ["alfred","stage_1","sudo"], role: danbohea.cask-app }
+    - { cask_app_name: "alfred", tags: ["alfred","stage_1","sudo"], role: danbohea.cask-app }
     - { role: path_finder, tags: ["path_finder","stage_1"] }
     - { cask_app_name: "the-unarchiver", tags: ["the_unarchiver","stage_1","temp_no_ci"], role: danbohea.cask-app }
     - { cask_app_name: "keyboard-maestro", tags: ["keyboard_maestro","stage_1","mac_os_10_10"], role: danbohea.cask-app }
