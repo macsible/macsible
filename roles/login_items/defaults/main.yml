@@ -1,6 +1,6 @@
 ---
 
-# Filenames must include .app extension
+# Filenames must include .app extension.
 login_items_apps:
   - Alfred 3.app
   - aText.app

@@ -1,11 +1,7 @@
 ---
 
-# - List order will effect order in Dock
-# - Filenames must include .app extension
-# - Works with any type of app:
-#   - App Store app
-#   - Cask app
-#   - System app
+# List order will effect order in Dock.
+# Filenames must include .app extension.
 dock_apps:
   - Path Finder.app
   - Dash.app
