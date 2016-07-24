@@ -22,3 +22,6 @@
 
 - src: https://github.com/danbohea/ansible-role-spelling
   name: danbohea.spelling
+
+- src: https://github.com/danbohea/ansible-role-dock-items.git
+  name: danbohea.dock-items

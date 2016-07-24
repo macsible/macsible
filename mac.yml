@@ -109,7 +109,7 @@
     # Last
     # --------------------------------------------------------------------------
 
-    - { role: dock_items, tags: ["dock_items","last","always"] }
+    - { role: danbohea.dock-items, tags: ["dock_items","last","always"] }
     - { role: login_items, tags: ["login_items","last","always"] }
 
   post_tasks:
