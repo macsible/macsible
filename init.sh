@@ -53,7 +53,7 @@ fi
 
 # Install Ansible Galaxy dependencies:
 setStatusMessage "Installing required Ansible Galaxy roles"
-ansible-galaxy install -r requirements.yml
+ansible-galaxy install -r requirements.yml --force
 
 # Create config.yml
 setStatusMessage "Creating config.yml if absent"
