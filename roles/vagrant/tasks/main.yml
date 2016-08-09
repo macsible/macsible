@@ -2,8 +2,6 @@
 
 - name: Install Vagrant
   homebrew_cask: name=vagrant state=present
-  environment:
-    HOMEBREW_CASK_OPTS: --appdir={{ homebrew_cask_appdir }}
   notify: brew cask cleanup
 
 - name: Ensure ~/.ssh/ exists

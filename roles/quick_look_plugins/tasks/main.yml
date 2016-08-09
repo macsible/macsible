@@ -4,7 +4,5 @@
 
 - name: Install Quick Look plugins
   homebrew_cask: name={{ item }} state=present
-  environment:
-    HOMEBREW_CASK_OPTS: --appdir={{ homebrew_cask_appdir }}
   with_items: "{{ quick_look_plugins_list }}"
   notify: brew cask cleanup

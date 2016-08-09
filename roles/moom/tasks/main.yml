@@ -2,8 +2,6 @@
 
 - name: Install Moom
   homebrew_cask: name=moom state=present
-  environment:
-    HOMEBREW_CASK_OPTS: --appdir={{ homebrew_cask_appdir }}
   notify: brew cask cleanup
 
 - name: Set preferences (int)
