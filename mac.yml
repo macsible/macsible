@@ -25,7 +25,7 @@
     # Stage 1: Essential day-to-day
     # --------------------------------------------------------------------------
 
-    - { role: zsh, tags: ["zsh","stage_1"] }
+    # - { role: zsh, tags: ["zsh","stage_1"] }
     - { role: dotfiles, tags: ["dotfiles","stage_1"] }
     - { role: duti, tags: ["duti","stage_1"] }
     - { role: time_machine, tags: ["time_machine","stage_1"] }
