@@ -7,7 +7,7 @@ atom_packages:
   - atom-beautify
   - autoclose-html
   - autocomplete-plus
-  - autocomplete-sass
+  # - autocomplete-sass # Currently failing on installation
   - bottom-dock
   - double-tag
   - emmet
