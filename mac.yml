@@ -60,8 +60,7 @@
     - { role: danbohea.sketch, tags: ["sketch","stage_2","mac_os_10_10"] }
     - { cask_app_name: "xscope", tags: ["xscope","stage_2"], role: danbohea.cask-app }
     - { cask_app_name: "phpstorm", tags: ["phpstorm","stage_2"], role: danbohea.cask-app }
-    # TODO: Latest version of Slack has setup bugs.
-    # - { cask_app_name: "slack", tags: ["slack","stage_2"], role: danbohea.cask-app }
+    - { cask_app_name: "slack", tags: ["slack","stage_2"], role: danbohea.cask-app }
 
     # Stage 3: Projects
     # --------------------------------------------------------------------------
