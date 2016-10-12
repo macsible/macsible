@@ -6,6 +6,17 @@
 os: osx
 osx_image: xcode7.3
 
+# macOS 10.11 & 10.12
+# matrix:
+#   include:
+#     - os: osx
+#       osx_image: xcode7.3
+#     - os: osx
+#       osx_image: xcode8
+#   allow_failures:
+#     - osx_image: xcode8
+#   fast_finish: true
+
 install:
   # Debug info
   - python --version
