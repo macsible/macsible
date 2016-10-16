@@ -23,6 +23,5 @@
   become: true
 
 - name: Update composer
-  command:
-    composer self-update
+  composer: "self-update"
   become: true
