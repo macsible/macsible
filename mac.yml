@@ -29,7 +29,7 @@
     - { role: dotfiles, tags: ["dotfiles","stage_1"] }
     - { role: duti, tags: ["duti","stage_1"] }
     - { role: time_machine, tags: ["time_machine","stage_1"] }
-    - { cask_app_name: "firefox", tags: ["firefox","stage_1"], role: danbohea.cask-app }
+    - { role: danbohea.google-chrome, tags: ["google_chrome","stage_1"] }
     - { role: moom, tags: ["moom","stage_1"] }
     - { role: danbohea.flux, tags: ["flux","stage_1"] }
     - { role: evernote, tags: ["evernote","stage_1"] }
@@ -74,7 +74,7 @@
     - { brew_pkg_name: "bfg", tags: ["bfg","stage_4"], role: brew_pkg }
     - { brew_pkg_name: "tree", tags: ["tree","stage_4"], role: brew_pkg }
     - { cask_app_name: "istat-menus", role: danbohea.cask-app, tags: ["istat_menus","stage_4"] }
-    - { role: danbohea.google-chrome, tags: ["google_chrome","stage_4"] }
+    - { cask_app_name: "firefox", tags: ["firefox","stage_4"], role: danbohea.cask-app }
     - { cask_app_name: "opera", tags: ["opera","stage_4"], role: danbohea.cask-app }
     # - { cask_app_name: "opera-mobile-emulator", tags: ["opera_mobile_emulator","stage_4"], role: danbohea.cask-app }
 
