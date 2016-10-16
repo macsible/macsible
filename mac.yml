@@ -100,7 +100,7 @@
     - { cask_app_name: "doxie", tags: ["doxie","stage_5"], role: danbohea.cask-app }
     - { cask_app_name: "omnigraffle", tags: ["omnigraffle","stage_5"], role: danbohea.cask-app }
     - { cask_app_name: "appcleaner", tags: ["appcleaner","stage_5"], role: danbohea.cask-app }
-    # - { role: steam, tags: ["steam","stage_5"] }
+    - { role: steam, tags: ["steam","stage_5"] }
     - { cask_app_name: "diskmaker-x", tags: ["diskmaker_x","stage_5"], role: danbohea.cask-app }
     - { cask_app_name: "crashplan", tags: ["crashplan","stage_5","prompt"], role: danbohea.cask-app }
     - { cask_app_name: "harvest", tags: ["harvest","stage_5"], role: danbohea.cask-app }
