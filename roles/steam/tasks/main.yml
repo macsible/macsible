@@ -15,7 +15,7 @@
 - name: Create symlink for Steam directory
   file:
     path: "~/Library/Application Support/Steam"
-    src: {{ steam_symlink_src }}
+    src: "{{ steam_symlink_src }}"
     state: link
     force: yes
   when: steam_symlink_src != ""
