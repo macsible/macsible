@@ -13,6 +13,7 @@
 # - name: Exclude certain directories from Time Machine backups (desktop)
 #   shell: tmutil addexclusion {{ item }}
 #   with_items: "{{ time_machine_exclusions_desktop }}"
+#   # TODO: Variable no longer available, use another condition
 #   when: system_type == "desktop"
 
 # TODO: Make idempotent
@@ -20,6 +21,7 @@
 # - name: Exclude certain directories from Time Machine backups (laptop)
 #   shell: tmutil addexclusion {{ item }}
 #   with_items: "{{ time_machine_exclusions_laptop }}"
+#   # TODO: Variable no longer available, use another condition
 #   when: system_type == "laptop"
 
 - name: Show Time Machine in menu bar
