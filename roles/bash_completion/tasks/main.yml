@@ -1,0 +1,14 @@
+---
+
+- name: Install Bash Completion
+  homebrew: name=bash-completion
+  notify: brew cleanup
+
+- name: Tap the completions repository
+  homebrew_tap: tap=homebrew/completions
+
+- name: Install completion formulae
+  homebrew:
+    name: homebrew/completions/{{ item }}
+  with_items: "{{ bash_completion_formulae }}"
+  notify: brew cleanup

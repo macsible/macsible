@@ -1,0 +1,8 @@
+---
+bash_completion_formulae:
+  - brew-cask-completion
+  - composer-completion
+  - docker-completion
+  - docker-compose-completion
+  - docker-machine-completion
+  - vagrant-completion
