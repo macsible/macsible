@@ -70,6 +70,7 @@
     # Stage 4: Remaining apps
     # --------------------------------------------------------------------------
 
+    - { cask_app_name: "docker", tags: ["docker","stage_4"], role: danbohea.cask-app }
     - { role: transmission, tags: ["transmission","stage_4"] }
     - { brew_pkg_name: "bfg", tags: ["bfg","stage_4"], role: brew_pkg }
     - { brew_pkg_name: "tree", tags: ["tree","stage_4"], role: brew_pkg }
