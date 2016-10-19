@@ -1,4 +1,7 @@
 ---
+
+# https://github.com/Homebrew/homebrew-completions
+
 bash_completion_formulae:
   - brew-cask-completion
   - composer-completion

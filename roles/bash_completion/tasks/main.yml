@@ -1,11 +1,15 @@
 ---
 
+# http://davidalger.com/development/bash-completion-on-os-x-with-brew
+
 - name: Install Bash Completion
   homebrew: name=bash-completion
   notify: brew cleanup
 
 - name: Tap the completions repository
   homebrew_tap: tap=homebrew/completions
+
+# https://github.com/Homebrew/homebrew-completions
 
 - name: Install completion formulae
   homebrew:
