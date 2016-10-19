@@ -57,4 +57,8 @@ ansible-galaxy install -r requirements.yml --force
 
 # Create config.yml
 setStatusMessage "Creating config.yml if absent"
-cp -n config_example.yml config.yml
+cp -n config.example.yml config.yml
+
+# Create config.local.yml
+setStatusMessage "Creating config.local.yml if absent"
+cp -n config.example.yml config.local.yml

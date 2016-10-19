@@ -5,6 +5,7 @@
 
   vars_files:
     - config.yml
+    - config.local.yml
 
   roles:
 
