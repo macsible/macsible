@@ -6,7 +6,7 @@
 
 # NOTE: ~/.duti should be provided by the dotfiles role
 
-- name: Check that ~/.duti exists
+- name: Check that ~/.duti preferences file exists
   file:
     path: ~/.duti
     state: file
