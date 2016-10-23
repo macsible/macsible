@@ -1,6 +1,6 @@
 # Macsible
 
-[![Build Status](https://travis-ci.org/danbohea/macsible.svg?branch=master)](https://travis-ci.org/danbohea/macsible)
+[![Build Status](https://travis-ci.org/macsible/macsible.svg?branch=master)](https://travis-ci.org/macsible/macsible)
 
 - **Currently**, Macsible is the personal playbook that I use to setup 2 different Macs. It uses various Ansible Galaxy roles to achieve that (search Ansible Galaxy for [roles tagged "macsible"](https://galaxy.ansible.com/list#/roles?page=1&page_size=10&tags=macsible)).
 - **Eventually**, Macsible will be a fairly unopinionated framework for other people to do the same and hopefully contribute back to.
