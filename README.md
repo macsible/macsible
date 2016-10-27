@@ -2,10 +2,6 @@
 
 [![Build Status](https://travis-ci.org/macsible/macsible.svg?branch=master)](https://travis-ci.org/macsible/macsible)
 
-- **Currently**, Macsible is the personal playbook that I use to setup 2 different Macs. It uses various Ansible Galaxy roles to achieve that (search Ansible Galaxy for [roles tagged "macsible"](https://galaxy.ansible.com/list#/roles?page=1&page_size=10&tags=macsible)).
-- **Eventually**, Macsible will be a fairly unopinionated framework for other people to do the same and hopefully contribute back to.
-- **In the meantime**, feel free to fork, raise issues etc. I'd love to hear people's thoughts.
-
 
 ### Requirements
 
@@ -24,10 +20,10 @@ A script is included to ensure certain dependencies are met:
 - Install Homebrew
 - Install separate Python (via Homebrew)
 - Install Ansible (via Homebrew)
+- Create required files in not present: config.yml, config.local.yml, mac.yml, requirements.yml
 - Download required Ansible Galaxy roles
-- Create a config.yml file (required)
 
-To execute this script run:
+To execute this script run from the same location as this README.md file:
 
 ```
 bash init.sh
@@ -38,6 +34,8 @@ bash init.sh
 
 Default variables can be overridden in config.yml.
 
+config.local.yml can be used to override config.yml which can be useful when you need to use different values for just a few variables on a specifiv system. By default config.local.yml is ignored by git.
+
 
 ### Run the Ansible playbook
 
@@ -47,19 +45,8 @@ The primary Ansible playbook file is called mac.yml and can be run using the fol
 ansible-playbook mac.yml -K
 ```
 
-To run only certain tags (e.g. `evernote` and `moom`):
+To run only certain tags (e.g. `firefox` and `flux`):
 
 ```
-ansible-playbook mac.yml -K -t "evernote,moom"
+ansible-playbook mac.yml -K -t "firefox,flux"
 ```
-
-You can see a full list of available tags by running the following command (Galaxy roles must be downloaded first, run `bash init.sh` if uncertain):
-
-```
-ansible-playbook mac.yml --list-tags
-```
-
-### Further docs
-
-- [Installing requirements](docs/install_requirements.md)
-- [Stage by stage installation using tags](docs/tags_stages.md)
