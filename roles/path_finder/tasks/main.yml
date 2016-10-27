@@ -1,5 +1,0 @@
----
-
-- name: Install Path Finder
-  homebrew_cask: name=path-finder state=present
-  notify: brew cask cleanup

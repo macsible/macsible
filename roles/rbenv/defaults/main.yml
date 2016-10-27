@@ -1,7 +1,0 @@
----
-
-rbenv_brew_packages:
-  - rbenv
-  - ruby-build
-
-rbenv_default_ruby_version: "2.1.2"
