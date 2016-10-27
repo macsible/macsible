@@ -37,6 +37,15 @@ Default variables can be overridden in config.yml.
 config.local.yml can be used to override config.yml which can be useful when you need to use different values for just a few variables on a specific system. By default config.local.yml is ignored by git.
 
 
+### Updating externally sourced roles
+
+If you decide to add/edit the roles listed in requirements.yml (highly encouraged!) then you'll need to make sure that those dependencies are in place before running your playbook:
+
+```
+ansible-galaxy install -r requirements.yml --force
+```
+
+
 ### Run the Ansible playbook
 
 The primary Ansible playbook file is called mac.yml and can be run using the following command (asks for sudo password):
@@ -49,13 +58,4 @@ To run only certain tags (e.g. `firefox` and `flux`):
 
 ```
 ansible-playbook mac.yml -K -t "firefox,flux"
-```
-
-
-## Updating externally sourced roles
-
-If you decide to add/edit the roles listed in requirements.yml (highly encouraged!) then you'll need to make sure that those dependencies are in place before running your playbook:
-
-```
-ansible-galaxy install -r requirements.yml --force
 ```
