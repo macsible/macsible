@@ -53,19 +53,19 @@ fi
 
 # Create requirements.yml
 setStatusMessage "Creating requirements.yml if absent"
-cp -n templates/requirements.yml requirements.yml
+cp -n src/requirements.yml requirements.yml
 
 # Create mac.yml
 setStatusMessage "Creating mac.yml if absent"
-cp -n templates/mac.yml mac.yml
+cp -n src/mac.yml mac.yml
 
 # Create config.yml
 setStatusMessage "Creating config.yml if absent"
-cp -n templates/config.yml config.yml
+cp -n src/config.yml config.yml
 
 # Create config.local.yml
 setStatusMessage "Creating config.local.yml if absent"
-cp -n templates/config.yml config.local.yml
+cp -n src/config.yml config.local.yml
 
 # Install Ansible Galaxy dependencies:
 setStatusMessage "Installing required Ansible Galaxy roles"
