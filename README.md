@@ -13,6 +13,11 @@ Ensure the following requirements are already installed and working:
 See [here](docs/install_requirements.md) for assistance.
 
 
+## Installation & usage
+
+*NOTE: All commands listed on this page are to be run from the same location as this README.md file.*
+
+
 ### Install dependencies
 
 A script is included to ensure certain dependencies are met:
@@ -23,7 +28,7 @@ A script is included to ensure certain dependencies are met:
 - Create required files in not present: config.yml, config.local.yml, mac.yml, requirements.yml
 - Download required Ansible Galaxy roles
 
-To execute this script run from the same location as this README.md file:
+To execute this script run:
 
 ```
 bash init.sh
