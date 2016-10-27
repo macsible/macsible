@@ -22,10 +22,10 @@ See [here](docs/install_requirements.md) for assistance.
 
 A script is included to ensure certain dependencies are met:
 
-- Install Homebrew
-- Install separate Python (via Homebrew)
-- Install Ansible (via Homebrew)
-- Create required files in not present: config.yml, config.local.yml, mac.yml, requirements.yml
+- Install Homebrew (if not already installed)
+- Install separate Python (via Homebrew if not already installed)
+- Install Ansible (via Homebrew if not already installed)
+- Create required files if not present: config.yml, config.local.yml, mac.yml, requirements.yml
 - Download required Ansible Galaxy roles
 
 To execute this script run:
