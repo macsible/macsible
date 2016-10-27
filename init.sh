@@ -51,14 +51,22 @@ if ! exists ansible; then
   brew install ansible
 fi
 
-# Install Ansible Galaxy dependencies:
-setStatusMessage "Installing required Ansible Galaxy roles"
-ansible-galaxy install -r requirements.yml --force
+# Create requirements.yml
+setStatusMessage "Creating requirements.yml if absent"
+cp -n templates/requirements.yml requirements.yml
+
+# Create mac.yml
+setStatusMessage "Creating mac.yml if absent"
+cp -n templates/mac.yml mac.yml
 
 # Create config.yml
 setStatusMessage "Creating config.yml if absent"
-cp -n config.example.yml config.yml
+cp -n templates/config.yml config.yml
 
 # Create config.local.yml
 setStatusMessage "Creating config.local.yml if absent"
-cp -n config.example.yml config.local.yml
+cp -n templates/config.yml config.local.yml
+
+# Install Ansible Galaxy dependencies:
+setStatusMessage "Installing required Ansible Galaxy roles"
+ansible-galaxy install -r requirements.yml --force
