@@ -6,17 +6,6 @@
 os: osx
 osx_image: xcode7.3
 
-# macOS 10.11 & 10.12
-# matrix:
-#   include:
-#     - os: osx
-#       osx_image: xcode7.3
-#     - os: osx
-#       osx_image: xcode8
-#   allow_failures:
-#     - osx_image: xcode8
-#   fast_finish: true
-
 install:
   # Debug info
   - python --version
@@ -40,12 +29,6 @@ script:
   # "resources" is excluded to sidestep warnings about use of curl & git etc.
   # - ansible-lint -x resources mac.yml
 
-  # Custom playbook test for use in development only:
-  # - catch possible fails early
-  # - tweak/uncomment as required
-  # - ansible-playbook mac.yml --tags "duti"
-
   # Run Ansible playbook:
   # - Skip tasks/roles that we know cause issues in Travis
-  # - Skip stage 3/4/5 roles as they don't *really* add much to the test
-  - ansible-playbook mac.yml --skip-tags "no_ci,temp_no_ci,stage_3,stage_4,stage_5"
+  - ansible-playbook mac.yml --skip-tags "no_ci"
