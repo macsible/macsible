@@ -15,20 +15,10 @@ install:
   - python --version
   - pip --version
   - ansible --version
-  # Install Ansible Lint
-  # - sudo pip install -q ansible-lint
-  # Debug info
-  # - ansible localhost -m setup
 
 script:
   # Playbook syntax check
   - ansible-playbook mac.yml --syntax-check
-
-  # Playbook lint check
-  # https://github.com/willthames/ansible-lint
-  # "resources" is excluded to sidestep warnings about use of curl & git etc.
-  # - ansible-lint -x resources mac.yml
-
   # Run Ansible playbook:
   # - Skip tasks/roles that we know cause issues in Travis
   - ansible-playbook mac.yml --skip-tags "no_ci"
