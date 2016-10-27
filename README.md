@@ -34,7 +34,7 @@ bash init.sh
 
 Default variables can be overridden in config.yml.
 
-config.local.yml can be used to override config.yml which can be useful when you need to use different values for just a few variables on a specifiv system. By default config.local.yml is ignored by git.
+config.local.yml can be used to override config.yml which can be useful when you need to use different values for just a few variables on a specific system. By default config.local.yml is ignored by git.
 
 
 ### Run the Ansible playbook
