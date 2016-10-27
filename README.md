@@ -50,3 +50,12 @@ To run only certain tags (e.g. `firefox` and `flux`):
 ```
 ansible-playbook mac.yml -K -t "firefox,flux"
 ```
+
+
+## Updating externally sourced roles
+
+If you decide to add/edit the roles listed in requirements.yml (highly encouraged!) then you'll need to make sure that those dependencies are in place before running your playbook:
+
+```
+ansible-galaxy install -r requirements.yml --force
+```
