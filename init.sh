@@ -35,20 +35,14 @@ function exists {
 # Install
 # ------------------------------------------------------------------------------
 
-# Install Homebrew
-if ! exists brew; then
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+# Install pip
+if ! exists pip; then
+  sudo easy_install pip
 fi
-
-# Update Homebrew
-brew update
-
-# Install Python, separate from version that ships with OS X
-brew install python
 
 #  Install Ansible
 if ! exists ansible; then
-  brew install ansible
+  sudo pip install ansible --quiet
 fi
 
 # Create requirements.yml
