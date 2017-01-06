@@ -10,9 +10,12 @@ matrix:
     # macOS 10.11
     - os: osx
       osx_image: xcode8
+    # macOS 10.10
+    - os: osx
+      osx_image: xcode6.4
   allow_failures:
-    # macOS 10.12
-    - osx_image: xcode8.2
+    # macOS 10.10
+    - osx_image: xcode6.4
   fast_finish: true
 
 install:
