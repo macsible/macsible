@@ -7,7 +7,7 @@
 
 Ensure the following requirements are already installed and working:
 
-- macOS 10.11 (El Capitan)
+- macOS 10.10, 10.11 or 10.12
 - Command Line Developer Tools
 
 See [here](docs/install_requirements.md) for assistance.
