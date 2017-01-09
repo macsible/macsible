@@ -37,11 +37,13 @@ function exists {
 
 # Install pip
 if ! exists pip; then
+  setStatusMessage "Installing pip"
   sudo easy_install pip
 fi
 
 #  Install Ansible
 if ! exists ansible; then
+  setStatusMessage "Installing Ansible"
   sudo pip install ansible --quiet
 fi
 
