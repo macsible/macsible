@@ -5,7 +5,7 @@
 
 ### Requirements
 
-Ensure the following requirements are already installed and working:
+Ensure the following requirements are already installed and working on your local system:
 
 - macOS 10.10, 10.11 or 10.12
 - Command Line Developer Tools
@@ -13,9 +13,18 @@ Ensure the following requirements are already installed and working:
 See [here](docs/install_requirements.md) for assistance.
 
 
-## Installation & usage
+## Forking and customisation
 
-*NOTE: All commands listed on this page are to be run from the same location as this README.md file.*
+1. Fork the repository at [https://github.com/macsible/macsible](https://github.com/macsible/macsible).
+2. Clone the fork to your local system (this is now the repository you will use to store your own customisations).
+3. Navigate to the local clone using your terminal app of choice.
+4. Follow the usage instructions below.
+5. Commit and push any customisations to your local clone back upstream to your fork.
+
+
+## Usage
+
+*NOTE: All commands below are to be run from the same location as this README.md file.*
 
 
 ### Install dependencies
@@ -43,7 +52,7 @@ config.local.yml can be used to override config.yml which can be useful when you
 
 ### Updating externally sourced roles
 
-If you decide to add/edit the roles listed in requirements.yml (highly encouraged!) then you'll need to make sure that those dependencies are in place before running your playbook:
+If you decide to add/edit the roles listed in requirements.yml (highly encouraged!) then you'll need to make sure that those dependencies are in place before running your playbook. After editing requirements.yml you'll want to run the following command before running your playbook:
 
 ```
 ansible-galaxy install -r requirements.yml --force
@@ -63,3 +72,7 @@ To run only certain tags (e.g. `firefox` and `flux`):
 ```
 ansible-playbook mac.yml -K -t "firefox,flux"
 ```
+
+## Examples
+
+You can see a working example of a forked and customised repository at [https://github.com/danbohea/macsible](https://github.com/danbohea/macsible)
