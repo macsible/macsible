@@ -7,6 +7,12 @@
     - config.yml
     - config.local.yml
 
+  pre_tasks:
+    - fail:
+        msg: "The system is not running macOS."
+      when: ansible_os_family != "Darwin"
+      tags: always
+
   roles:
 
     # Prep
