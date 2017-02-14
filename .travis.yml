@@ -1,5 +1,8 @@
 ---
 
+env:
+  - secure: "CYMgjslIUTyvfBF7GjYl+ew8DILNRAZleLOqYuSyYf5QeISiJotaplo0FG6qqFfPju3+16F+FizBncXVefXb3H2gMpHocgOprnPEXCy07gFRQROTqr7ii07J8pLB73uZeV+aFXI69tQ1YDcJdLyYRKF7rYvShPD/UEL+RtSNSgEQxOb6thU8/Aprukb2VLd1YfUDRkjy401+B0y5Qg9Lf0jVi1bMf125GfM49D3O/gaAv+BVDkItyneV7bfVurmkWAARd5AP6zeVo+F7zKeAvtcxD+APbQThZZJb2Qfy0Vqjq4IffJuUv7Zis0dVR/2Y0ZZWhW3GvQOODTP68ZymnkbyZ0TTKzAMtzHBmaOnJ6bj/5uCFilP5UXvcujZSogiLTC2s8V8kIwX6MnfNPNEtU592CrVHCWTiFHSrhySn1rV/jjctxmFcO+BIyH7dmaKwJlEvFNNDLJqds5JB2dQ7xfjNShaz/pBnOub9FdRUFeh2kAr3TQwqlmTna5voh6D0/m0USt7PolZepnsZg+vKZHO6gIfUurgaB5eZv8G6Agz49SrudqNakP4ZeY3T3aF47jGUzyXiQ7zXPwumMqQCceRxrM7cEnZNpWvpJRgc8f7YL0IJbApfdFKUbV3Un5ZJQdBVtVrQaja+rZBS4zOTUDDa4iWw3ClzacbOxnJuBk="
+
 # https://docs.travis-ci.com/user/osx-ci-environment
 
 matrix:
@@ -33,3 +36,8 @@ script:
   # Run Ansible playbook:
   # - Skip tasks/roles that we know cause issues in Travis
   - ansible-playbook mac.yml --skip-tags "no_ci"
+
+after_success:
+  - "curl -o /tmp/travis-automerge https://raw.githubusercontent.com/cdown/travis-automerge/master/travis-automerge"
+  - "chmod a+x /tmp/travis-automerge"
+  - "BRANCHES_TO_MERGE_REGEX='dev' BRANCH_TO_MERGE_INTO=master GITHUB_REPO=macsible/macsible /tmp/travis-automerge"
