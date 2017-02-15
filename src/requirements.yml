@@ -2,8 +2,7 @@
 
 # TODO: Using repo address as src to avoid "name must be a byte string" error in Ansible 2.1.0.0
 
-- src: https://github.com/danbohea/ansible-role-cask-app
-  name: danbohea.cask-app
+- src: danbohea.cask-app
 
 - src: https://github.com/danbohea/ansible-role-homebrew
   name: danbohea.homebrew
