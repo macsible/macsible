@@ -41,7 +41,7 @@ if ! exists pip; then
   sudo easy_install pip
 fi
 
-#  Install Ansible
+# Install Ansible
 if ! exists ansible; then
   setStatusMessage "Installing Ansible"
   sudo pip install ansible --quiet
