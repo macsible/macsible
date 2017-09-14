@@ -21,6 +21,7 @@ See [here](docs/install_requirements.md) for assistance.
 4. Follow the usage instructions below.
 5. Commit and push any customisations to your local clone back upstream to your fork.
 
+You can see a working example of a forked and customised repository at [https://github.com/danbohea/macsible](https://github.com/danbohea/macsible)
 
 ## Usage
 
@@ -72,7 +73,3 @@ To run only certain tags (e.g. `firefox` and `flux`):
 ```
 ansible-playbook mac.yml -K -t "firefox,flux"
 ```
-
-## Examples
-
-You can see a working example of a forked and customised repository at [https://github.com/danbohea/macsible](https://github.com/danbohea/macsible)
