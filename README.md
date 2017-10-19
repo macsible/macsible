@@ -7,7 +7,7 @@
 
 Ensure the following requirements are already installed and working on your local system:
 
-- macOS 10.10, 10.11 or 10.12
+- [macOS](https://support.apple.com/en-us/HT201372) 10.10, 10.11 or 10.12
 - Command Line Developer Tools
 
 See [here](docs/install_requirements.md) for assistance.
