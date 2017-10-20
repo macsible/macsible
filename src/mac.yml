@@ -8,9 +8,10 @@
     - config.local.yml
 
   pre_tasks:
-    - name: Ensure host is running macOS
-      fail: msg="The host (target) system is not running macOS."
-      when: ansible_os_family != "Darwin"
+    - name: Ensure target system is running macOS
+      assert:
+        that: ansible_os_family is "Darwin"
+        msg: "The target system is not running macOS."
       tags: always
 
   roles:
