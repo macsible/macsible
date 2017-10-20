@@ -9,7 +9,7 @@
 
   pre_tasks:
 
-    - name: Verify Ansible meets Macsible's version requirements.
+    - name: Verify Ansible version.
       assert:
         that: "ansible_version.full | version_compare('2.1', '>=')"
         msg: "You must update Ansible to at least 2.1 to use this version of Macsible."
@@ -17,8 +17,14 @@
 
     - name: Verify target system is running macOS.
       assert:
-        that: "ansible_os_family == 'Darwin'"
+        that: "ansible_distribution == 'MacOSX'"
         msg: "The target system is not running macOS."
+      tags: always
+
+    - name: Verify macOS version.
+      assert:
+        that: "ansible_distribution_version | version_compare('10.10', '>=')"
+        msg: "The target system must be running macOS 10.10 or higher to use this version of Macsible."
       tags: always
 
   roles:
