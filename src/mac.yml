@@ -8,10 +8,17 @@
     - config.local.yml
 
   pre_tasks:
-    - name: Ensure target system is running macOS
+
+    - name: Verify target system is running macOS.
       assert:
         that: ansible_os_family is "Darwin"
         msg: "The target system is not running macOS."
+      tags: always
+
+    - name: Verify Ansible meets Macsible's version requirements.
+      assert:
+        that: "ansible_version.full | version_compare('2.1', '>=')"
+        msg: "You must update Ansible to at least 2.1 to use this version of Macsible."
       tags: always
 
   roles:
