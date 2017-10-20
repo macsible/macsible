@@ -11,7 +11,7 @@
 
     - name: Verify target system is running macOS.
       assert:
-        that: "ansible_os_family is 'Darwin'"
+        that: "ansible_os_family == 'Darwin'"
         msg: "The target system is not running macOS."
       tags: always
 
