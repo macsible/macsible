@@ -5,21 +5,25 @@
 
   roles:
 
-    # Prep
-    # --------------------------------------------------------------------------
+    # The following roles are included in requirements.yml.
+    # "Required" roles are downloaded from remote sources.
 
-    - { role: danbohea.spelling, tags: ["spelling","prep"] }
+    # Command to download required roles (init.sh runs this command too):
+    # ansible-galaxy install -r requirements.yml --force
 
-    # Stage 1: Essential day-to-day
-    # --------------------------------------------------------------------------
+    # Ansible Galaxy docs:
+    # http://docs.ansible.com/ansible/latest/galaxy.html
 
-    - { role: danbohea.flux, tags: ["flux","stage_1"] }
-    - { cask_app_name: "the-unarchiver", tags: ["the_unarchiver","stage_1"], role: danbohea.cask-app }
 
-    # Last
-    # --------------------------------------------------------------------------
+    # Basic role example
+    - { role: danbohea.spelling, tags: ["spelling"] }
 
-    - { role: danbohea.dock-items, tags: ["dock_items","last","always"] }
+    # Passing a vairiable to a role.
+    - { role: danbohea.cask-app, cask_app_name: "muzzle", tags: ["muzzle"] }
+
+    # Using the "always" tag on a role to ensure it always runs,
+    # no matter what what tags you instructed Ansible to run.
+    - { role: danbohea.dock-items, tags: ["dock_items","always"] }
 
   post_tasks:
 
