@@ -1,6 +1,6 @@
 ---
 - name: Mac custom
-  inventory: all
+  hosts: all
   connection: local
 
   tasks:
