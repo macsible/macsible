@@ -1,5 +1,7 @@
 ---
 
+- src: danbohea.cask-app
+  version: master
 - src: danbohea.flux
   version: master
 - src: danbohea.spelling
