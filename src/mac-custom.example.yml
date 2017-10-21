@@ -7,7 +7,7 @@
 
     # Prep
     # --------------------------------------------------------------------------
-    
+
     - block:
       - include_role:
           name: danbohea.spelling
@@ -28,18 +28,16 @@
         vars:
           cask_app_name: "the-unarchiver"
         tags: the_unarchiver
-
+        
       tags: stage_1
 
     # Last
     # --------------------------------------------------------------------------
 
     - block:
-
       - include_role:
           name: danbohea.dock-items
         tags: dock_items
-
       tags: [last, always]
 
   post_tasks:
