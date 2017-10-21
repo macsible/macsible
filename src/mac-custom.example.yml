@@ -7,33 +7,40 @@
 
     # Prep
     # --------------------------------------------------------------------------
-    - include_role:
-        name: danbohea.spelling
-      tags: spelling
-    # - { role: danbohea.spelling, tags: ["spelling","prep"] }
+    
+    - block:
+      - include_role:
+          name: danbohea.spelling
+        tags: spelling
+      tags: prep
 
     # Stage 1: Essential day-to-day
     # --------------------------------------------------------------------------
 
-    - include_role:
-        name: danbohea.flux
-      tags: flux
+    - block:
 
-    - include_role:
-        name: danbohea.cask-app
-      vars:
-        cask_app_name: "the-unarchiver"
-      tags: the_unarchiver
-    # - { role: danbohea.flux, tags: ["flux","stage_1"] }
-    # - { cask_app_name: "the-unarchiver", tags: ["the_unarchiver","stage_1"], role: danbohea.cask-app }
+      - include_role:
+          name: danbohea.flux
+        tags: flux
+
+      - include_role:
+          name: danbohea.cask-app
+        vars:
+          cask_app_name: "the-unarchiver"
+        tags: the_unarchiver
+
+      tags: stage_1
 
     # Last
     # --------------------------------------------------------------------------
 
-    - include_role:
-        name: danbohea.dock-items
-      tags: dock_items
-    # - { role: danbohea.dock-items, tags: ["dock_items","last","always"] }
+    - block:
+
+      - include_role:
+          name: danbohea.dock-items
+        tags: dock_items
+
+      tags: [last, always]
 
   post_tasks:
 
