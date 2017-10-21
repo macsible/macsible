@@ -5,25 +5,54 @@
 
   roles:
 
-    # The following roles are included in requirements.yml.
-    # "Required" roles are downloaded from remote sources.
+    # --------------------------------------------------------------------------
 
-    # Command to download required roles (init.sh runs this command too):
-    # ansible-galaxy install -r requirements.yml --force
+    # Requiring roles
+    # ---------------
+
+    # The roles below are included in requirements.yml.
+    # "Required" roles are downloaded from remote sources.
 
     # Ansible Galaxy docs:
     # http://docs.ansible.com/ansible/latest/galaxy.html
 
+    # --------------------------------------------------------------------------
 
-    # Basic role example
+    # Using tags
+    # ----------
+
+    # Each role has a unique & descriptive tag so that specific roles can be
+    # run via the `ansible-playbook` command.
+
+    # Ansible tags docs:
+    # http://docs.ansible.com/ansible/latest/playbooks_tags.html
+
+    # --------------------------------------------------------------------------
+
+    # Basic role example.
     - { role: danbohea.spelling, tags: ["spelling"] }
 
-    # Passing a vairiable to a role.
+    # Passing a variable to a role.
     - { role: danbohea.cask-app, cask_app_name: "muzzle", tags: ["muzzle"] }
 
     # Using the "always" tag on a role to ensure it always runs,
-    # no matter what what tags you instructed Ansible to run.
+    # no matter what tags you instructed Ansible to run.
     - { role: danbohea.dock-items, tags: ["dock_items","always"] }
+
+    # --------------------------------------------------------------------------
+
+    #  More info on the example roles used here:
+
+    # https://github.com/danbohea/ansible-role-spelling
+    # https://github.com/danbohea/ansible-role-cask-app
+    # https://github.com/danbohea/ansible-role-dock-items
+
+    # You can find further compatible roles via the Ansible Galaxy website.
+    # Here's a good starting point:
+
+    # https://galaxy.ansible.com/list#/roles?page=1&page_size=20&users=danbohea&autocomplete=macsible&order=name,username
+
+    # --------------------------------------------------------------------------
 
   post_tasks:
 
