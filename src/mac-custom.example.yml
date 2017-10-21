@@ -1,6 +1,6 @@
 ---
 - name: Mac custom
-  hosts: all
+  inventory: all
   connection: local
 
   tasks:
@@ -28,7 +28,7 @@
         vars:
           cask_app_name: "the-unarchiver"
         tags: the_unarchiver
-        
+
       tags: stage_1
 
     # Last

@@ -3,7 +3,7 @@
 # Do not customise this file. Customise mac-custom.yml.
 
 - name: Macsible
-  hosts: all
+  inventory: all
   connection: local
 
   vars_files:
