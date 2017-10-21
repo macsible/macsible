@@ -1,0 +1,28 @@
+---
+- name: Mac custom
+  # hosts: all
+  # connection: local
+
+  roles:
+
+    # Prep
+    # --------------------------------------------------------------------------
+
+    - { role: danbohea.spelling, tags: ["spelling","prep"] }
+
+    # Stage 1: Essential day-to-day
+    # --------------------------------------------------------------------------
+
+    - { role: danbohea.flux, tags: ["flux","stage_1"] }
+    - { cask_app_name: "the-unarchiver", tags: ["the_unarchiver","stage_1"], role: danbohea.cask-app }
+
+    # Last
+    # --------------------------------------------------------------------------
+
+    - { role: danbohea.dock-items, tags: ["dock_items","last","always"] }
+
+  post_tasks:
+
+    - debug:
+        msg: "Some changes may not take effect until you've restarted your Mac."
+      tags: always

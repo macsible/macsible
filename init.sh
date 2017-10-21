@@ -42,6 +42,7 @@ if ! exists pip; then
 fi
 
 # Install Ansible
+# TODO: We need at least Ansible 2.4.0, upgrade if needed.
 if ! exists ansible; then
   setStatusMessage "Installing Ansible"
   sudo pip install ansible --quiet
@@ -51,9 +52,9 @@ fi
 setStatusMessage "Creating requirements.yml if absent"
 cp -n src/requirements.yml requirements.yml
 
-# Create mac.yml
-setStatusMessage "Creating mac.yml if absent"
-cp -n src/mac.yml mac.yml
+# Create mac-custom.yml
+setStatusMessage "Creating mac-custom.yml if absent"
+cp -n src/mac-custom.yml mac-custom.yml
 
 # Create config.yml
 setStatusMessage "Creating config.yml if absent"
