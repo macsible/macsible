@@ -3,42 +3,23 @@
   hosts: all
   connection: local
 
-  tasks:
+  roles:
 
     # Prep
     # --------------------------------------------------------------------------
 
-    - block:
-      - include_role:
-          name: danbohea.spelling
-        tags: spelling
-      tags: prep
+    - { role: danbohea.spelling, tags: ["spelling","prep"] }
 
     # Stage 1: Essential day-to-day
     # --------------------------------------------------------------------------
 
-    - block:
-
-      - include_role:
-          name: danbohea.flux
-        tags: flux
-
-      - include_role:
-          name: danbohea.cask-app
-        vars:
-          cask_app_name: "the-unarchiver"
-        tags: the_unarchiver
-
-      tags: stage_1
+    - { role: danbohea.flux, tags: ["flux","stage_1"] }
+    - { cask_app_name: "the-unarchiver", tags: ["the_unarchiver","stage_1"], role: danbohea.cask-app }
 
     # Last
     # --------------------------------------------------------------------------
 
-    - block:
-      - include_role:
-          name: danbohea.dock-items
-        tags: dock_items
-      tags: [last, always]
+    - { role: danbohea.dock-items, tags: ["dock_items","last","always"] }
 
   post_tasks:
 
