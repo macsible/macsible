@@ -19,8 +19,6 @@ matrix:
   fast_finish: true
 
 install:
-  # Debug info
-  - python --version
   # Run setup script
   - bash init.sh
   # Debug info

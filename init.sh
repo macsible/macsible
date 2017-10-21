@@ -48,6 +48,9 @@ if ! exists ansible; then
   sudo pip install ansible --quiet
 fi
 
+# Confirm installed Ansible version
+ansible --version
+
 # Create requirements.yml
 setStatusMessage "Creating requirements.yml if absent"
 cp -n src/requirements.yml requirements.yml
