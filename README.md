@@ -25,7 +25,7 @@ You can see a working example of a forked and customised repository at [https://
 
 ## Usage
 
-*NOTE: All commands below are to be run from the same location as this README.md file.*
+*NOTE: All commands below are to be run from the root of this codebase.*
 
 
 ### Install dependencies
@@ -34,7 +34,7 @@ A script is included to ensure certain dependencies are met:
 
 - Install pip (if not already installed)
 - Install Ansible (if not already installed)
-- Create required files if not present: config.yml, config.local.yml, mac.yml, requirements.yml
+- Create required files if not present: config.yml, config.local.yml, mac-custom.yml, requirements.yml
 - Download required Ansible Galaxy roles
 
 To execute this script run:
@@ -62,14 +62,14 @@ ansible-galaxy install -r requirements.yml --force
 
 ### Run the Ansible playbook
 
-The primary Ansible playbook file is called mac.yml and can be run using the following command (asks for sudo password):
+The primary Ansible playbook file is called macsible.yml and can be run using the following command (asks for sudo password):
 
 ```
-ansible-playbook mac.yml -K
+ansible-playbook macsible.yml -K
 ```
 
 To run only certain tags (e.g. `firefox` and `flux`):
 
 ```
-ansible-playbook mac.yml -K -t "firefox,flux"
+ansible-playbook macsible.yml -K -t "firefox,flux"
 ```

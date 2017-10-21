@@ -27,7 +27,7 @@ install:
 
 script:
   # Playbook syntax check
-  - ansible-playbook mac.yml --syntax-check
+  - ansible-playbook macsible.yml --syntax-check
   # Run Ansible playbook:
   # - Skip tasks/roles that we know cause issues in Travis
-  - ansible-playbook mac.yml --skip-tags "no_ci"
+  - ansible-playbook macsible.yml --skip-tags "no_ci"
