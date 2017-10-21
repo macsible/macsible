@@ -1,7 +1,7 @@
 ---
 - name: Mac custom
-  # hosts: all
-  # connection: local
+  hosts: all
+  connection: local
 
   roles:
 
