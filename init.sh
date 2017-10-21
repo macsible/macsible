@@ -53,19 +53,19 @@ ansible --version
 
 # Create requirements.yml
 setStatusMessage "Creating requirements.yml if absent"
-cp -n src/requirements.yml requirements.yml
+cp -n src/requirements.example.yml requirements.yml
 
 # Create mac-custom.yml
 setStatusMessage "Creating mac-custom.yml if absent"
-cp -n src/mac-custom.yml mac-custom.yml
+cp -n src/mac-custom.example.yml mac-custom.yml
 
 # Create config.yml
 setStatusMessage "Creating config.yml if absent"
-cp -n src/config.yml config.yml
+cp -n src/config.example.yml config.yml
 
 # Create config.local.yml
 setStatusMessage "Creating config.local.yml if absent"
-cp -n src/config.yml config.local.yml
+cp -n src/config.example.yml config.local.yml
 
 # Install Ansible Galaxy dependencies:
 setStatusMessage "Installing required Ansible Galaxy roles"
