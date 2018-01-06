@@ -6,10 +6,6 @@
   hosts: all
   connection: local
 
-  vars_files:
-    - config.yml
-    - config.local.yml
-
   pre_tasks:
 
     - block:
