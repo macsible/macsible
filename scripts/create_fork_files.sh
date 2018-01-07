@@ -1,6 +1,7 @@
 #!/bin/bash
 
-. common.sh
+DIR="$(dirname "$0")"
+. "$DIR/common.sh"
 
 # Create requirements.yml
 setStatusMessage "Creating requirements.yml if absent"

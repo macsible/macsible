@@ -1,6 +1,7 @@
 #!/bin/bash
 
-. common.sh
+DIR="$(dirname "$0")"
+. "$DIR/common.sh"
 
 # Install pip
 if ! exists pip; then
