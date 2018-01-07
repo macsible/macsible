@@ -19,11 +19,9 @@ matrix:
   fast_finish: true
 
 install:
-  # Run setup script
-  - bash init.sh
-  # Debug info
-  - pip --version
-  - ansible --version
+  - bash scripts/install_deps.sh
+  - bash scripts/create_fork_files.sh
+  - ansible-galaxy install -r requirements.yml --force
 
 script:
   # Playbook syntax check
