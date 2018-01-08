@@ -32,7 +32,6 @@ bash create_fork_files.sh
 
 This will create the following files based on the examples found in the src directory:
 
-- .travis.yml
 - config.yml
 - config.local.yml
 - mac-custom.yml

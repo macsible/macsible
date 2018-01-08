@@ -10,9 +10,6 @@ cd ../
 
 # Copy and rename files from ./src:
 
-setStatusMessage "Creating ./.travis.yml if absent"
-cp -n src/.travis.example.yml .travis.yml
-
 setStatusMessage "Creating ./config.yml if absent"
 cp -n src/config.example.yml config.yml
 
