@@ -6,9 +6,9 @@
 
 Ensure the following requirements are already installed and working on your local system:
 
-- macOS 10.10, 10.11 or 10.12 [help](https://support.apple.com/en-us/HT201372).
-- Command Line Developer Tools [help](docs/install_command_line_developer_tools.md).
-- Ansible [help](docs/install_ansible.md).
+- macOS 10.10, 10.11 or 10.12 ([help](https://support.apple.com/en-us/HT201372)).
+- Command Line Developer Tools ([help](docs/install_command_line_developer_tools.md)).
+- Ansible ([help](docs/install_ansible.md)).
 
 ## Forking and customisation overview
 
