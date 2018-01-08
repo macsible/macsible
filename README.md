@@ -18,13 +18,13 @@ Ensure the following requirements are already installed and working on your loca
 4. Follow the usage instructions below.
 5. Commit and push any customisations to your local clone back upstream to your fork.
 
-You can see a working example of a forked and customised repository at [https://github.com/danbohea/macsible](https://github.com/danbohea/macsible)
+You can see a working example of a forked and customised repository at [https://github.com/danbohea/macsible](https://github.com/danbohea/macsible).
 
 ## Usage
 
 ### Create required additional files
 
-You'll need to create some additional files in the root of your project. A script has been included to automate this. To use it simply run:
+You'll need to create some additional files in the root of your project. A script has been included to automate this. To use it run:
 
 ```
 bash create_fork_files.sh
@@ -53,7 +53,7 @@ config.local.yml can be used to override config.yml which can be useful when you
 
 ### Run the Ansible playbook
 
-The primary Ansible playbook file is called macsible.yml and can be run using the following command (asks for sudo password):
+The primary Ansible playbook file is called macsible.yml and can be run using the command below (asks for sudo password). Note that running macsible.yml will in turn run your customised mac-custom.yml playbook.
 
 ```
 ansible-playbook macsible.yml -K
