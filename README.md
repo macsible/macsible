@@ -27,7 +27,7 @@ You can see a working example of a forked and customised repository at [https://
 You'll need to create some additional files in the root of your project. A script has been included to automate this. To use it run:
 
 ```
-bash create_fork_files.sh
+bash scripts/create_fork_files.sh
 ```
 
 This will create the following files based on the examples found in the src directory:
