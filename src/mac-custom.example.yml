@@ -1,7 +1,6 @@
 ---
 - name: Mac custom
   hosts: all
-  connection: local
 
   vars_files:
     - config.yml
