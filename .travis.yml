@@ -25,6 +25,10 @@ matrix:
 
 install:
   - bash scripts/install_deps.sh
+  - ansible-galaxy --version
+  - python --version
+  # Python's openSSL version
+  - python -c "import ssl; print(ssl.OPENSSL_VERSION)"
   - bash scripts/create_fork_files.sh
   - ansible-galaxy install -r requirements.yml --force
 
