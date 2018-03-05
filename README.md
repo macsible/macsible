@@ -30,7 +30,7 @@ You'll need to create some additional files in the root of your project. A scrip
 bash scripts/create_fork_files.sh
 ```
 
-This will create the following files based on the examples found in the src directory:
+This will create the following files based on the examples found in the templates directory:
 
 - config.yml
 - config.local.yml
