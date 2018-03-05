@@ -8,7 +8,7 @@ Ensure the following requirements are already installed and working on your loca
 
 - macOS 10.11 or 10.13 ([help](https://support.apple.com/en-us/HT201372)).
 - Command Line Developer Tools ([help](docs/install_command_line_developer_tools.md)).
-- Ansible ([help](docs/install_ansible.md)).
+- Ansible >= 2.4 ([help](docs/install_ansible.md)).
 
 ## Forking and customisation overview
 
@@ -27,15 +27,18 @@ You can see a working example of a forked and customised repository at [https://
 You'll need to create some additional files in the root of your project. A script has been included to automate this. To use it run:
 
 ```
-bash scripts/create_fork_files.sh
+bash scripts/copy_example_files.sh
 ```
 
-This will create the following files based on the examples found in the src directory:
+This will create the following files based on the examples found in the examples directory:
 
 - config.yml
 - config.local.yml
+- files/README.md
+- inventory.yml
 - mac-custom.yml
 - requirements.yml
+- roles/README.md
 
 ### Download externally sourced roles
 
