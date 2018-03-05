@@ -4,6 +4,10 @@
 
 os: osx
 
+cache:
+  directories:
+    - $HOME/Library/Caches/pip
+
 matrix:
   include:
     # macOS 10.13
