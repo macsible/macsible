@@ -13,7 +13,7 @@ matrix:
 
 install:
   - bash scripts/install_deps.sh
-  - bash scripts/create_fork_files.sh
+  - bash scripts/copy_example_files.sh
   - ansible-galaxy install -r requirements.yml --force
 
 script:
