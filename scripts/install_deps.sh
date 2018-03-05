@@ -4,7 +4,7 @@ DIR="$(dirname "$0")"
 
 . "$DIR/common.sh"
 
-set -ev
+set -e
 
 # Install pip
 if ! exists pip; then

@@ -34,9 +34,11 @@ This will create the following files based on the examples found in the examples
 
 - config.yml
 - config.local.yml
+- files/README.md
 - inventory.yml
 - mac-custom.yml
 - requirements.yml
+- roles/README.md
 
 ### Download externally sourced roles
 
