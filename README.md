@@ -8,7 +8,7 @@ Ensure the following requirements are already installed and working on your loca
 
 - macOS 10.11 or 10.13 ([help](https://support.apple.com/en-us/HT201372)).
 - Command Line Developer Tools ([help](docs/install_command_line_developer_tools.md)).
-- Ansible ([help](docs/install_ansible.md)).
+- Ansible >= 2.4 ([help](docs/install_ansible.md)).
 
 ## Forking and customisation overview
 
