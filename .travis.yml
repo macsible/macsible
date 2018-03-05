@@ -6,7 +6,6 @@ os: osx
 
 cache:
   directories:
-    # TODO: Sadly this seems to have no effect.
     - $HOME/Library/Caches/pip
     - $HOME/Library/Caches/Homebrew
 
