@@ -16,6 +16,9 @@ cd ../
 # when using `cp -n` (it's the `-n` it doesn't like).
 # https://github.com/travis-ci/travis-ci/issues/6307#issuecomment-363899104
 
+setStatusMessage "Creating ./ansible.cfg if absent"
+rsync examples/ansible.cfg ansible.cfg --ignore-existing
+
 setStatusMessage "Creating ./config.yml if absent"
 rsync examples/config.example.yml config.yml --ignore-existing
 
