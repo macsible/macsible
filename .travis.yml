@@ -23,10 +23,3 @@ script:
   # Run Ansible playbook:
   # - Skip tasks/roles that we know cause issues in Travis
   - ansible-playbook macsible.yml --skip-tags "no_ci"
-  
-  # Idempotence test (run test playbook again & check output)
-  - >
-    ansible-playbook macsible.yml --skip-tags "no_ci"
-    | grep -q 'changed=0.*failed=0'
-    && (echo 'Idempotence test: pass' && exit 0)
-    || (echo 'Idempotence test: fail' && exit 1)
