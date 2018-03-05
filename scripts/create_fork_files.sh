@@ -4,6 +4,8 @@ DIR="$(dirname "$0")"
 
 . "$DIR/common.sh"
 
+set -ev
+
 # Change to project root directory
 cd "$DIR"
 cd ../
