@@ -20,6 +20,9 @@ rsync templates/config.example.yml config.yml --ignore-existing
 setStatusMessage "Creating ./config.local.yml if absent"
 rsync templates/config.example.yml config.local.yml --ignore-existing
 
+setStatusMessage "Creating ./inventory.yml if absent"
+rsync templates/inventory.example.yml inventory.yml --ignore-existing
+
 setStatusMessage "Creating ./mac-custom.yml if absent"
 rsync templates/mac-custom.example.yml mac-custom.yml --ignore-existing
 

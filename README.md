@@ -34,6 +34,7 @@ This will create the following files based on the examples found in the template
 
 - config.yml
 - config.local.yml
+- inventory.yml
 - mac-custom.yml
 - requirements.yml
 
