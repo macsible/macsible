@@ -26,9 +26,6 @@ rsync examples/config.yml config.yml --ignore-existing
 setStatusMessage "Creating ./config.local.yml if absent"
 rsync examples/config.yml config.local.yml --ignore-existing
 
-setStatusMessage "Creating ./files if absent"
-rsync -r examples/files . --ignore-existing
-
 setStatusMessage "Creating ./inventory.yml if absent"
 rsync examples/inventory.yml inventory.yml --ignore-existing
 
@@ -37,6 +34,3 @@ rsync examples/mac-custom.yml mac-custom.yml --ignore-existing
 
 setStatusMessage "Creating ./requirements.yml if absent"
 rsync examples/requirements.yml requirements.yml --ignore-existing
-
-setStatusMessage "Creating ./roles if absent"
-rsync -r examples/roles . --ignore-existing
