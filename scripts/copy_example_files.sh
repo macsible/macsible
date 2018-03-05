@@ -1,9 +1,10 @@
 #!/bin/bash
 
+# Include ../common.sh
 DIR="$(dirname "$0")"
-
 . "$DIR/common.sh"
 
+# Terminate as soon as any command fails.
 set -e
 
 # Change to project root directory
