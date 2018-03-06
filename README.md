@@ -34,16 +34,16 @@ This will create the following files based on the examples found in the examples
 
 - config.yml
 - config.local.yml
-- inventory.yml
-- mac-custom.yml
-- requirements.yml
+- custom/inventory.yml
+- custom/mac.yml
+- custom/requirements.yml
 
 ### Download externally sourced roles
 
-Remotely sourced Ansible roles can be added to requirements.yml. Before running the playbook you'll need to download any Ansible roles specified in requirements.yml by running the following command:
+Remotely sourced Ansible roles can be added to custom/requirements.yml. Before running the playbook you'll need to download any Ansible roles specified in custom/requirements.yml by running the following command:
 
 ```
-ansible-galaxy install -r requirements.yml --force
+ansible-galaxy install -r custom/requirements.yml --force
 ```
 
 ### Configure

@@ -35,5 +35,5 @@ rsync examples/inventory.yml custom/inventory.yml --ignore-existing
 setStatusMessage "Creating ./custom/mac.yml if absent"
 rsync examples/mac.yml custom/mac.yml --ignore-existing
 
-setStatusMessage "Creating ./requirements.yml if absent"
-rsync examples/requirements.yml requirements.yml --ignore-existing
+setStatusMessage "Creating ./custom/requirements.yml if absent"
+rsync examples/requirements.yml custom/requirements.yml --ignore-existing
