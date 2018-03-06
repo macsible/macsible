@@ -19,7 +19,7 @@ matrix:
 install:
   - bash scripts/install_deps.sh
   - bash scripts/copy_example_files.sh
-  - ansible-galaxy install -r requirements.yml --force
+  - ansible-galaxy install -r custom/requirements.yml --force
 
 script:
   # Syntax check
