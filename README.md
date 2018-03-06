@@ -18,7 +18,7 @@ Ensure the following requirements are already installed and working on your loca
 4. Follow the usage instructions below.
 5. Commit and push any customisations to your local clone back upstream to your fork.
 
-You can see a working example of a forked and customised repository at [https://github.com/danbohea/macsible](https://github.com/danbohea/macsible)
+You can see a working example of a forked and customised repository at [https://github.com/danbohea/macsible](https://github.com/danbohea/macsible).
 
 ## Usage
 
@@ -30,34 +30,34 @@ You'll need to create some additional required files before you begin your custo
 bash scripts/copy_starter_files.sh
 ```
 
-This will create the following files (copied from the starter_files directory):
+This will create the following files (copied from the `starter_files` directory):
 
-- ansible.cfg
-- custom/config.yml
-- custom/config.local.yml
-- custom/inventory.yml
-- custom/mac.yml
-- custom/requirements.yml
+- `ansible.cfg`
+- `custom/config.yml`
+- `custom/config.local.yml`
+- `custom/inventory.yml`
+- `custom/mac.yml`
+- `custom/requirements.yml`
 
 ### Download externally sourced roles
 
-Remotely sourced Ansible roles can be specified in custom/requirements.yml. Before running the playbook you'll need to download any Ansible roles specified here by running the following command:
+Remotely sourced Ansible roles can be specified in `custom/requirements.yml`. Before running the playbook you'll need to download any Ansible roles specified here by running the following command:
 
 ```shell
 ansible-galaxy install -r custom/requirements.yml --force
 ```
 
-Roles downloaded in this way will be placed in custom/roles/external. If you wish to create any roles within this repository you can do so in custom/roles/internal.
+Roles downloaded in this way will be placed in `custom/roles/external`. If you wish to create any roles within this repository you can do so in `custom/roles/internal`.
 
 ### Configure
 
-Default variables can be overridden in config.yml.
+Default variables can be overridden in `custom/config.yml`.
 
-config.local.yml can be used to override config.yml which can be useful when you need to use different values for just a few variables on a specific system. By default config.local.yml is ignored by git.
+`custom/config.local.yml` can be used to override `custom/config.yml` which can be useful when you need to use different values for just a few variables on a specific system. By default `custom/config.local.yml` is ignored by git.
 
 ### Run the Ansible playbook
 
-The primary Ansible playbook file is called macsible.yml and can be run using the following command (asks for sudo password):
+The primary Ansible playbook file is `macsible.yml` and can be run using the following command (asks for sudo password):
 
 ```shell
 ansible-playbook macsible.yml -K
