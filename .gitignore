@@ -1,4 +1,4 @@
 *.retry
 ansible.log
-config.local.yml
+custom/config.local.yml
 ext_roles

@@ -24,23 +24,24 @@ You can see a working example of a forked and customised repository at [https://
 
 ### Create required additional files
 
-You'll need to create some additional files in the root of your project. A script has been included to automate this. To use it simply run:
+You'll need to create some additional required files before you begin your customisations. A script has been included to automate this:
 
 ```
 bash scripts/copy_example_files.sh
 ```
 
-This will create the following files based on the examples found in the examples directory:
+This will create the following files (copied from the starter_files directory):
 
-- config.yml
-- config.local.yml
+- ansible.cfg
+- custom/config.yml
+- custom/config.local.yml
 - custom/inventory.yml
 - custom/mac.yml
 - custom/requirements.yml
 
 ### Download externally sourced roles
 
-Remotely sourced Ansible roles can be added to custom/requirements.yml. Before running the playbook you'll need to download any Ansible roles specified in custom/requirements.yml by running the following command:
+Remotely sourced Ansible roles can be specified in custom/requirements.yml. Before running the playbook you'll need to download any Ansible roles specified here by running the following command:
 
 ```
 ansible-galaxy install -r custom/requirements.yml --force

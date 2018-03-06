@@ -20,11 +20,11 @@ cd ../
 setStatusMessage "Creating ./ansible.cfg if absent"
 rsync starter_files/ansible.cfg ansible.cfg --ignore-existing
 
-setStatusMessage "Creating ./config.yml if absent"
-rsync starter_files/config.yml config.yml --ignore-existing
+setStatusMessage "Creating ./custom/config.yml if absent"
+rsync starter_files/config.yml custom/config.yml --ignore-existing
 
-setStatusMessage "Creating ./config.local.yml if absent"
-rsync starter_files/config.yml config.local.yml --ignore-existing
+setStatusMessage "Creating ./custom/config.local.yml if absent"
+rsync starter_files/config.yml custom/config.local.yml --ignore-existing
 
 setStatusMessage "Creating ./custom if absent"
 mkdir custom
