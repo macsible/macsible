@@ -26,14 +26,14 @@ rsync examples/config.yml config.yml --ignore-existing
 setStatusMessage "Creating ./config.local.yml if absent"
 rsync examples/config.yml config.local.yml --ignore-existing
 
-setStatusMessage "Creating ./custom-playbooks if absent"
-mkdir custom-playbooks
+setStatusMessage "Creating ./custom if absent"
+mkdir custom
 
-setStatusMessage "Creating ./inventory.yml if absent"
-rsync examples/inventory.yml inventory.yml --ignore-existing
+setStatusMessage "Creating ./custom/inventory.yml if absent"
+rsync examples/inventory.yml custom/inventory.yml --ignore-existing
 
-setStatusMessage "Creating ./custom-playbooks/mac.yml if absent"
-rsync examples/mac.yml custom-playbooks/mac.yml --ignore-existing
+setStatusMessage "Creating ./custom/mac.yml if absent"
+rsync examples/mac.yml custom/mac.yml --ignore-existing
 
 setStatusMessage "Creating ./requirements.yml if absent"
 rsync examples/requirements.yml requirements.yml --ignore-existing
