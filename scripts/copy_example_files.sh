@@ -26,6 +26,9 @@ rsync examples/config.yml config.yml --ignore-existing
 setStatusMessage "Creating ./config.local.yml if absent"
 rsync examples/config.yml config.local.yml --ignore-existing
 
+setStatusMessage "Creating ./custom-playbooks if absent"
+mkdir -p custom-playbooks
+
 setStatusMessage "Creating ./inventory.yml if absent"
 rsync examples/inventory.yml inventory.yml --ignore-existing
 
