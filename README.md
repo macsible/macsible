@@ -18,34 +18,33 @@ Ensure the following requirements are already installed and working on your loca
 4. Follow the usage instructions below.
 5. Commit and push any customisations to your local clone back upstream to your fork.
 
-You can see a working example of a forked and customised repository at [https://github.com/danbohea/macsible](https://github.com/danbohea/macsible).
+You can see a working example of a forked and customised repository at [https://github.com/danbohea/macsible](https://github.com/danbohea/macsible)
 
 ## Usage
 
 ### Create required additional files
 
-You'll need to create some additional files in the root of your project. A script has been included to automate this. To use it run:
+You'll need to create some additional required files before you begin your customisations. A script has been included to automate this:
 
+```shell
+bash scripts/copy_starter_files.sh
 ```
-bash scripts/copy_example_files.sh
-```
 
-This will create the following files based on the examples found in the examples directory:
+This will create the following files (copied from the starter_files directory):
 
-- config.yml
-- config.local.yml
-- files/README.md
-- inventory.yml
-- mac-custom.yml
-- requirements.yml
-- roles/README.md
+- ansible.cfg
+- custom/config.yml
+- custom/config.local.yml
+- custom/inventory.yml
+- custom/mac.yml
+- custom/requirements.yml
 
 ### Download externally sourced roles
 
-Remotely sourced Ansible roles can be added to requirements.yml. Before running the playbook you'll need to download any Ansible roles specified in requirements.yml by running the following command:
+Remotely sourced Ansible roles can be specified in custom/requirements.yml. Before running the playbook you'll need to download any Ansible roles specified here by running the following command:
 
-```
-ansible-galaxy install -r requirements.yml --force
+```shell
+ansible-galaxy install -r custom/requirements.yml --force
 ```
 
 ### Configure
@@ -56,14 +55,14 @@ config.local.yml can be used to override config.yml which can be useful when you
 
 ### Run the Ansible playbook
 
-The primary Ansible playbook file is called macsible.yml and can be run using the command below (asks for sudo password). Note that running macsible.yml will in turn run your customised mac-custom.yml playbook.
+The primary Ansible playbook file is called macsible.yml and can be run using the following command (asks for sudo password):
 
-```
+```shell
 ansible-playbook macsible.yml -K
 ```
 
 To run only certain tags (e.g. `firefox` and `dev_apps`):
 
-```
+```shell
 ansible-playbook macsible.yml -K -t "firefox,dev_apps"
 ```

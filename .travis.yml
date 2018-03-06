@@ -4,6 +4,11 @@
 
 os: osx
 
+cache:
+  directories:
+    - $HOME/Library/Caches/pip
+    - $HOME/Library/Caches/Homebrew
+
 matrix:
   include:
     # macOS 10.13
@@ -13,8 +18,8 @@ matrix:
 
 install:
   - bash scripts/install_deps.sh
-  - bash scripts/copy_example_files.sh
-  - ansible-galaxy install -r requirements.yml --force
+  - bash scripts/copy_starter_files.sh
+  - ansible-galaxy install -r custom/requirements.yml --force
 
 script:
   # Syntax check
