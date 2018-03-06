@@ -1,13 +1,11 @@
 #!/bin/bash
 
 # Vars
-# ------------------------------------------------------------------------------
 
 BGreen='\e[1;32m' # Green
 Color_Off='\e[0m' # Text Reset
 
 # Functions
-# ------------------------------------------------------------------------------
 
 function setStatusMessage {
   printf " --> ${BGreen}$1${Color_Off}\n" 1>&2

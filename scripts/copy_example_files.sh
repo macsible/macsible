@@ -4,36 +4,36 @@
 DIR="$(dirname "$0")"
 . "$DIR/common.sh"
 
-# Terminate as soon as any command fails.
+# Terminate as soon as any command fails
 set -e
 
 # Change to project root directory
 cd "$DIR"
 cd ../
 
-# Copy and rename files & directories from ./examples
+# Copy files from ./starter_files
 
 # We're using `rsync` instead of `cp` because for some reason Travis now fails
 # when using `cp -n` (it's the `-n` it doesn't like).
 # https://github.com/travis-ci/travis-ci/issues/6307#issuecomment-363899104
 
 setStatusMessage "Creating ./ansible.cfg if absent"
-rsync examples/ansible.cfg ansible.cfg --ignore-existing
+rsync starter_files/ansible.cfg ansible.cfg --ignore-existing
 
 setStatusMessage "Creating ./config.yml if absent"
-rsync examples/config.yml config.yml --ignore-existing
+rsync starter_files/config.yml config.yml --ignore-existing
 
 setStatusMessage "Creating ./config.local.yml if absent"
-rsync examples/config.yml config.local.yml --ignore-existing
+rsync starter_files/config.yml config.local.yml --ignore-existing
 
 setStatusMessage "Creating ./custom if absent"
 mkdir custom
 
 setStatusMessage "Creating ./custom/inventory.yml if absent"
-rsync examples/inventory.yml custom/inventory.yml --ignore-existing
+rsync starter_files/inventory.yml custom/inventory.yml --ignore-existing
 
 setStatusMessage "Creating ./custom/mac.yml if absent"
-rsync examples/mac.yml custom/mac.yml --ignore-existing
+rsync starter_files/mac.yml custom/mac.yml --ignore-existing
 
 setStatusMessage "Creating ./custom/requirements.yml if absent"
-rsync examples/requirements.yml custom/requirements.yml --ignore-existing
+rsync starter_files/requirements.yml custom/requirements.yml --ignore-existing
