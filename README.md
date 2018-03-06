@@ -32,12 +32,17 @@ bash scripts/copy_starter_files.sh
 
 This will create the following files (copied from the `starter_files` directory):
 
-- `ansible.cfg`
-- `custom/config.yml`
-- `custom/config.local.yml`
-- `custom/inventory.yml`
-- `custom/mac.yml`
-- `custom/requirements.yml`
+```
+.
+├── ansible.cfg
+└── custom
+    ├── config.local.yml
+    ├── config.yml
+    ├── inventory.yml
+    ├── mac.yml
+    └── requirements.yml
+
+```
 
 ### Download externally sourced roles
 
