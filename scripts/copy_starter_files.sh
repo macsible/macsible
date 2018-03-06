@@ -14,7 +14,7 @@ cd ../
 # Create required directories
 
 setStatusMessage "Creating ./custom if absent"
-mkdir custom
+mkdir -p custom
 
 # Copy files from ./starter_files
 

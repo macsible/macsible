@@ -47,6 +47,8 @@ Remotely sourced Ansible roles can be specified in custom/requirements.yml. Befo
 ansible-galaxy install -r custom/requirements.yml --force
 ```
 
+Roles downloaded in this way will be placed in custom/roles/external. If you wish to create any roles within this repository you can do so in custom/roles/internal.
+
 ### Configure
 
 Default variables can be overridden in config.yml.
