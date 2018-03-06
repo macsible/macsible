@@ -2,7 +2,7 @@
 
 To install Xcode Command Line Developer Tools run the following:
 
-```shell
+```sh
 xcode-select --install
 ```
 

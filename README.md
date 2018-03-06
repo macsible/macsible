@@ -26,7 +26,7 @@ You can see a working example of a forked and customised repository at [https://
 
 You'll need to create some additional required files before you begin your customisations. A script has been included to automate this:
 
-```shell
+```sh
 bash scripts/copy_starter_files.sh
 ```
 
@@ -43,7 +43,7 @@ This will create the following files (copied from the `starter_files` directory)
 
 Remotely sourced Ansible roles can be specified in `custom/requirements.yml`. Before running the playbook you'll need to download any Ansible roles specified here by running the following command:
 
-```shell
+```sh
 ansible-galaxy install -r custom/requirements.yml --force
 ```
 
@@ -59,12 +59,12 @@ Default variables can be overridden in `custom/config.yml`.
 
 The primary Ansible playbook file is `macsible.yml` and can be run using the following command (asks for sudo password):
 
-```shell
+```sh
 ansible-playbook macsible.yml -K
 ```
 
 To run only certain tags (e.g. `firefox` and `dev_apps`):
 
-```shell
+```sh
 ansible-playbook macsible.yml -K -t "firefox,dev_apps"
 ```
