@@ -34,7 +34,7 @@
 
     # Basic role example.
     - {
-      role: danbohea.spelling,
+      role: danbohea.macos-spelling,
       tags: ["spelling"]
       }
 
@@ -48,16 +48,16 @@
     # no matter what tags you instructed Ansible to run.
     - {
       role: danbohea.macos-dock,
-      tags: ["macos-dock","always"]
+      tags: ["always"]
       }
 
     # --------------------------------------------------------------------------
 
     #  More info on the example roles used here:
 
-    # https://github.com/danbohea/ansible-role-spelling
+    # https://github.com/danbohea/ansible-role-macos-spelling
     # https://github.com/danbohea/ansible-role-cask-app
-    # https://github.com/danbohea/ansible-role-dock-items
+    # https://github.com/danbohea/ansible-role-macos-dock
 
     # You can find further compatible roles via the Ansible Galaxy website.
     # Here's a good starting point:

@@ -2,7 +2,7 @@
 
 - src: danbohea.cask-app
   version: 1.0.1
-- src: danbohea.spelling
-  version: master
+- src: danbohea.macos-spelling
+  version: 1.0.0
 - src: danbohea.macos-dock
   version: 1.0.0
