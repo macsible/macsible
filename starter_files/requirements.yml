@@ -4,5 +4,5 @@
   version: master
 - src: danbohea.spelling
   version: master
-- src: danbohea.dock-items
-  version: master
+- src: danbohea.macos-dock
+  version: 1.0.0

@@ -47,8 +47,8 @@
     # Using the "always" tag on a role to ensure it always runs,
     # no matter what tags you instructed Ansible to run.
     - {
-      role: danbohea.dock-items,
-      tags: ["dock_items","always"]
+      role: danbohea.macos-dock,
+      tags: ["macos-dock","always"]
       }
 
     # --------------------------------------------------------------------------
