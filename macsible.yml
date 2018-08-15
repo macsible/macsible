@@ -11,7 +11,7 @@
 
       - name: Verify Ansible version.
         assert:
-          that: "ansible_version.full | version_compare('2.4', '>=')"
+          that: "ansible_version.full is version_compare('2.4', '>=')"
           msg: "You must update Ansible to at least 2.4 to use this version of Macsible."
 
       - name: Verify target system is running macOS.
@@ -21,7 +21,7 @@
 
       - name: Verify macOS version.
         assert:
-          that: "ansible_distribution_version | version_compare('10.10', '>=')"
+          that: "ansible_distribution_version is version_compare('10.10', '>=')"
           msg: "The target system must be running macOS 10.10 or higher to use this version of Macsible."
 
       tags: always
