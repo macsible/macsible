@@ -41,7 +41,6 @@ This will create the following files (copied from the `starter_files` directory)
     ├── inventory.yml
     ├── mac.yml
     └── requirements.yml
-
 ```
 
 ### Download externally sourced roles
