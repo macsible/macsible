@@ -48,7 +48,7 @@
     # no matter what tags you instructed Ansible to run.
     - {
       role: danbohea.macos-dock,
-      tags: ["always"]
+      tags: ["always", "dock"]
       }
 
     # --------------------------------------------------------------------------
